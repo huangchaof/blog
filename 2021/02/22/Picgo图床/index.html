@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Picgo图床Word与md文档存储图片word文档或者笔记软件插入图片，图片存储在文档本身里，这些文档是二进制的，需要对应软件才能打开。 markdown或html文档里插入的图片无法存储在文档里，只能以地址形式连接到文档，这样造成了文档与图片的分离。 图片可以存储在本地，与文档一起，也可以存到某个网络服务器上，图床就是这样的一个网络服务器。 图床可以选择付费的云盘、VPS、云主机，或者托管的免">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Picgo图床">
+<meta property="og:url" content="http://example.com/2021/02/22/Picgo%E5%9B%BE%E5%BA%8A/index.html">
+<meta property="og:site_name" content="冷飕飕的个人博客">
+<meta property="og:description" content="Picgo图床Word与md文档存储图片word文档或者笔记软件插入图片，图片存储在文档本身里，这些文档是二进制的，需要对应软件才能打开。 markdown或html文档里插入的图片无法存储在文档里，只能以地址形式连接到文档，这样造成了文档与图片的分离。 图片可以存储在本地，与文档一起，也可以存到某个网络服务器上，图床就是这样的一个网络服务器。 图床可以选择付费的云盘、VPS、云主机，或者托管的免">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125181222.png">
+<meta property="og:image" content="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125171254.png">
+<meta property="og:image" content="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125172633.png">
+<meta property="og:image" content="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125172801.png">
+<meta property="og:image" content="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125173610.png">
+<meta property="og:image" content="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125174335.png">
+<meta property="article:published_time" content="2021-02-22T11:22:51.737Z">
+<meta property="article:modified_time" content="2021-02-22T11:19:31.280Z">
+<meta property="article:author" content="lensousou">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125181222.png">
+
+<link rel="canonical" href="http://example.com/2021/02/22/Picgo%E5%9B%BE%E5%BA%8A/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Picgo图床 | 冷飕飕的个人博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">冷飕飕的个人博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">1</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">1</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/22/Picgo%E5%9B%BE%E5%BA%8A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/jugg.jfif">
+      <meta itemprop="name" content="lensousou">
+      <meta itemprop="description" content="轻轻的我走了，正如我轻轻的来">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冷飕飕的个人博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Picgo图床
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-02-22 11:22:51 / 修改时间：11:19:31" itemprop="dateCreated datePublished" datetime="2021-02-22T11:22:51Z">2021-02-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Picgo图床"><a href="#Picgo图床" class="headerlink" title="Picgo图床"></a>Picgo图床</h1><h2 id="Word与md文档存储图片"><a href="#Word与md文档存储图片" class="headerlink" title="Word与md文档存储图片"></a>Word与md文档存储图片</h2><p>word文档或者笔记软件插入图片，图片存储在文档本身里，这些文档是二进制的，需要对应软件才能打开。</p>
+<p>markdown或html文档里插入的图片无法存储在文档里，只能以地址形式连接到文档，这样造成了文档与图片的分离。</p>
+<p>图片可以存储在本地，与文档一起，也可以存到某个网络服务器上，图床就是这样的一个网络服务器。</p>
+<p>图床可以选择付费的云盘、VPS、云主机，或者托管的免费主机，如github、gitee。</p>
+<p><strong><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo">Picgo</a>实现了图片的自动上传与相册管理，支持多种图床，可以随时切换，可设置上传时的默认图床。</strong></p>
+<h2 id="Gitee图床设置"><a href="#Gitee图床设置" class="headerlink" title="Gitee图床设置"></a>Gitee图床设置</h2><p>Picgo有插件仓库，使用Gitee作图床需要下载插件</p>
+<img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125181222.png" alt="image-20201125181222214" style="zoom: 80%;" />
+
+<img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125171254.png" alt="image-20201125171253936" style="zoom:80%;" />
+
+<ul>
+<li>owner:gitee username，如果username有空格，使用<a target="_blank" rel="noopener" href="https://gitee.com/lensousou/imagerepo%E5%9C%B0%E5%9D%80%E9%87%8C%E7%9A%84%E5%90%8D%E5%AD%97">https://gitee.com/lensousou/imagerepo地址里的名字</a></li>
+<li>repo:存放图片的仓库名，注意仓库不能为private，否则无法上传，因为private repository对他人不具有可见性</li>
+<li>path:可以不填，上传时会自动生成，图中设置为img/(不用先在repo里先建立该目录),上传的图片就存放在这个文件夹下</li>
+<li>token：私人令牌，其实是个授权码，提供了Picgo对仓库数据的访问权限</li>
+<li>message：图片每次上传就是对repo的一次commit，这就是commit信息</li>
+</ul>
+<h2 id="Gitee-API"><a href="#Gitee-API" class="headerlink" title="Gitee API"></a>Gitee API</h2><p>gitee提供了API，第三方可以用于访问gitee的用户数据</p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/api/v5/swagger#/getV5ReposOwnerRepoStargazers?ex=no">https://gitee.com/api/v5/swagger#/getV5ReposOwnerRepoStargazers?ex=no</a></p>
+<p>token就是这些API需要提供的参数之一</p>
+<h2 id="Github图床设置"><a href="#Github图床设置" class="headerlink" title="Github图床设置"></a>Github图床设置</h2><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125172633.png" alt="image-20201125172633508" style="zoom:80%;" />
+
+<ul>
+<li><p>注意设定仓库名，不要复制下图中的，复制的会产生空格，导致后续上传错误，可见Picgo issue仓库</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/issues/585">https://github.com/Molunerfinn/PicGo/issues/585</a></p>
+</li>
+</ul>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125172801.png" alt="image-20201125172801645"></p>
+<ul>
+<li>分支名：由于github对美国BLM运动的响应，新建仓库默认分支名不再用master，改用main</li>
+</ul>
+<h2 id="Picgo日志文件"><a href="#Picgo日志文件" class="headerlink" title="Picgo日志文件"></a>Picgo日志文件</h2><p>此处可以打开picgo上传产生的log，上传时如果错误，可以查看log，反馈到Picgo issue仓库</p>
+<img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125173610.png" alt="image-20201125173610771" style="zoom:80%;" />
+
+<h2 id="Picgo配置文件"><a href="#Picgo配置文件" class="headerlink" title="Picgo配置文件"></a>Picgo配置文件</h2><p>data.json存放了上传图片的信息以及图床信息。这是个明文文件，存储在本地，随着图片的大量上传，文件会迅速膨胀。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">  &#123;</span><br><span class="line">    <span class="attr">&quot;fileName&quot;</span>: <span class="string">&quot;20201125174335.png&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;width&quot;</span>: <span class="number">798</span>,</span><br><span class="line">    <span class="attr">&quot;height&quot;</span>: <span class="number">438</span>,</span><br><span class="line">    <span class="attr">&quot;extname&quot;</span>: <span class="string">&quot;.png&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;imgUrl&quot;</span>: <span class="string">&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20201125174335.png&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;gitee&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;id&quot;</span>: <span class="string">&quot;9bb7766d-4d54-4c37-97ec-16e9509dd071&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">],</span><br><span class="line">&quot;picBed&quot;: &#123;</span><br><span class="line">  &quot;current&quot;: &quot;gitee&quot;,</span><br><span class="line">  &quot;github&quot;: &#123;</span><br><span class="line">    &quot;branch&quot;: &quot;main&quot;,</span><br><span class="line">    &quot;customUrl&quot;: &quot;https://github.com/huangchaof/tutuchuang&quot;,</span><br><span class="line">    &quot;path&quot;: &quot;img/&quot;,</span><br><span class="line">    &quot;repo&quot;: &quot;huangchaof/tutuchuang&quot;,</span><br><span class="line">    &quot;token&quot;: &quot;*********************&quot;</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<p>token明文保存，这其实违背了token的安全性</p>
+<h2 id="相册"><a href="#相册" class="headerlink" title="相册"></a>相册</h2><p>提供了上传图片的预览功能</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125174335.png" alt="image-20201125174335507"></p>
+<h2 id="上传大图片"><a href="#上传大图片" class="headerlink" title="上传大图片"></a>上传大图片</h2><p>从实际使用效果看，几M的图片可以上传到gitee，但是上传速度慢，阅读时也无法加载，可以把图片压缩为几百K再上传</p>
+<h2 id="打开Picgo上传图片重命名"><a href="#打开Picgo上传图片重命名" class="headerlink" title="打开Picgo上传图片重命名"></a>打开Picgo上传图片重命名</h2><p>如果上传图片重名，会上传失败，可以在设置里打开<code>时间戳重命名</code></p>
+<h2 id="遇到错误解决思路"><a href="#遇到错误解决思路" class="headerlink" title="遇到错误解决思路"></a>遇到错误解决思路</h2><p><strong>错误</strong>：我在配置github图床时，无法上传，其中是两个错误导致的</p>
+<ul>
+<li>github仓库设置为private</li>
+<li>设定仓库名复制时引入了空格</li>
+</ul>
+<p><strong>解决过程</strong>：一开始查看了许多中文教程，去发现自己配置不对的地方，但是教程中往往没有显示提示这两个细节。某个时间点我进入配置文件，发现了github仓库名中引入了空格，修改了文件，但是没有在picgo的设置窗口进行修改，所以还是upload failure.</p>
+<p>我在picgo的issue仓库中发现有大量类似issue才意识到,最终通过在设置窗口修改保存，并重启了picgo，才解决错误。为了避免后续还有人困惑，在picgo issue 585留下了回复。</p>
+<p><code>修改软件配置有时需要重启软件才能生效</code></p>
+<p><strong>结论</strong>：这种开源软件的问题有可能在中文教程中得到解决，但最有可能的方式是去查看issue</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/02/22/office%202019%E6%BF%80%E6%B4%BB%E6%96%B9%E5%BC%8F/" rel="prev" title="office2019激活方式">
+      <i class="fa fa-chevron-left"></i> office2019激活方式
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/02/22/python/" rel="next" title="python">
+      python <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Picgo%E5%9B%BE%E5%BA%8A"><span class="nav-number">1.</span> <span class="nav-text">Picgo图床</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Word%E4%B8%8Emd%E6%96%87%E6%A1%A3%E5%AD%98%E5%82%A8%E5%9B%BE%E7%89%87"><span class="nav-number">1.1.</span> <span class="nav-text">Word与md文档存储图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gitee%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">Gitee图床设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gitee-API"><span class="nav-number">1.3.</span> <span class="nav-text">Gitee API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github%E5%9B%BE%E5%BA%8A%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">Github图床设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Picgo%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.</span> <span class="nav-text">Picgo日志文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Picgo%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.6.</span> <span class="nav-text">Picgo配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E5%86%8C"><span class="nav-number">1.7.</span> <span class="nav-text">相册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E4%BC%A0%E5%A4%A7%E5%9B%BE%E7%89%87"><span class="nav-number">1.8.</span> <span class="nav-text">上传大图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%BC%80Picgo%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87%E9%87%8D%E5%91%BD%E5%90%8D"><span class="nav-number">1.9.</span> <span class="nav-text">打开Picgo上传图片重命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E6%80%9D%E8%B7%AF"><span class="nav-number">1.10.</span> <span class="nav-text">遇到错误解决思路</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="lensousou"
+      src="/images/jugg.jfif">
+  <p class="site-author-name" itemprop="name">lensousou</p>
+  <div class="site-description" itemprop="description">轻轻的我走了，正如我轻轻的来</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lensousou</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
