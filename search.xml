@@ -117,58 +117,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>The Elder Scrolls V：Skyrim Special Edition</title>
-    <url>/2021/02/22/The%20Elder%20Scrolls%20V%EF%BC%9ASkyrim%20Special%20Edition/</url>
-    <content><![CDATA[<h1 id="游戏本体和资源"><a href="#游戏本体和资源" class="headerlink" title="游戏本体和资源"></a>游戏本体和资源</h1><p>以下用上古5代指上古卷轴五重置版，本文所使用的上古五游戏本体程序来自于3DM，《上古卷轴5：天际重制版》3DM免安装官方中文未加密版：<a href="https://dl.3dmgame.com/pc/83371.html,%E7%89%88%E6%9C%AC%E5%8F%B7%E4%BD%8D1.5.16">https://dl.3dmgame.com/pc/83371.html,版本号位1.5.16</a></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213181723.png" alt="image-20201213181715963"></p>
-<h1 id="物品、魔法、交易界面美化"><a href="#物品、魔法、交易界面美化" class="headerlink" title="物品、魔法、交易界面美化"></a>物品、魔法、交易界面美化</h1><p>原版的这些界面使用不方便，加装Mod可以美化这些界面。需要两个Mod:</p>
-<h2 id="Skyrim-Script-Extender-SKSE"><a href="#Skyrim-Script-Extender-SKSE" class="headerlink" title="Skyrim Script Extender (SKSE)"></a>Skyrim Script Extender (SKSE)</h2><p>SKYUI需要这个mod,其他的许多mod也需要其支持，所以最先安装的就是SKSE。</p>
-<p>注意2011年的上古5是32位程序，原有SKSE也是32位的，所以重置版需要使用新版的SKSE64。3DM有很多SKSE，也有64位的SKSE，但需要Skyrim版本号和SKSE对应，对应关系可以看下载的压缩包里的文档skse64_whatsnew.txt</p>
-<p>在官网<a href="https://skse.silverlock.org/%E6%9C%89%E4%BC%97%E5%A4%9A%E7%89%88%E6%9C%AC%E7%9A%84SKSE,%E5%A6%822.05%E7%89%88%E6%9C%AC%E6%94%AF%E6%8C%811.5.16%E7%89%88%E6%9C%AC%E3%80%823DM%E6%9C%89%E4%B8%8A%E5%8F%A4%E4%BA%94%E7%9A%84%E5%8D%87%E7%BA%A7%E8%A1%A5%E4%B8%81%EF%BC%8C%E5%A6%82%E3%80%8A%E4%B8%8A%E5%8F%A4%E5%8D%B7%E8%BD%B45%EF%BC%9A%E5%A4%A9%E9%99%85%E9%87%8D%E5%88%B6%E7%89%88%E3%80%8B">https://skse.silverlock.org/有众多版本的SKSE,如2.05版本支持1.5.16版本。3DM有上古五的升级补丁，如《上古卷轴5：天际重制版》</a> v1.5.80升级档+未加密补丁[3DM]：<a href="https://dl.3dmgame.com/patch/140660.html">https://dl.3dmgame.com/patch/140660.html</a></p>
-<p>安装方式：把解压缩的文件放置到游戏的根目录（根目录也就是SkyrimSE.exe、SkyrimSELauncher.exe所在目录），如skse64_2_00_05.7z解压缩后结构如下，其中src是源码，可以删除。</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213181934.png" alt="image-20201213181934177"></p>
-<h2 id="SKYUI"><a href="#SKYUI" class="headerlink" title="SKYUI"></a>SKYUI</h2><p>没有看到SKYUI的官网，就在3DM下载了一个版本，上古卷轴5：天际重制版 天际界面SkyUI v5.2汉化版：<a href="https://dl.3dmgame.com/patch/118634.html">https://dl.3dmgame.com/patch/118634.html</a> </p>
-<p>安装方式是使用Mod管理器<strong>Mod Organizer</strong>，《ModOganizer》补丁管理工具v2.1.5汉化中文版：<a href="https://dl.3dmgame.com/patch/129028.html%E3%80%82%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C%E5%8F%82%E8%A7%81%E4%B8%A4%E4%B8%AA%E5%8E%8B%E7%BC%A9%E5%86%85%E8%87%AA%E5%B8%A6%E7%9A%84%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3%E3%80%82">https://dl.3dmgame.com/patch/129028.html。具体操作参见两个压缩内自带的说明文档。</a></p>
-<h2 id="游戏启动"><a href="#游戏启动" class="headerlink" title="游戏启动"></a>游戏启动</h2><p>安装这个两个Mod之后，不再用SkyrimSE.exe启动，可以从<strong>Mod Organizer</strong>里启动skse64_loader.exe来启动上古五</p>
-<h2 id="美化效果"><a href="#美化效果" class="headerlink" title="美化效果"></a>美化效果</h2><p><strong>武器物品</strong></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213183256.jpg"></p>
-<p><strong>全部物品</strong></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213183414.jpg"></p>
-<p><strong>魔法</strong></p>
-<p><img src="C:\Users\hcf\AppData\Roaming\Typora\typora-user-images\image-20201213183647623.png" alt="image-20201213183647623"></p>
-<p><strong>交易</strong></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213184001.jpg"></p>
-<h1 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h1><p>原版技能树界面其实也不好用，应该有这方面的Mod，后续修改</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Win10自带mail客户端设置</title>
-    <url>/2021/02/22/Win10%E8%87%AA%E5%B8%A6Outlook%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="邮件客户端版本"><a href="#邮件客户端版本" class="headerlink" title="邮件客户端版本"></a>邮件客户端版本</h2><p>本文所使用的Outlook是Win10家庭版1909自带的邮件桌面客户端，非Office或Office365包含的Outlook,该Outlook账户可以登录网页版。</p>
-<h2 id="设置收发邮件的自动归档"><a href="#设置收发邮件的自动归档" class="headerlink" title="设置收发邮件的自动归档"></a>设置收发邮件的自动归档</h2><p>Win10自带邮件客户端上没有自定义收信规则的功能，<code>移动到某个文件夹</code>有，但是前者可以在收发邮件时自动归类，发邮件也是可以归类的，但是一般放在发件箱就够了。</p>
-<p>这个邮件客户端是阉割版的，让我以为Outlook的自动分类需要购买收费版，查看了QQ邮箱，发现免费的QQ邮箱有这个功能，那Outlook应该也免费有。登录了Outlook Web端，才能找到这个功能，web端相比这个客户端设置功能更丰富。</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211041254.jpg"></p>
-<h2 id="设置签名"><a href="#设置签名" class="headerlink" title="设置签名"></a>设置签名</h2><p>Web端和桌面端都支持自定义富文本签名</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211041603.jpg"></p>
-<h2 id="收发其他邮箱"><a href="#收发其他邮箱" class="headerlink" title="收发其他邮箱"></a>收发其他邮箱</h2><p>要在Outlook桌面客户端添加其他邮箱账户，需要先开启其他邮箱账户的pop/smtp 或imap/smtp服务。</p>
-<p>pop/imap都是邮件获取协议，用于客户端从邮件服务器上download邮件,smtp用于上传邮件到服务器，</p>
-<p>即发邮件。pop与imap的区别是pop只下载邮件，在邮件客户端的操作，如删除、移动，不会同步到服务器。</p>
-<h3 id="QQ邮箱"><a href="#QQ邮箱" class="headerlink" title="QQ邮箱"></a>QQ邮箱</h3><p>如何开启qq邮箱的pop、imap\smtp服务，参考QQ邮箱的帮助中心</p>
-<p><strong><em>密码项，此处不是填入QQ邮箱的登录密码，而是要填入QQ邮箱生成的授权码</em></strong></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211042638.png" alt="image-20201211042638088"></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211042153.png" alt="image-20201211042153388"></p>
-<p><strong><em>更改邮箱同步设置项，用于设置服务器和收发规则</em></strong></p>
-<p>服务器地址和端口号参见QQ邮箱帮助中心</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211042328.png" alt="image-20201211042328871"></p>
-<h3 id="新浪邮箱"><a href="#新浪邮箱" class="headerlink" title="新浪邮箱"></a>新浪邮箱</h3><p>和QQ邮箱差不多的步骤</p>
-<h3 id="同步方式"><a href="#同步方式" class="headerlink" title="同步方式"></a>同步方式</h3><p>手动同步或者设置每隔一定时间自动收取邮件</p>
-<h2 id="安全反思"><a href="#安全反思" class="headerlink" title="安全反思"></a>安全反思</h2><p>QQ邮箱和新浪邮箱都说采用授权码是为了用第三方邮件客户端登录邮箱时更安全，但是我在配置的过程中保留了授权码的截图，如果截图被他人获取，他人也能配置来收发我的邮件，除非邮件服务器能够在检测到异地第三方登录时启用验证服务，如手机验证码。</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201212172651.png" alt="image-20201212172643553"></p>
-<p>在我从qq邮箱添加了Outlook邮箱后，给我发了安全提示邮件，可以看出安全系统检测到从**<code>新位置、新设备、新应用</code>**登录，就会被认为是异常活动。</p>
-<h2 id="移动端、Web端、PC端"><a href="#移动端、Web端、PC端" class="headerlink" title="移动端、Web端、PC端"></a>移动端、Web端、PC端</h2><p>在win10 outlook桌面端添加其他邮箱账户后，并不能把其他邮箱同步到web端或者安卓端，所以还需要在安卓端继续添加其他邮箱。Web端同样需要添加。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Windows Terminal</title>
     <url>/2021/02/21/Windows%20Terminal/</url>
     <content><![CDATA[<h1 id="Windows-Terminal"><a href="#Windows-Terminal" class="headerlink" title="Windows Terminal"></a>Windows Terminal</h1><p>官方文档：<a href="https://docs.microsoft.com/zh-cn/windows/terminal/">https://docs.microsoft.com/zh-cn/windows/terminal/</a></p>
@@ -264,9 +212,28 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo博客搭建备忘</title>
-    <url>/2021/02/22/hexo%E5%A4%87%E5%BF%98/</url>
-    <content><![CDATA[<p>hexo搭建的博客，参考一个博主 <a href="https://tding.top/tools/">https://tding.top/tools/</a></p>
+    <title>The Elder Scrolls V：Skyrim Special Edition</title>
+    <url>/2021/02/22/The%20Elder%20Scrolls%20V%EF%BC%9ASkyrim%20Special%20Edition/</url>
+    <content><![CDATA[<h1 id="游戏本体和资源"><a href="#游戏本体和资源" class="headerlink" title="游戏本体和资源"></a>游戏本体和资源</h1><p>以下用上古5代指上古卷轴五重置版，本文所使用的上古五游戏本体程序来自于3DM，《上古卷轴5：天际重制版》3DM免安装官方中文未加密版：<a href="https://dl.3dmgame.com/pc/83371.html,%E7%89%88%E6%9C%AC%E5%8F%B7%E4%BD%8D1.5.16">https://dl.3dmgame.com/pc/83371.html,版本号位1.5.16</a></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213181723.png" alt="image-20201213181715963"></p>
+<h1 id="物品、魔法、交易界面美化"><a href="#物品、魔法、交易界面美化" class="headerlink" title="物品、魔法、交易界面美化"></a>物品、魔法、交易界面美化</h1><p>原版的这些界面使用不方便，加装Mod可以美化这些界面。需要两个Mod:</p>
+<h2 id="Skyrim-Script-Extender-SKSE"><a href="#Skyrim-Script-Extender-SKSE" class="headerlink" title="Skyrim Script Extender (SKSE)"></a>Skyrim Script Extender (SKSE)</h2><p>SKYUI需要这个mod,其他的许多mod也需要其支持，所以最先安装的就是SKSE。</p>
+<p>注意2011年的上古5是32位程序，原有SKSE也是32位的，所以重置版需要使用新版的SKSE64。3DM有很多SKSE，也有64位的SKSE，但需要Skyrim版本号和SKSE对应，对应关系可以看下载的压缩包里的文档skse64_whatsnew.txt</p>
+<p>在官网<a href="https://skse.silverlock.org/%E6%9C%89%E4%BC%97%E5%A4%9A%E7%89%88%E6%9C%AC%E7%9A%84SKSE,%E5%A6%822.05%E7%89%88%E6%9C%AC%E6%94%AF%E6%8C%811.5.16%E7%89%88%E6%9C%AC%E3%80%823DM%E6%9C%89%E4%B8%8A%E5%8F%A4%E4%BA%94%E7%9A%84%E5%8D%87%E7%BA%A7%E8%A1%A5%E4%B8%81%EF%BC%8C%E5%A6%82%E3%80%8A%E4%B8%8A%E5%8F%A4%E5%8D%B7%E8%BD%B45%EF%BC%9A%E5%A4%A9%E9%99%85%E9%87%8D%E5%88%B6%E7%89%88%E3%80%8B">https://skse.silverlock.org/有众多版本的SKSE,如2.05版本支持1.5.16版本。3DM有上古五的升级补丁，如《上古卷轴5：天际重制版》</a> v1.5.80升级档+未加密补丁[3DM]：<a href="https://dl.3dmgame.com/patch/140660.html">https://dl.3dmgame.com/patch/140660.html</a></p>
+<p>安装方式：把解压缩的文件放置到游戏的根目录（根目录也就是SkyrimSE.exe、SkyrimSELauncher.exe所在目录），如skse64_2_00_05.7z解压缩后结构如下，其中src是源码，可以删除。</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213181934.png" alt="image-20201213181934177"></p>
+<h2 id="SKYUI"><a href="#SKYUI" class="headerlink" title="SKYUI"></a>SKYUI</h2><p>没有看到SKYUI的官网，就在3DM下载了一个版本，上古卷轴5：天际重制版 天际界面SkyUI v5.2汉化版：<a href="https://dl.3dmgame.com/patch/118634.html">https://dl.3dmgame.com/patch/118634.html</a> </p>
+<p>安装方式是使用Mod管理器<strong>Mod Organizer</strong>，《ModOganizer》补丁管理工具v2.1.5汉化中文版：<a href="https://dl.3dmgame.com/patch/129028.html%E3%80%82%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C%E5%8F%82%E8%A7%81%E4%B8%A4%E4%B8%AA%E5%8E%8B%E7%BC%A9%E5%86%85%E8%87%AA%E5%B8%A6%E7%9A%84%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3%E3%80%82">https://dl.3dmgame.com/patch/129028.html。具体操作参见两个压缩内自带的说明文档。</a></p>
+<h2 id="游戏启动"><a href="#游戏启动" class="headerlink" title="游戏启动"></a>游戏启动</h2><p>安装这个两个Mod之后，不再用SkyrimSE.exe启动，可以从<strong>Mod Organizer</strong>里启动skse64_loader.exe来启动上古五</p>
+<h2 id="美化效果"><a href="#美化效果" class="headerlink" title="美化效果"></a>美化效果</h2><p><strong>武器物品</strong></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213183256.jpg"></p>
+<p><strong>全部物品</strong></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213183414.jpg"></p>
+<p><strong>魔法</strong></p>
+<p><img src="C:\Users\hcf\AppData\Roaming\Typora\typora-user-images\image-20201213183647623.png" alt="image-20201213183647623"></p>
+<p><strong>交易</strong></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213184001.jpg"></p>
+<h1 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h1><p>原版技能树界面其实也不好用，应该有这方面的Mod，后续修改</p>
 ]]></content>
   </entry>
   <entry>
@@ -284,6 +251,33 @@
 <p><a href="https://github.com/EdgeTranslate/EdgeTranslate">https://github.com/EdgeTranslate/EdgeTranslate</a></p>
 <h1 id="sha值计算比较"><a href="#sha值计算比较" class="headerlink" title="sha值计算比较"></a>sha值计算比较</h1><p>一般下载文件时，官方会提供文件的sha值，如果文件内容发生改变（文件名改变无影响），文件的sha值会变化。所以验证文件是否与官方相同的方式就是比较sha值是否相同。</p>
 <p><a href="https://www.7-zip.org/">https://www.7-zip.org/</a> 是一款开源的免费压缩软件，它提供了在windows菜单右键计算sha值功能</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Win10自带mail客户端设置</title>
+    <url>/2021/02/22/Win10%E8%87%AA%E5%B8%A6Outlook%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="邮件客户端版本"><a href="#邮件客户端版本" class="headerlink" title="邮件客户端版本"></a>邮件客户端版本</h2><p>本文所使用的Outlook是Win10家庭版1909自带的邮件桌面客户端，非Office或Office365包含的Outlook,该Outlook账户可以登录网页版。</p>
+<h2 id="设置收发邮件的自动归档"><a href="#设置收发邮件的自动归档" class="headerlink" title="设置收发邮件的自动归档"></a>设置收发邮件的自动归档</h2><p>Win10自带邮件客户端上没有自定义收信规则的功能，<code>移动到某个文件夹</code>有，但是前者可以在收发邮件时自动归类，发邮件也是可以归类的，但是一般放在发件箱就够了。</p>
+<p>这个邮件客户端是阉割版的，让我以为Outlook的自动分类需要购买收费版，查看了QQ邮箱，发现免费的QQ邮箱有这个功能，那Outlook应该也免费有。登录了Outlook Web端，才能找到这个功能，web端相比这个客户端设置功能更丰富。</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211041254.jpg"></p>
+<h2 id="设置签名"><a href="#设置签名" class="headerlink" title="设置签名"></a>设置签名</h2><p>Web端和桌面端都支持自定义富文本签名</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211041603.jpg"></p>
+<h2 id="收发其他邮箱"><a href="#收发其他邮箱" class="headerlink" title="收发其他邮箱"></a>收发其他邮箱</h2><p>要在Outlook桌面客户端添加其他邮箱账户，需要先开启其他邮箱账户的pop/smtp 或imap/smtp服务。</p>
+<p>pop/imap都是邮件获取协议，用于客户端从邮件服务器上download邮件,smtp用于上传邮件到服务器，</p>
+<p>即发邮件。pop与imap的区别是pop只下载邮件，在邮件客户端的操作，如删除、移动，不会同步到服务器。</p>
+<h3 id="QQ邮箱"><a href="#QQ邮箱" class="headerlink" title="QQ邮箱"></a>QQ邮箱</h3><p>如何开启qq邮箱的pop、imap\smtp服务，参考QQ邮箱的帮助中心</p>
+<p><strong><em>密码项，此处不是填入QQ邮箱的登录密码，而是要填入QQ邮箱生成的授权码</em></strong></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211042638.png" alt="image-20201211042638088"></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211042153.png" alt="image-20201211042153388"></p>
+<p><strong><em>更改邮箱同步设置项，用于设置服务器和收发规则</em></strong></p>
+<p>服务器地址和端口号参见QQ邮箱帮助中心</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211042328.png" alt="image-20201211042328871"></p>
+<h3 id="新浪邮箱"><a href="#新浪邮箱" class="headerlink" title="新浪邮箱"></a>新浪邮箱</h3><p>和QQ邮箱差不多的步骤</p>
+<h3 id="同步方式"><a href="#同步方式" class="headerlink" title="同步方式"></a>同步方式</h3><p>手动同步或者设置每隔一定时间自动收取邮件</p>
+<h2 id="安全反思"><a href="#安全反思" class="headerlink" title="安全反思"></a>安全反思</h2><p>QQ邮箱和新浪邮箱都说采用授权码是为了用第三方邮件客户端登录邮箱时更安全，但是我在配置的过程中保留了授权码的截图，如果截图被他人获取，他人也能配置来收发我的邮件，除非邮件服务器能够在检测到异地第三方登录时启用验证服务，如手机验证码。</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201212172651.png" alt="image-20201212172643553"></p>
+<p>在我从qq邮箱添加了Outlook邮箱后，给我发了安全提示邮件，可以看出安全系统检测到从**<code>新位置、新设备、新应用</code>**登录，就会被认为是异常活动。</p>
+<h2 id="移动端、Web端、PC端"><a href="#移动端、Web端、PC端" class="headerlink" title="移动端、Web端、PC端"></a>移动端、Web端、PC端</h2><p>在win10 outlook桌面端添加其他邮箱账户后，并不能把其他邮箱同步到web端或者安卓端，所以还需要在安卓端继续添加其他邮箱。Web端同样需要添加。</p>
 ]]></content>
   </entry>
   <entry>
@@ -305,37 +299,15 @@
 ]]></content>
   </entry>
   <entry>
+    <title>hexo博客搭建备忘</title>
+    <url>/2021/02/22/hexo%E5%A4%87%E5%BF%98/</url>
+    <content><![CDATA[<p>hexo搭建的博客，参考一个博主 <a href="https://tding.top/tools/">https://tding.top/tools/</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>newposty</title>
     <url>/2021/02/21/newposty/</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>python</title>
-    <url>/2021/02/22/python/</url>
-    <content><![CDATA[<p>python</p>
-<p>[toc]</p>
-<h1 id="pip国内源配置"><a href="#pip国内源配置" class="headerlink" title="pip国内源配置"></a>pip国内源配置</h1><p>pip install安装包时是用从<code>The Python Package Index</code><a href="https://pypi.org/%E4%B8%8B%E8%BD%BD%EF%BC%8C%E9%80%9F%E5%BA%A6%E8%BE%83%E6%85%A2%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%85%8D%E7%BD%AE%E4%B8%BA%E5%9B%BD%E5%86%85%E6%BA%90">https://pypi.org/下载，速度较慢，可以配置为国内源</a></p>
-<p>清华开源镜像站pipy地址：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">https://mirrors.tuna.tsinghua.edu.cn/help/pypi/</a></p>
-<ul>
-<li><p>临时使用命令：</p>
-<blockquote>
-<p>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> some-package</p>
-</blockquote>
-<p>-i选项制定了源地址</p>
-</li>
-<li><p>永久配置（参见<a href="https://pip.pypa.io/en/stable/user_guide/">https://pip.pypa.io/en/stable/user_guide/</a> 关于index-url）<br>在C:\Users\username\AppData\Roaming\pip下新建一个pip.ini文件，写入</p>
-<blockquote>
-<p>[global]</p>
-<p>index-url = <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
-<p>[install]</p>
-<p>trusted-host = pypi.tuna.tsinghua.edu.cn</p>
-</blockquote>
-</li>
-</ul>
-<p>使用pip download packagename 某个包，从输出查看是否使用了指定的源</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125014112.png" alt="image-20201125014105622"></p>
-<p>for /r . %i in (dota*.exe) do @echo %i</p>
-]]></content>
   </entry>
   <entry>
     <title>office2019激活方式</title>
@@ -364,6 +336,34 @@
 <p>cscript <code>你的ospp.vbs路径</code> /act</p>
 <h1 id="参考信息"><a href="#参考信息" class="headerlink" title="参考信息"></a>参考信息</h1><p><a href="https://docs.microsoft.com/en-us/DeployOffice/vlactivation/gvlks">https://docs.microsoft.com/en-us/DeployOffice/vlactivation/gvlks</a></p>
 <p><a href="https://www.bilibili.com/read/cv6907989/">https://www.bilibili.com/read/cv6907989/</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>python</title>
+    <url>/2021/02/22/python/</url>
+    <content><![CDATA[<p>python</p>
+<p>[toc]</p>
+<h1 id="pip国内源配置"><a href="#pip国内源配置" class="headerlink" title="pip国内源配置"></a>pip国内源配置</h1><p>pip install安装包时是用从<code>The Python Package Index</code><a href="https://pypi.org/%E4%B8%8B%E8%BD%BD%EF%BC%8C%E9%80%9F%E5%BA%A6%E8%BE%83%E6%85%A2%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%85%8D%E7%BD%AE%E4%B8%BA%E5%9B%BD%E5%86%85%E6%BA%90">https://pypi.org/下载，速度较慢，可以配置为国内源</a></p>
+<p>清华开源镜像站pipy地址：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">https://mirrors.tuna.tsinghua.edu.cn/help/pypi/</a></p>
+<ul>
+<li><p>临时使用命令：</p>
+<blockquote>
+<p>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> some-package</p>
+</blockquote>
+<p>-i选项制定了源地址</p>
+</li>
+<li><p>永久配置（参见<a href="https://pip.pypa.io/en/stable/user_guide/">https://pip.pypa.io/en/stable/user_guide/</a> 关于index-url）<br>在C:\Users\username\AppData\Roaming\pip下新建一个pip.ini文件，写入</p>
+<blockquote>
+<p>[global]</p>
+<p>index-url = <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
+<p>[install]</p>
+<p>trusted-host = pypi.tuna.tsinghua.edu.cn</p>
+</blockquote>
+</li>
+</ul>
+<p>使用pip download packagename 某个包，从输出查看是否使用了指定的源</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125014112.png" alt="image-20201125014105622"></p>
+<p>for /r . %i in (dota*.exe) do @echo %i</p>
 ]]></content>
   </entry>
   <entry>
