@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-02-22T11:21:55.171Z</updated>
+  <updated>2021-02-23T02:56:57.856Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>cmd脚本解释</title>
+    <link href="http://example.com/2021/02/22/cmd%E8%84%9A%E6%9C%AC%E8%A7%A3%E9%87%8A/"/>
+    <id>http://example.com/2021/02/22/cmd%E8%84%9A%E6%9C%AC%E8%A7%A3%E9%87%8A/</id>
+    <published>2021-02-22T20:13:17.187Z</published>
+    <updated>2021-02-23T02:56:57.856Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;@echo off&lt;/p&gt;
+&lt;p&gt;:fun1&lt;br&gt;if not exist “%1” (echo New post filename requried)^&lt;br&gt;else (copy “%1” E:\HexoBlog\source_posts &amp;amp;&amp;amp;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>代理与加速</title>
     <link href="http://example.com/2021/02/22/%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8A%A0%E9%80%9F/"/>
     <id>http://example.com/2021/02/22/%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8A%A0%E9%80%9F/</id>
     <published>2021-02-22T11:22:51.753Z</published>
-    <updated>2021-02-22T11:21:55.171Z</updated>
+    <updated>2021-02-23T02:25:49.547Z</updated>
     
     
       
@@ -360,19 +382,6 @@
     
     
     <category term="CLI" scheme="http://example.com/tags/CLI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>newposty</title>
-    <link href="http://example.com/2021/02/21/newposty/"/>
-    <id>http://example.com/2021/02/21/newposty/</id>
-    <published>2021-02-22T01:16:41.000Z</published>
-    <updated>2021-02-22T09:16:41.797Z</updated>
-    
-    
-    
-    
     
   </entry>
   

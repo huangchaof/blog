@@ -117,6 +117,31 @@
 ]]></content>
   </entry>
   <entry>
+    <title>The Elder Scrolls V：Skyrim Special Edition</title>
+    <url>/2021/02/22/The%20Elder%20Scrolls%20V%EF%BC%9ASkyrim%20Special%20Edition/</url>
+    <content><![CDATA[<h1 id="游戏本体和资源"><a href="#游戏本体和资源" class="headerlink" title="游戏本体和资源"></a>游戏本体和资源</h1><p>以下用上古5代指上古卷轴五重置版，本文所使用的上古五游戏本体程序来自于3DM，《上古卷轴5：天际重制版》3DM免安装官方中文未加密版：<a href="https://dl.3dmgame.com/pc/83371.html,%E7%89%88%E6%9C%AC%E5%8F%B7%E4%BD%8D1.5.16">https://dl.3dmgame.com/pc/83371.html,版本号位1.5.16</a></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213181723.png" alt="image-20201213181715963"></p>
+<h1 id="物品、魔法、交易界面美化"><a href="#物品、魔法、交易界面美化" class="headerlink" title="物品、魔法、交易界面美化"></a>物品、魔法、交易界面美化</h1><p>原版的这些界面使用不方便，加装Mod可以美化这些界面。需要两个Mod:</p>
+<h2 id="Skyrim-Script-Extender-SKSE"><a href="#Skyrim-Script-Extender-SKSE" class="headerlink" title="Skyrim Script Extender (SKSE)"></a>Skyrim Script Extender (SKSE)</h2><p>SKYUI需要这个mod,其他的许多mod也需要其支持，所以最先安装的就是SKSE。</p>
+<p>注意2011年的上古5是32位程序，原有SKSE也是32位的，所以重置版需要使用新版的SKSE64。3DM有很多SKSE，也有64位的SKSE，但需要Skyrim版本号和SKSE对应，对应关系可以看下载的压缩包里的文档skse64_whatsnew.txt</p>
+<p>在官网<a href="https://skse.silverlock.org/%E6%9C%89%E4%BC%97%E5%A4%9A%E7%89%88%E6%9C%AC%E7%9A%84SKSE,%E5%A6%822.05%E7%89%88%E6%9C%AC%E6%94%AF%E6%8C%811.5.16%E7%89%88%E6%9C%AC%E3%80%823DM%E6%9C%89%E4%B8%8A%E5%8F%A4%E4%BA%94%E7%9A%84%E5%8D%87%E7%BA%A7%E8%A1%A5%E4%B8%81%EF%BC%8C%E5%A6%82%E3%80%8A%E4%B8%8A%E5%8F%A4%E5%8D%B7%E8%BD%B45%EF%BC%9A%E5%A4%A9%E9%99%85%E9%87%8D%E5%88%B6%E7%89%88%E3%80%8B">https://skse.silverlock.org/有众多版本的SKSE,如2.05版本支持1.5.16版本。3DM有上古五的升级补丁，如《上古卷轴5：天际重制版》</a> v1.5.80升级档+未加密补丁[3DM]：<a href="https://dl.3dmgame.com/patch/140660.html">https://dl.3dmgame.com/patch/140660.html</a></p>
+<p>安装方式：把解压缩的文件放置到游戏的根目录（根目录也就是SkyrimSE.exe、SkyrimSELauncher.exe所在目录），如skse64_2_00_05.7z解压缩后结构如下，其中src是源码，可以删除。</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213181934.png" alt="image-20201213181934177"></p>
+<h2 id="SKYUI"><a href="#SKYUI" class="headerlink" title="SKYUI"></a>SKYUI</h2><p>没有看到SKYUI的官网，就在3DM下载了一个版本，上古卷轴5：天际重制版 天际界面SkyUI v5.2汉化版：<a href="https://dl.3dmgame.com/patch/118634.html">https://dl.3dmgame.com/patch/118634.html</a> </p>
+<p>安装方式是使用Mod管理器<strong>Mod Organizer</strong>，《ModOganizer》补丁管理工具v2.1.5汉化中文版：<a href="https://dl.3dmgame.com/patch/129028.html%E3%80%82%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C%E5%8F%82%E8%A7%81%E4%B8%A4%E4%B8%AA%E5%8E%8B%E7%BC%A9%E5%86%85%E8%87%AA%E5%B8%A6%E7%9A%84%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3%E3%80%82">https://dl.3dmgame.com/patch/129028.html。具体操作参见两个压缩内自带的说明文档。</a></p>
+<h2 id="游戏启动"><a href="#游戏启动" class="headerlink" title="游戏启动"></a>游戏启动</h2><p>安装这个两个Mod之后，不再用SkyrimSE.exe启动，可以从<strong>Mod Organizer</strong>里启动skse64_loader.exe来启动上古五</p>
+<h2 id="美化效果"><a href="#美化效果" class="headerlink" title="美化效果"></a>美化效果</h2><p><strong>武器物品</strong></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213183256.jpg"></p>
+<p><strong>全部物品</strong></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213183414.jpg"></p>
+<p><strong>魔法</strong></p>
+<p><img src="C:\Users\hcf\AppData\Roaming\Typora\typora-user-images\image-20201213183647623.png" alt="image-20201213183647623"></p>
+<p><strong>交易</strong></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213184001.jpg"></p>
+<h1 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h1><p>原版技能树界面其实也不好用，应该有这方面的Mod，后续修改</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Win10自带mail客户端设置</title>
     <url>/2021/02/22/Win10%E8%87%AA%E5%B8%A6Outlook%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="邮件客户端版本"><a href="#邮件客户端版本" class="headerlink" title="邮件客户端版本"></a>邮件客户端版本</h2><p>本文所使用的Outlook是Win10家庭版1909自带的邮件桌面客户端，非Office或Office365包含的Outlook,该Outlook账户可以登录网页版。</p>
@@ -141,31 +166,6 @@
 <p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201212172651.png" alt="image-20201212172643553"></p>
 <p>在我从qq邮箱添加了Outlook邮箱后，给我发了安全提示邮件，可以看出安全系统检测到从**<code>新位置、新设备、新应用</code>**登录，就会被认为是异常活动。</p>
 <h2 id="移动端、Web端、PC端"><a href="#移动端、Web端、PC端" class="headerlink" title="移动端、Web端、PC端"></a>移动端、Web端、PC端</h2><p>在win10 outlook桌面端添加其他邮箱账户后，并不能把其他邮箱同步到web端或者安卓端，所以还需要在安卓端继续添加其他邮箱。Web端同样需要添加。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>The Elder Scrolls V：Skyrim Special Edition</title>
-    <url>/2021/02/22/The%20Elder%20Scrolls%20V%EF%BC%9ASkyrim%20Special%20Edition/</url>
-    <content><![CDATA[<h1 id="游戏本体和资源"><a href="#游戏本体和资源" class="headerlink" title="游戏本体和资源"></a>游戏本体和资源</h1><p>以下用上古5代指上古卷轴五重置版，本文所使用的上古五游戏本体程序来自于3DM，《上古卷轴5：天际重制版》3DM免安装官方中文未加密版：<a href="https://dl.3dmgame.com/pc/83371.html,%E7%89%88%E6%9C%AC%E5%8F%B7%E4%BD%8D1.5.16">https://dl.3dmgame.com/pc/83371.html,版本号位1.5.16</a></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213181723.png" alt="image-20201213181715963"></p>
-<h1 id="物品、魔法、交易界面美化"><a href="#物品、魔法、交易界面美化" class="headerlink" title="物品、魔法、交易界面美化"></a>物品、魔法、交易界面美化</h1><p>原版的这些界面使用不方便，加装Mod可以美化这些界面。需要两个Mod:</p>
-<h2 id="Skyrim-Script-Extender-SKSE"><a href="#Skyrim-Script-Extender-SKSE" class="headerlink" title="Skyrim Script Extender (SKSE)"></a>Skyrim Script Extender (SKSE)</h2><p>SKYUI需要这个mod,其他的许多mod也需要其支持，所以最先安装的就是SKSE。</p>
-<p>注意2011年的上古5是32位程序，原有SKSE也是32位的，所以重置版需要使用新版的SKSE64。3DM有很多SKSE，也有64位的SKSE，但需要Skyrim版本号和SKSE对应，对应关系可以看下载的压缩包里的文档skse64_whatsnew.txt</p>
-<p>在官网<a href="https://skse.silverlock.org/%E6%9C%89%E4%BC%97%E5%A4%9A%E7%89%88%E6%9C%AC%E7%9A%84SKSE,%E5%A6%822.05%E7%89%88%E6%9C%AC%E6%94%AF%E6%8C%811.5.16%E7%89%88%E6%9C%AC%E3%80%823DM%E6%9C%89%E4%B8%8A%E5%8F%A4%E4%BA%94%E7%9A%84%E5%8D%87%E7%BA%A7%E8%A1%A5%E4%B8%81%EF%BC%8C%E5%A6%82%E3%80%8A%E4%B8%8A%E5%8F%A4%E5%8D%B7%E8%BD%B45%EF%BC%9A%E5%A4%A9%E9%99%85%E9%87%8D%E5%88%B6%E7%89%88%E3%80%8B">https://skse.silverlock.org/有众多版本的SKSE,如2.05版本支持1.5.16版本。3DM有上古五的升级补丁，如《上古卷轴5：天际重制版》</a> v1.5.80升级档+未加密补丁[3DM]：<a href="https://dl.3dmgame.com/patch/140660.html">https://dl.3dmgame.com/patch/140660.html</a></p>
-<p>安装方式：把解压缩的文件放置到游戏的根目录（根目录也就是SkyrimSE.exe、SkyrimSELauncher.exe所在目录），如skse64_2_00_05.7z解压缩后结构如下，其中src是源码，可以删除。</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213181934.png" alt="image-20201213181934177"></p>
-<h2 id="SKYUI"><a href="#SKYUI" class="headerlink" title="SKYUI"></a>SKYUI</h2><p>没有看到SKYUI的官网，就在3DM下载了一个版本，上古卷轴5：天际重制版 天际界面SkyUI v5.2汉化版：<a href="https://dl.3dmgame.com/patch/118634.html">https://dl.3dmgame.com/patch/118634.html</a> </p>
-<p>安装方式是使用Mod管理器<strong>Mod Organizer</strong>，《ModOganizer》补丁管理工具v2.1.5汉化中文版：<a href="https://dl.3dmgame.com/patch/129028.html%E3%80%82%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C%E5%8F%82%E8%A7%81%E4%B8%A4%E4%B8%AA%E5%8E%8B%E7%BC%A9%E5%86%85%E8%87%AA%E5%B8%A6%E7%9A%84%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3%E3%80%82">https://dl.3dmgame.com/patch/129028.html。具体操作参见两个压缩内自带的说明文档。</a></p>
-<h2 id="游戏启动"><a href="#游戏启动" class="headerlink" title="游戏启动"></a>游戏启动</h2><p>安装这个两个Mod之后，不再用SkyrimSE.exe启动，可以从<strong>Mod Organizer</strong>里启动skse64_loader.exe来启动上古五</p>
-<h2 id="美化效果"><a href="#美化效果" class="headerlink" title="美化效果"></a>美化效果</h2><p><strong>武器物品</strong></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213183256.jpg"></p>
-<p><strong>全部物品</strong></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213183414.jpg"></p>
-<p><strong>魔法</strong></p>
-<p><img src="C:\Users\hcf\AppData\Roaming\Typora\typora-user-images\image-20201213183647623.png" alt="image-20201213183647623"></p>
-<p><strong>交易</strong></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213184001.jpg"></p>
-<h1 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h1><p>原版技能树界面其实也不好用，应该有这方面的Mod，后续修改</p>
 ]]></content>
   </entry>
   <entry>
@@ -281,6 +281,15 @@
 ]]></content>
   </entry>
   <entry>
+    <title>cmd脚本解释</title>
+    <url>/2021/02/22/cmd%E8%84%9A%E6%9C%AC%E8%A7%A3%E9%87%8A/</url>
+    <content><![CDATA[<p>@echo off</p>
+<p>:fun1<br>if not exist “%1” (echo New post filename requried)^<br>else (copy “%1” E:\HexoBlog\source_posts &amp;&amp; cmd /c “cd /d E:\HexoBlog\source_posts &amp;&amp; git status &amp;&amp; git add . &amp;&amp; git commit -m “add new post” &amp;&amp; cd /d E:\HexoBlog &amp;&amp; hexo g “)<br>goto:eof</p>
+<p>call fun1</p>
+<p>Rem 该脚本可以在cmd和powershell中运行<br>Rem 进入某个目录并执行命令，不切换当前cmd窗口的路径，而是另开一个cmd<br>Rem 复制新文件到E:\HexoBlog\source_posts目录，执行git命令，再执行hexo命令，最后再退回powershell环境<br>Rem else语句换行需要用符号^^连接<br>Rem git add . 暂存当前目录下所有新文件和修改的文件</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/02/22/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
@@ -303,11 +312,6 @@
     <url>/2021/02/22/hexo%E5%A4%87%E5%BF%98/</url>
     <content><![CDATA[<p>hexo搭建的博客，参考一个博主 <a href="https://tding.top/tools/">https://tding.top/tools/</a></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>newposty</title>
-    <url>/2021/02/21/newposty/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>office2019激活方式</title>
@@ -442,7 +446,7 @@
   <entry>
     <title>代理与加速</title>
     <url>/2021/02/22/%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8A%A0%E9%80%9F/</url>
-    <content><![CDATA[<h2 id="github加速与浏览器扩展"><a href="#github加速与浏览器扩展" class="headerlink" title="github加速与浏览器扩展"></a>github加速与浏览器扩展</h2><p>github有事下载较慢，可以安装一个chrome插件，chrome插件可以打开edge浏览器添加到edge</p>
+    <content><![CDATA[<h2 id="github加速与浏览器扩展"><a href="#github加速与浏览器扩展" class="headerlink" title="github加速与浏览器扩展"></a>github加速与浏览器扩展</h2><p>github有时下载较慢，可以安装一个chrome插件，chrome插件可以打开edge浏览器添加到edge</p>
 <p><a href="https://chrome.google.com/webstore/detail/github%E5%8A%A0%E9%80%9F/mfnkflidjnladnkldfonnaicljppahpg">GitHub加速</a> 提供repo的镜像加速地址，不提供release和raw的，<strong>不要设置该扩展</strong>，安装即有下图</p>
 <p>效果</p>
 <p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210219134621.png" alt="image-20210219134621700"></p>
