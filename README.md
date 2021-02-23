@@ -1,2 +1,2 @@
-# huangchaof.github.io
-this repository is only for my blog
+
+我的个人博客
