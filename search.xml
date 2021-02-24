@@ -1,142 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>代理与加速</title>
-    <url>/2021/02/22/%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8A%A0%E9%80%9F/</url>
-    <content><![CDATA[<h2 id="github加速与浏览器扩展"><a href="#github加速与浏览器扩展" class="headerlink" title="github加速与浏览器扩展"></a>github加速与浏览器扩展</h2><p>github有时下载较慢，可以安装一个chrome插件，chrome插件可以打开edge浏览器添加到edge</p>
-<p><a href="https://chrome.google.com/webstore/detail/github%E5%8A%A0%E9%80%9F/mfnkflidjnladnkldfonnaicljppahpg">GitHub加速</a> 提供repo的镜像加速地址，不提供release和raw的，<strong>不要设置该扩展</strong>，安装即有下图</p>
-<p>效果</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210219134621.png" alt="image-20210219134621700"></p>
-<p><a href="https://chrome.google.com/webstore/detail/enhanced-github/anlikcnbgdeidpacdbdljnabclhahhmd">Enhanced GitHub</a> 提供单个文件的下载链接和复制按钮</p>
-<p><a href="https://chrome.google.com/webstore/detail/octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc">Octotree - GitHub code tree</a> 提供repo的目录树</p>
-<h2 id="github徽章生成"><a href="#github徽章生成" class="headerlink" title="github徽章生成"></a>github徽章生成</h2><p>通过这个网站<a href="https://shields.io/">https://shields.io/</a></p>
-<h2 id="一个加速github的油猴脚本"><a href="#一个加速github的油猴脚本" class="headerlink" title="一个加速github的油猴脚本"></a>一个加速github的油猴脚本</h2><p><a href="https://zhuanlan.zhihu.com/p/262905603">成功解决 Github 下载速度慢的问题！ - 知乎 (zhihu.com)</a></p>
-<p>作者github：<a href="https://github.com/XIU2/UserScript">XIU2/UserScript: 🔨 自用的一些乱七八糟 油猴脚本 (github.com)</a></p>
-<p>还开源了一些其他脚本</p>
-<p>油猴脚本仓库</p>
-<p><a href="https://greasyfork.org/zh-CN">Greasy Fork - 安全、实用的用户脚本大全</a></p>
-<h2 id="佛跳墙vpn官网"><a href="#佛跳墙vpn官网" class="headerlink" title="佛跳墙vpn官网"></a>佛跳墙vpn官网</h2><p><a href="https://github.com/getfotiaoqiang/download">https://github.com/getfotiaoqiang/download</a></p>
-<p><a href="https://fotiaoqiang.io/">https://fotiaoqiang.io</a></p>
-<p>目前使用效果是游客也可以免费使用，且十分稳定</p>
-<h2 id="js在线代理-临时上网"><a href="#js在线代理-临时上网" class="headerlink" title="js在线代理(临时上网)"></a>js在线代理(临时上网)</h2><p><strong><a href="https://github.com/EtherDream/jsproxy">jsprox</a></strong></p>
-<p>使用里面的cf-worker可以暂时上外网，推特等需要登录的网站不支持，google会提示检测到机器人，youtube等不需要登录的网站可以访问</p>
-<h2 id="wsl的ubuntu源替换为清华源"><a href="#wsl的ubuntu源替换为清华源" class="headerlink" title="wsl的ubuntu源替换为清华源"></a>wsl的ubuntu源替换为清华源</h2><p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210219135312.png" alt="image-20210219135312111"></p>
-<p>点击<code>？</code>可以看到替换方式</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210219135427.png" alt="image-20210219135427366"></p>
-<p>阿里的Ubuntu替换源教程都没有写好</p>
-<p><a href="https://developer.aliyun.com/mirror/ubuntu?spm=a2c6h.13651102.0.0.3e221b11uZr8As">阿里ubuntu</a></p>
-<h2 id="终端走代理"><a href="#终端走代理" class="headerlink" title="终端走代理"></a>终端走代理</h2><p>在CLI里运行git clone命令是没有走代理的，需要进行配置，待续….</p>
-<p>使用重复密码可能导致泄漏</p>
-<p>可以使用密码随机生成</p>
-<p><a href="https://1password.com/zh-cn/password-generator/">https://1password.com/zh-cn/password-generator/</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>cmd脚本解释</title>
-    <url>/2021/02/23/cmd%E8%84%9A%E6%9C%AC%E8%A7%A3%E9%87%8A/</url>
-    <content><![CDATA[<p>@echo off</p>
-<p>:fun1<br>if not exist “%1” (echo New post filename requried)^<br>else (copy “%1” E:\HexoBlog\source_posts &amp;&amp; cmd /c “cd /d E:\HexoBlog\source_posts &amp;&amp; git status &amp;&amp; git add . &amp;&amp; git commit -m “add new post” &amp;&amp; cd /d E:\HexoBlog &amp;&amp; hexo g “)<br>goto:eof</p>
-<p>call fun1</p>
-<p>Rem 该脚本可以在cmd和powershell中运行<br>Rem 进入某个目录并执行命令，不切换当前cmd窗口的路径，而是另开一个cmd<br>Rem 复制新文件到E:\HexoBlog\source_posts目录，执行git命令，再执行hexo命令，最后再退回powershell环境<br>Rem else语句换行需要用符号^^连接<br>Rem git add . 暂存当前目录下所有新文件和修改的文件</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Win10自带mail客户端设置</title>
-    <url>/2021/02/22/Win10%E8%87%AA%E5%B8%A6Outlook%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<h2 id="邮件客户端版本"><a href="#邮件客户端版本" class="headerlink" title="邮件客户端版本"></a>邮件客户端版本</h2><p>本文所使用的Outlook是Win10家庭版1909自带的邮件桌面客户端，非Office或Office365包含的Outlook,该Outlook账户可以登录网页版。</p>
-<h2 id="设置收发邮件的自动归档"><a href="#设置收发邮件的自动归档" class="headerlink" title="设置收发邮件的自动归档"></a>设置收发邮件的自动归档</h2><p>Win10自带邮件客户端上没有自定义收信规则的功能，<code>移动到某个文件夹</code>有，但是前者可以在收发邮件时自动归类，发邮件也是可以归类的，但是一般放在发件箱就够了。</p>
-<p>这个邮件客户端是阉割版的，让我以为Outlook的自动分类需要购买收费版，查看了QQ邮箱，发现免费的QQ邮箱有这个功能，那Outlook应该也免费有。登录了Outlook Web端，才能找到这个功能，web端相比这个客户端设置功能更丰富。</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211041254.jpg"></p>
-<h2 id="设置签名"><a href="#设置签名" class="headerlink" title="设置签名"></a>设置签名</h2><p>Web端和桌面端都支持自定义富文本签名</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211041603.jpg"></p>
-<h2 id="收发其他邮箱"><a href="#收发其他邮箱" class="headerlink" title="收发其他邮箱"></a>收发其他邮箱</h2><p>要在Outlook桌面客户端添加其他邮箱账户，需要先开启其他邮箱账户的pop/smtp 或imap/smtp服务。</p>
-<p>pop/imap都是邮件获取协议，用于客户端从邮件服务器上download邮件,smtp用于上传邮件到服务器，</p>
-<p>即发邮件。pop与imap的区别是pop只下载邮件，在邮件客户端的操作，如删除、移动，不会同步到服务器。</p>
-<h3 id="QQ邮箱"><a href="#QQ邮箱" class="headerlink" title="QQ邮箱"></a>QQ邮箱</h3><p>如何开启qq邮箱的pop、imap\smtp服务，参考QQ邮箱的帮助中心</p>
-<p><strong><em>密码项，此处不是填入QQ邮箱的登录密码，而是要填入QQ邮箱生成的授权码</em></strong></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211042638.png" alt="image-20201211042638088"></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211042153.png" alt="image-20201211042153388"></p>
-<p><strong><em>更改邮箱同步设置项，用于设置服务器和收发规则</em></strong></p>
-<p>服务器地址和端口号参见QQ邮箱帮助中心</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211042328.png" alt="image-20201211042328871"></p>
-<h3 id="新浪邮箱"><a href="#新浪邮箱" class="headerlink" title="新浪邮箱"></a>新浪邮箱</h3><p>和QQ邮箱差不多的步骤</p>
-<h3 id="同步方式"><a href="#同步方式" class="headerlink" title="同步方式"></a>同步方式</h3><p>手动同步或者设置每隔一定时间自动收取邮件</p>
-<h2 id="安全反思"><a href="#安全反思" class="headerlink" title="安全反思"></a>安全反思</h2><p>QQ邮箱和新浪邮箱都说采用授权码是为了用第三方邮件客户端登录邮箱时更安全，但是我在配置的过程中保留了授权码的截图，如果截图被他人获取，他人也能配置来收发我的邮件，除非邮件服务器能够在检测到异地第三方登录时启用验证服务，如手机验证码。</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201212172651.png" alt="image-20201212172643553"></p>
-<p>在我从qq邮箱添加了Outlook邮箱后，给我发了安全提示邮件，可以看出安全系统检测到从**<code>新位置、新设备、新应用</code>**登录，就会被认为是异常活动。</p>
-<h2 id="移动端、Web端、PC端"><a href="#移动端、Web端、PC端" class="headerlink" title="移动端、Web端、PC端"></a>移动端、Web端、PC端</h2><p>在win10 outlook桌面端添加其他邮箱账户后，并不能把其他邮箱同步到web端或者安卓端，所以还需要在安卓端继续添加其他邮箱。Web端同样需要添加。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>win10home-docker</title>
-    <url>/2021/02/22/win10-home-docker/</url>
-    <content><![CDATA[<h2 id="wsl如何升级到wsl2"><a href="#wsl如何升级到wsl2" class="headerlink" title="wsl如何升级到wsl2"></a>wsl如何升级到wsl2</h2><p>reference：<a href="https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers">https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers</a></p>
-<p><a href="https://docs.docker.com/docker-for-windows/wsl/">https://docs.docker.com/docker-for-windows/wsl/</a></p>
-<p><a href="https://docs.microsoft.com/zh-cn/windows/wsl/reference">https://docs.microsoft.com/zh-cn/windows/wsl/reference</a></p>
-<p><a href="https://docs.docker.com/docker-for-windows/install-windows-home/">https://docs.docker.com/docker-for-windows/install-windows-home/</a></p>
-<p><a href="https://www.cnblogs.com/temari/p/13188168.html">https://www.cnblogs.com/temari/p/13188168.html</a></p>
-<p><a href="https://github.com/microsoft/WSL/discussions/5922">https://github.com/microsoft/WSL/discussions/5922</a></p>
-<p>docker run -it ubuntu bash  这个镜像最小化了，需要运行</p>
-<h2 id="win10家庭版开启虚拟化"><a href="#win10家庭版开启虚拟化" class="headerlink" title="win10家庭版开启虚拟化"></a>win10家庭版开启虚拟化</h2><p><a href="https://docs.docker.com/docker-for-windows/troubleshoot/#hyper-v">https://docs.docker.com/docker-for-windows/troubleshoot/#hyper-v</a></p>
-<p>wsl和wsl2可以互相切换，切换到wsl2后，不需要重新安装disto,docker Desktop for windows只支持wsl2，为了在win10家庭版下使用docker，需要进行切换</p>
-<p>To check the WSL mode, run:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wsl.exe -l -v</span><br></pre></td></tr></table></figure>
-
-<p>To upgrade your existing Linux distro to v2, run:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wsl.exe --set-version (distro name) 2</span><br></pre></td></tr></table></figure>
-
-<p>To set v2 as the default version for future installations, run:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wsl.exe --set-default-version 2</span><br></pre></td></tr></table></figure>
-
-
-
-<p>运行<code>wsl.exe --set-version (distro name) 2</code>需要几分钟，此时wsl已经切换到wsl2,然后运行</p>
-<p><code>wsl  --distribution (distro name)</code>启动wsl2的disto(不需要再重新安装：wsl install (distro name) )</p>
-<p>运行<code>docker run hello-world</code>测试是否正常，如果出现”<code>Unable to find image &#39;hello-world:latest&#39; locally</code>“,是因为docker还没有从hub上pull镜像到本地，稍等下就可以了</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210218150541.png" alt="image-20210218150534442"></p>
-<p>列出所有安装的image</p>
-<p>docker image ls</p>
-<p>运行某个镜像</p>
-<p>docker run  image-name</p>
-<h2 id="docker替换源"><a href="#docker替换源" class="headerlink" title="docker替换源"></a>docker替换源</h2><p>docker在不同平台替换源的配置方式不同，参考<a href="https://docs.docker.com/engine/reference/commandline/dockerd/">dockerd | Docker Documentation</a>，搜索<code>configuration file</code>可以找到windows平台的配置方式</p>
-<p>docker官方推出了中国源：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;registry-mirrors&quot;: [</span><br><span class="line">		&quot;registry.docker-cn.com&quot;</span><br><span class="line">	]</span><br></pre></td></tr></table></figure>
-
-<p>docker-desktop-for-windows的config file</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210219225756.png" alt="image-20210219225756676"></p>
-<p>位于C:\Users\hcf\AppData\Roaming\Docker\last-start-linux-daemon.json</p>
-<p>或者C:\Users\hcf\.docker\daemon.json 这两个文件内容一致</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>python</title>
-    <url>/2021/02/22/python/</url>
-    <content><![CDATA[<p>python</p>
-<p>[toc]</p>
-<h1 id="pip国内源配置"><a href="#pip国内源配置" class="headerlink" title="pip国内源配置"></a>pip国内源配置</h1><p>pip install安装包时是用从<code>The Python Package Index</code><a href="https://pypi.org/%E4%B8%8B%E8%BD%BD%EF%BC%8C%E9%80%9F%E5%BA%A6%E8%BE%83%E6%85%A2%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%85%8D%E7%BD%AE%E4%B8%BA%E5%9B%BD%E5%86%85%E6%BA%90">https://pypi.org/下载，速度较慢，可以配置为国内源</a></p>
-<p>清华开源镜像站pipy地址：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">https://mirrors.tuna.tsinghua.edu.cn/help/pypi/</a></p>
-<ul>
-<li><p>临时使用命令：</p>
-<blockquote>
-<p>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> some-package</p>
-</blockquote>
-<p>-i选项制定了源地址</p>
-</li>
-<li><p>永久配置（参见<a href="https://pip.pypa.io/en/stable/user_guide/">https://pip.pypa.io/en/stable/user_guide/</a> 关于index-url）<br>在C:\Users\username\AppData\Roaming\pip下新建一个pip.ini文件，写入</p>
-<blockquote>
-<p>[global]</p>
-<p>index-url = <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
-<p>[install]</p>
-<p>trusted-host = pypi.tuna.tsinghua.edu.cn</p>
-</blockquote>
-</li>
-</ul>
-<p>使用pip download packagename 某个包，从输出查看是否使用了指定的源</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125014112.png" alt="image-20201125014105622"></p>
-<p>for /r . %i in (dota*.exe) do @echo %i</p>
-]]></content>
-  </entry>
-  <entry>
     <title>Picgo图床</title>
     <url>/2021/02/22/Picgo%E5%9B%BE%E5%BA%8A/</url>
     <content><![CDATA[<h1 id="Picgo图床"><a href="#Picgo图床" class="headerlink" title="Picgo图床"></a>Picgo图床</h1><h2 id="Word与md文档存储图片"><a href="#Word与md文档存储图片" class="headerlink" title="Word与md文档存储图片"></a>Word与md文档存储图片</h2><p>word文档或者笔记软件插入图片，图片存储在文档本身里，这些文档是二进制的，需要对应软件才能打开。</p>
@@ -190,35 +54,6 @@
 <p>我在picgo的issue仓库中发现有大量类似issue才意识到,最终通过在设置窗口修改保存，并重启了picgo，才解决错误。为了避免后续还有人困惑，在picgo issue 585留下了回复。</p>
 <p><code>修改软件配置有时需要重启软件才能生效</code></p>
 <p><strong>结论</strong>：这种开源软件的问题有可能在中文教程中得到解决，但最有可能的方式是去查看issue</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>office2019激活方式</title>
-    <url>/2021/02/22/office%202019%E6%BF%80%E6%B4%BB%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<h1 id="更方便的方式"><a href="#更方便的方式" class="headerlink" title="更方便的方式"></a>更方便的方式</h1><p><a href="https://otp.landian.vip/zh-cn/">https://otp.landian.vip/zh-cn/</a></p>
-<p>以下是自己手动方式</p>
-<h1 id="office-2019安装包哪儿下载"><a href="#office-2019安装包哪儿下载" class="headerlink" title="office 2019安装包哪儿下载"></a>office 2019安装包哪儿下载</h1><p><a href="https://msdn.itellyou.cn/">https://msdn.itellyou.cn/</a></p>
-<p>下载这个文件Office Professional Plus 2019 (x86 and x64) - DVD (Chinese-Simplified)</p>
-<p>，它是官方原版镜像文件</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210118164441.png" alt="image-20210118164434736"></p>
-<p>复制ed2k地址用迅雷下载。</p>
-<h1 id="零售版转换为批量授权版"><a href="#零售版转换为批量授权版" class="headerlink" title="零售版转换为批量授权版"></a>零售版转换为批量授权版</h1><p>KMS激活只适合批量授权版，如果是零售版的office安装包，需要转换。</p>
-<p>把下面的文本写到txt文件里，把txt文件改成bat文件运行就能实现转换。</p>
-<p>cmd窗口出现<code>Retail to Volume License conversion finished</code>就表示转换成功了。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:ADMIN</span><br><span class="line">openfiles &gt;nul 2&gt;nul ||(</span><br><span class="line">echo CreateObject^(&quot;Shell.Application&quot;^).ShellExecute &quot;%~s0&quot;, &quot;&quot;, &quot;&quot;, &quot;runas&quot;, 1 &gt;&gt; &quot;%temp%\getadmin.vbs&quot;</span><br><span class="line">&quot;%temp%\getadmin.vbs&quot; &gt;nul 2&gt;&amp;1</span><br><span class="line">goto:eof</span><br><span class="line">)</span><br><span class="line">del &#x2F;f &#x2F;q &quot;%temp%\getadmin.vbs&quot; &gt;nul 2&gt;nul</span><br><span class="line"></span><br><span class="line">for &#x2F;f &quot;tokens&#x3D;6 delims&#x3D;[]. &quot; %%G in (&#39;ver&#39;) do set win&#x3D;%%G</span><br><span class="line"></span><br><span class="line">setlocal</span><br><span class="line"></span><br><span class="line">pushd &quot;%~dp0&quot;</span><br><span class="line">Title Office 2019 Retail to Volume License Converter</span><br><span class="line"></span><br><span class="line">rem SET OfficePath&#x3D;%ProgramFiles%\Microsoft Office</span><br><span class="line">SET OfficePath&#x3D;%ProgramFiles(x86)%\Microsoft Office</span><br><span class="line">if not exist &quot;%OfficePath%\root\Licenses16&quot; SET OfficePath&#x3D;%ProgramFiles(x86)%\Microsoft Office</span><br><span class="line">if not exist &quot;%OfficePath%\root\Licenses16&quot; (</span><br><span class="line">    echo Could not find the license files for Office 2019!</span><br><span class="line">    pause</span><br><span class="line">    goto :eof</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">echo Press Enter to start VL-Conversion...</span><br><span class="line">echo.</span><br><span class="line">pause</span><br><span class="line">echo.</span><br><span class="line">cd &#x2F;D &quot;%SystemRoot%\System32&quot;</span><br><span class="line"></span><br><span class="line">if %win% GEQ 9200 (</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ppd.xrm-ms&quot;</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ul.xrm-ms&quot;</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ul-oob.xrm-ms&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\client-issuance-bridge-office.xrm-ms</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\client-issuance-root.xrm-ms</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\client-issuance-root-bridge-test.xrm-ms</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\client-issuance-stil.xrm-ms</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\client-issuance-ul.xrm-ms</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\client-issuance-ul-oob.xrm-ms</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\pkeyconfig-office.xrm-ms</span><br><span class="line">)</span><br><span class="line"> if %win% LSS 9200 (</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ppd.xrm-ms&quot;</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ul.xrm-ms&quot;</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ul-oob.xrm-ms&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\client-issuance-bridge-office.xrm-ms</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\client-issuance-root.xrm-ms</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\client-issuance-root-bridge-test.xrm-ms</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\client-issuance-stil.xrm-ms</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\client-issuance-ul.xrm-ms</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\client-issuance-ul-oob.xrm-ms</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\pkeyconfig-office.xrm-ms</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP</span><br><span class="line">cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;act</span><br><span class="line"></span><br><span class="line">echo.</span><br><span class="line">echo Retail to Volume License conversion finished.</span><br><span class="line">echo.</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="KMS激活步骤"><a href="#KMS激活步骤" class="headerlink" title="KMS激活步骤"></a>KMS激活步骤</h1><p>按照<a href="https://03k.org/kms.html%E7%9A%84%E6%96%B9%E6%B3%95%E5%81%9A%E3%80%82">https://03k.org/kms.html的方法做。</a></p>
-<p>cmd里比如我自己执行两条命令如下：</p>
-<p>cscript  “C:\Program Files (x86)\Microsoft Office\Office16\OSPP.VBS” /sethst:kms.03k.org</p>
-<p>cscript “C:\Program Files (x86)\Microsoft Office\Office16\OSPP.VBS” /act</p>
-<p>出现<img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210118165259.png" alt="image-20210118165259275">就激活成功了</p>
-<p>如果你的OSPP.VBS文件路径和我的不一样 ，请输入：</p>
-<p>cscript <code>你的ospp.vbs路径</code> /sethst:kms.03k.org</p>
-<p>cscript <code>你的ospp.vbs路径</code> /act</p>
-<h1 id="参考信息"><a href="#参考信息" class="headerlink" title="参考信息"></a>参考信息</h1><p><a href="https://docs.microsoft.com/en-us/DeployOffice/vlactivation/gvlks">https://docs.microsoft.com/en-us/DeployOffice/vlactivation/gvlks</a></p>
-<p><a href="https://www.bilibili.com/read/cv6907989/">https://www.bilibili.com/read/cv6907989/</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -282,29 +117,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>hexo博客搭建备忘</title>
-    <url>/2021/02/22/hexo%E5%A4%87%E5%BF%98/</url>
-    <content><![CDATA[<p>hexo搭建的博客，参考一个博主 <a href="https://tding.top/tools/">https://tding.top/tools/</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>chrome浏览器扩展</title>
-    <url>/2021/02/22/chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95/</url>
-    <content><![CDATA[<p>[toc]</p>
-<h1 id="chrome浏览器扩展"><a href="#chrome浏览器扩展" class="headerlink" title="chrome浏览器扩展"></a>chrome浏览器扩展</h1><p>国内无法访问chrome扩展商店，如果从某些下载站下载，可能会有安全风险，有个第三方网站提供了扩展的搜索与下载</p>
-<p><a href="https://www.crx4chrome.com/">https://www.crx4chrome.com/</a></p>
-<p>扩展安装方式</p>
-<ol>
-<li>不启用开发者模式，拖拽crx文件到chrome窗口无法安装<br><em>此行占位行，使用shift+enter强制换行功能可以这样，如果只输入</em><br><em>enter会开启新的列表</em></li>
-<li>启用chrome开发者模式，可以解压缩.crx文件，<br>导入该文件夹即可安装</li>
-</ol>
-<h1 id="edge-translate扩展"><a href="#edge-translate扩展" class="headerlink" title="edge translate扩展"></a>edge translate扩展</h1><p>提供在当前页面对选中文字翻译，在当前页面的侧边显示翻译结果，提供了沉浸式阅读的体验</p>
-<p><a href="https://github.com/EdgeTranslate/EdgeTranslate">https://github.com/EdgeTranslate/EdgeTranslate</a></p>
-<h1 id="sha值计算比较"><a href="#sha值计算比较" class="headerlink" title="sha值计算比较"></a>sha值计算比较</h1><p>一般下载文件时，官方会提供文件的sha值，如果文件内容发生改变（文件名改变无影响），文件的sha值会变化。所以验证文件是否与官方相同的方式就是比较sha值是否相同。</p>
-<p><a href="https://www.7-zip.org/">https://www.7-zip.org/</a> 是一款开源的免费压缩软件，它提供了在windows菜单右键计算sha值功能</p>
-]]></content>
-  </entry>
-  <entry>
     <title>The Elder Scrolls V：Skyrim Special Edition</title>
     <url>/2021/02/22/The%20Elder%20Scrolls%20V%EF%BC%9ASkyrim%20Special%20Edition/</url>
     <content><![CDATA[<h1 id="游戏本体和资源"><a href="#游戏本体和资源" class="headerlink" title="游戏本体和资源"></a>游戏本体和资源</h1><p>以下用上古5代指上古卷轴五重置版，本文所使用的上古五游戏本体程序来自于3DM，《上古卷轴5：天际重制版》3DM免安装官方中文未加密版：<a href="https://dl.3dmgame.com/pc/83371.html,%E7%89%88%E6%9C%AC%E5%8F%B7%E4%BD%8D1.5.16">https://dl.3dmgame.com/pc/83371.html,版本号位1.5.16</a></p>
@@ -327,6 +139,339 @@
 <p><strong>交易</strong></p>
 <p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201213184001.jpg"></p>
 <h1 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h1><p>原版技能树界面其实也不好用，应该有这方面的Mod，后续修改</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Win10自带mail客户端设置</title>
+    <url>/2021/02/22/Win10%E8%87%AA%E5%B8%A6Outlook%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="邮件客户端版本"><a href="#邮件客户端版本" class="headerlink" title="邮件客户端版本"></a>邮件客户端版本</h2><p>本文所使用的Outlook是Win10家庭版1909自带的邮件桌面客户端，非Office或Office365包含的Outlook,该Outlook账户可以登录网页版。</p>
+<h2 id="设置收发邮件的自动归档"><a href="#设置收发邮件的自动归档" class="headerlink" title="设置收发邮件的自动归档"></a>设置收发邮件的自动归档</h2><p>Win10自带邮件客户端上没有自定义收信规则的功能，<code>移动到某个文件夹</code>有，但是前者可以在收发邮件时自动归类，发邮件也是可以归类的，但是一般放在发件箱就够了。</p>
+<p>这个邮件客户端是阉割版的，让我以为Outlook的自动分类需要购买收费版，查看了QQ邮箱，发现免费的QQ邮箱有这个功能，那Outlook应该也免费有。登录了Outlook Web端，才能找到这个功能，web端相比这个客户端设置功能更丰富。</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211041254.jpg"></p>
+<h2 id="设置签名"><a href="#设置签名" class="headerlink" title="设置签名"></a>设置签名</h2><p>Web端和桌面端都支持自定义富文本签名</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211041603.jpg"></p>
+<h2 id="收发其他邮箱"><a href="#收发其他邮箱" class="headerlink" title="收发其他邮箱"></a>收发其他邮箱</h2><p>要在Outlook桌面客户端添加其他邮箱账户，需要先开启其他邮箱账户的pop/smtp 或imap/smtp服务。</p>
+<p>pop/imap都是邮件获取协议，用于客户端从邮件服务器上download邮件,smtp用于上传邮件到服务器，</p>
+<p>即发邮件。pop与imap的区别是pop只下载邮件，在邮件客户端的操作，如删除、移动，不会同步到服务器。</p>
+<h3 id="QQ邮箱"><a href="#QQ邮箱" class="headerlink" title="QQ邮箱"></a>QQ邮箱</h3><p>如何开启qq邮箱的pop、imap\smtp服务，参考QQ邮箱的帮助中心</p>
+<p><strong><em>密码项，此处不是填入QQ邮箱的登录密码，而是要填入QQ邮箱生成的授权码</em></strong></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211042638.png" alt="image-20201211042638088"></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211042153.png" alt="image-20201211042153388"></p>
+<p><strong><em>更改邮箱同步设置项，用于设置服务器和收发规则</em></strong></p>
+<p>服务器地址和端口号参见QQ邮箱帮助中心</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201211042328.png" alt="image-20201211042328871"></p>
+<h3 id="新浪邮箱"><a href="#新浪邮箱" class="headerlink" title="新浪邮箱"></a>新浪邮箱</h3><p>和QQ邮箱差不多的步骤</p>
+<h3 id="同步方式"><a href="#同步方式" class="headerlink" title="同步方式"></a>同步方式</h3><p>手动同步或者设置每隔一定时间自动收取邮件</p>
+<h2 id="安全反思"><a href="#安全反思" class="headerlink" title="安全反思"></a>安全反思</h2><p>QQ邮箱和新浪邮箱都说采用授权码是为了用第三方邮件客户端登录邮箱时更安全，但是我在配置的过程中保留了授权码的截图，如果截图被他人获取，他人也能配置来收发我的邮件，除非邮件服务器能够在检测到异地第三方登录时启用验证服务，如手机验证码。</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201212172651.png" alt="image-20201212172643553"></p>
+<p>在我从qq邮箱添加了Outlook邮箱后，给我发了安全提示邮件，可以看出安全系统检测到从**<code>新位置、新设备、新应用</code>**登录，就会被认为是异常活动。</p>
+<h2 id="移动端、Web端、PC端"><a href="#移动端、Web端、PC端" class="headerlink" title="移动端、Web端、PC端"></a>移动端、Web端、PC端</h2><p>在win10 outlook桌面端添加其他邮箱账户后，并不能把其他邮箱同步到web端或者安卓端，所以还需要在安卓端继续添加其他邮箱。Web端同样需要添加。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Windows Terminal</title>
+    <url>/2021/02/21/Windows%20Terminal/</url>
+    <content><![CDATA[<h1 id="Windows-Terminal"><a href="#Windows-Terminal" class="headerlink" title="Windows Terminal"></a>Windows Terminal</h1><p>官方文档：<a href="https://docs.microsoft.com/zh-cn/windows/terminal/">https://docs.microsoft.com/zh-cn/windows/terminal/</a></p>
+<p>Github:<a href="https://github.com/microsoft/terminal">https://github.com/microsoft/terminal</a></p>
+<p><a href="https://www.hanselman.com/blog/whats-the-difference-between-a-console-a-terminal-and-a-shell">终端、控制台、shell的区别</a></p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>配置方式类型vscode，Win Terminal的默认配置文件<code>default.json</code>打开方式：按住<code>alt</code>键点击<code>设置</code>。</p>
+<p>在<code>setting.json</code>中自定义选项时可以参考<code>default.json</code>。</p>
+<p>对各项设定作用以及取值说明文档 <a href="https://github.com/microsoft/terminal/blob/10c599eb176a5bd460f4c5caee6bded553e38928/doc/cascadia/SettingsSchema.md">SettingsSchema.md</a></p>
+<h2 id="设定启动目录"><a href="#设定启动目录" class="headerlink" title="设定启动目录"></a>设定启动目录</h2><p><code>default.json</code> 中设置为<code>&quot;startingDirectory&quot;: &quot;%USERPROFILE%&quot;</code>,如我的设置<code>powershell</code>启动目录为<code>Desktop</code></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210212211005.png" alt="image-20210212210958074"></p>
+<h2 id="设置主题（theme"><a href="#设置主题（theme" class="headerlink" title="设置主题（theme)"></a>设置主题（theme)</h2><p>主题包括整个窗口的颜色（不包括标题栏）</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210212211639.png" alt="image-20210212211639068"></p>
+<p>配置Win Terminal有两种方式</p>
+<p><strong>经实际使用，colortool只在cmd或powershell中有效，在Win Terminal打开的ps中运行无效</strong></p>
+<p>自动方式：<a href="https://github.com/microsoft/terminal/tree/ae550e0969595f062b15c2ff5cc33d4afe8ebc3f/src/tools/ColorTool">colortool</a>, 属于Terminal repo的一部分，可以在repo下载release安装或者<code>scoop install colortool</code>,我运行整个程序就出错:</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210212212532.png" alt="image-20210212212531920"></p>
+<p>查了repo的issue，暂时没找到原因，我的Terminal从win store安装，非预览版，在colortool的文档中没有见到有要求Terminal版本</p>
+<p><strong>经实际使用 <code>colortool campbell.ini</code>才是正确方式，即Scheme name要带上文件后缀</strong>，<strong>为了使这项改动永久生效，还需要在powershell的标题栏右键打开属性点击“确定”</strong>，cmd的窗口主题也可以这样改变，cmd和ps的改定似乎是分开的，即使ps中已经成功运行了这条命令，这条命令在Windows Terminal中打开的PS里运行并不改变主题，猜想Windows Terminal的setting.json拥有最高优先级。</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210213201915.png" alt="image-20210213201907913"></p>
+<p>手动方式：改写setting.json文件，例如配置毛玻璃主题：<a href="https://docs.microsoft.com/zh-cn/windows/terminal/custom-terminal-gallery/frosted-glass-theme%EF%BC%8C%E8%A6%81%E6%94%B9%E7%9A%84%E4%B8%A4%E5%A4%84%E4%B8%80%E5%A4%84%E6%98%AF%E5%9C%A8sheme%E4%B8%AD%E6%B7%BB%E5%8A%A0%E4%B8%BB%E9%A2%98%E7%9A%84%E5%90%84%E7%A7%8D%E5%80%BC%EF%BC%8C%E5%8F%A6%E4%B8%80%E5%A4%84%E6%98%AFprofile%E4%B8%AD%E9%92%88%E5%AF%B9powershell%E6%B7%BB%E5%8A%A0%E9%80%89%E9%A1%B9&quot;colorScheme&quot;,%60default.json%60%E6%9C%89%E5%90%84%E7%A7%8D%E4%B8%BB%E9%A2%98%E7%9A%84scheme%E9%94%AE%E5%80%BC%E5%AF%B9%EF%BC%8C%E9%BB%98%E8%AE%A4%E7%9A%84%E4%B8%BB%E9%A2%98%E6%98%AFCampbell%EF%BC%8C%E4%BB%A5%E4%B8%8A%E6%88%AA%E5%9B%BE%E6%98%AF%E6%94%B9%E6%88%90%E4%BA%86%60Solarized">https://docs.microsoft.com/zh-cn/windows/terminal/custom-terminal-gallery/frosted-glass-theme，要改的两处一处是在sheme中添加主题的各种值，另一处是profile中针对powershell添加选项&quot;colorScheme&quot;,`default.json`有各种主题的scheme键值对，默认的主题是Campbell，以上截图是改成了`Solarized</a> Dark`，可以观察到colortool -b Campbell命令中的字符-b不易阅读。</p>
+<h2 id="使用oh-my-posh美化Powershell"><a href="#使用oh-my-posh美化Powershell" class="headerlink" title="使用oh-my-posh美化Powershell"></a>使用oh-my-posh美化Powershell</h2><p><a href="https://github.com/JanDeDobbeleer/oh-my-posh">https://github.com/JanDeDobbeleer/oh-my-posh</a></p>
+<p>oh-my-posh包括了powerline功能，后者可以在命令行提示中显示git状态以及给提示分段，以下乱码是字体不能显示某些符号</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210212214545.png" alt="image-20210212214544956"></p>
+<p>参见issue <a href="https://github.com/JanDeDobbeleer/oh-my-posh/issues/319">#319</a>,下载任何一个Nerd字体,安装字体后，setting.json中添加”fontFace”: “Delugia Nerd Font”,  这个字体的下载地址参见：<a href="https://www.jianshu.com/p/19db2f50cec9">https://www.jianshu.com/p/19db2f50cec9</a></p>
+<p>Nerd字体的Repo:<a href="https://github.com/ryanoasis/nerd-fonts">https://github.com/ryanoasis/nerd-fonts</a></p>
+<p>以下是美化后的效果截图</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210212220023.png" alt="image-20210212220023248"></p>
+<p>1部分：显示加载配置文件耗时</p>
+<p>2部分：用vscode在oh-my-posh本地repository下创建了新文件</p>
+<p>3部分：git状态提示，+1表示新添加了文件</p>
+<h3 id="不能在powershell中修改字体"><a href="#不能在powershell中修改字体" class="headerlink" title="不能在powershell中修改字体"></a>不能在powershell中修改字体</h3><p> 在windows Terminal setting.json中给PS配置了NERD字体，如果不通过WT直接启动PS，还是不能正确显示，PS也无法更改字体，原因是PS对字体使用有更严格的要求</p>
+<p>可以使用这个字体：<a href="https://github.com/be5invis/Sarasa-Gothic/releases">https://github.com/be5invis/Sarasa-Gothic/releases</a> 在它的介绍里发现有<a href="https://mirrors.tuna.tsinghua.edu.cn/github-release/be5invis/Sarasa-Gothic">tsinghua mirror</a>,加快下载速度</p>
+<p>使用<code>等距更纱黑体 T SC</code>字体可以显示powerline的符号，这个字体也适合cmd，即cmd也能设置这个字体，再配合colortool更改配色</p>
+<p>参考<a href="https://www.jianshu.com/p/100aa26a42cc">https://www.jianshu.com/p/100aa26a42cc</a></p>
+<h2 id="添加git-bash到Win-Terminal"><a href="#添加git-bash到Win-Terminal" class="headerlink" title="添加git bash到Win Terminal"></a>添加git bash到Win Terminal</h2><p>git bash属于git-for-windows提供的bash环境</p>
+<p>每个profile都需要GUID，一个在线生成GUID的网站<a href="https://www.guidgen.com/">https://www.guidgen.com/</a></p>
+<p>or You can run <code>[guid]::NewGuid()</code> in PowerShell to generate a GUID for your custom profile.</p>
+<p>我的配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">               &#x2F;&#x2F; Make changes here to the git-bash.exe profile.</span><br><span class="line">               &quot;guid&quot;: &quot;&#123;b113edb3-02a0-431a-a6c9-9c0356a1ad4c&#125;&quot;,</span><br><span class="line">               &quot;name&quot;: &quot;git bash&quot;,</span><br><span class="line">               &quot;commandline&quot;: &quot;C:\\Program Files\\Git\\bin\\bash.exe&quot;,</span><br><span class="line">               &quot;icon&quot;: &quot;C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico&quot;,</span><br><span class="line">               &quot;hidden&quot;: false,</span><br><span class="line">               &quot;padding&quot;: &quot;8, 8, 8, 8&quot;,</span><br><span class="line">               &quot;altGrAliasing&quot;: true,</span><br><span class="line">               &quot;startingDirectory&quot;: &quot;%USERPROFILE%&quot;,</span><br><span class="line">               &quot;useAcrylic&quot;: true,</span><br><span class="line">               &quot;acrylicOpacity&quot;: 0.7,</span><br><span class="line">               &quot;colorScheme&quot;: &quot;Ubuntu&quot;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意 commandline不要填git-bash.exe的路径，否则生成的窗口不会嵌入在Win Terminal里，而是独立成窗口</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210213214337.png" alt="image-20210213214337473"></p>
+<p><strong>issue</strong></p>
+<p>1部分可以看到有路径没有正确显示，中文乱码</p>
+<p><a href="https://github.com/git-for-windows/git/issues/2181T">https://github.com/git-for-windows/git/issues/2181T</a></p>
+<h2 id="修改启动时的默认profile"><a href="#修改启动时的默认profile" class="headerlink" title="修改启动时的默认profile"></a>修改启动时的默认profile</h2><p>defaultProfile 值填写各个profile的GUID,如要默认启动bash，就填bash的GUID</p>
+<h2 id="修改背景图片"><a href="#修改背景图片" class="headerlink" title="修改背景图片"></a>修改背景图片</h2><p>“backgroundImage”：”图片的绝对地址”</p>
+<p>“backgroundImageOpacity”: 1 // 图片透明图</p>
+<p>“backgroundImageStretchMode”: “uniformToFill”</p>
+<p>setting.json的”defaults”下的设置对所有profile都有效，Put settings here that you want to apply to all profiles。如果把更改背景图片的设置放在这儿，所有的shell都会被更改背景图片</p>
+<h2 id="一个Powershell资源收集REPO"><a href="#一个Powershell资源收集REPO" class="headerlink" title="一个Powershell资源收集REPO"></a>一个Powershell资源收集REPO</h2><p><a href="https://github.com/janikvonrotz/awesome-powershell">awesome-powershell</a></p>
+<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><p><a href="https://github.com/atomcorp/themes">https://github.com/atomcorp/themes</a> 此处可以获取各种theme的json文件</p>
+<p><a href="https://terminalsplash.com/">TerminalSplash</a></p>
+<h1 id="WSL"><a href="#WSL" class="headerlink" title="WSL"></a>WSL</h1><p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210214033957.png" alt="image-20210214033950182"></p>
+<h2 id="更改安装目录"><a href="#更改安装目录" class="headerlink" title="更改安装目录"></a>更改安装目录</h2><p>默认安装目录为系统盘，依以下步骤可以迁移到其他目录</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">首先查看所有分发版本</span><br><span class="line">wsl <span class="literal">-l</span> -<span class="literal">-all</span>  <span class="literal">-v</span></span><br><span class="line">  NAME STATE VERSION</span><br><span class="line"> * Ubuntu<span class="literal">-20</span>.<span class="number">04</span> Running <span class="number">2</span></span><br><span class="line"></span><br><span class="line">导出分发版为tar文件到d盘</span><br><span class="line">wsl -<span class="literal">-export</span> Ubuntu<span class="literal">-20</span>.<span class="number">04</span> d:\ubuntu20.<span class="number">04</span>.tar</span><br><span class="line">注销当前分发版</span><br><span class="line">wsl -<span class="literal">-unregister</span> Ubuntu<span class="literal">-20</span>.<span class="number">04</span></span><br><span class="line">重新导入并安装分发版在d:\ubuntu</span><br><span class="line">wsl -<span class="literal">-import</span> Ubuntu<span class="literal">-20</span>.<span class="number">04</span> d:\ubuntu d:\ubuntu20.<span class="number">04</span>.tar -<span class="literal">-version</span> <span class="number">2</span></span><br><span class="line">设置默认登陆用户为安装时用户名</span><br><span class="line">ubuntu2004 config -<span class="literal">-default</span><span class="literal">-user</span> Username</span><br><span class="line">删除tar文件(可选)</span><br><span class="line"><span class="built_in">del</span> d:\ubuntu20.<span class="number">04</span>.tar</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="运行windows的exe文件"><a href="#运行windows的exe文件" class="headerlink" title="运行windows的exe文件"></a>运行windows的exe文件</h2><p>wsl（指子系统的命令行）自动继承了windows的环境变量，输入<code>echo $PATH</code> 可以观察，但是/mnt/c/MinGW/bin下的gcc为exe文件，需要输入gcc.exe才能在wsl里运行</p>
+<h2 id="打开资源管理器"><a href="#打开资源管理器" class="headerlink" title="打开资源管理器"></a>打开资源管理器</h2><p>运行explorer.exe .可以打开当前目录，可以在.bahsrc里建立同名：alias explore=explorer.exe</p>
+<h2 id="在windows和wsl上都安装有python"><a href="#在windows和wsl上都安装有python" class="headerlink" title="在windows和wsl上都安装有python"></a>在windows和wsl上都安装有python</h2><p>Remember, Python is installed in the Linux distro, which means if you’re editing Python files on the Windows side, you can’t run or debug them unless you install the same Python development stack on Windows. And that defeats the purpose of having an isolated Linux instance set up with all your Python tools and runtimes!</p>
+<h2 id="vscode-wsl"><a href="#vscode-wsl" class="headerlink" title="vscode+wsl"></a>vscode+wsl</h2><p>vscode装在windows侧，配有插件wsl-remote,第一次在wsl中使用命令code会自动安装a small vscode server</p>
+<p><a href="https://code.visualstudio.com/docs/remote/wsl">https://code.visualstudio.com/docs/remote/wsl</a></p>
+<h2 id="wsl在vscode中的issue"><a href="#wsl在vscode中的issue" class="headerlink" title="wsl在vscode中的issue"></a>wsl在vscode中的issue</h2><p><a href="https://code.visualstudio.com/docs/remote/wsl#_known-limitations">https://code.visualstudio.com/docs/remote/wsl#_known-limitations</a></p>
+<h2 id="Working-with-Git"><a href="#Working-with-Git" class="headerlink" title="Working with Git#"></a>Working with Git<a href="https://code.visualstudio.com/docs/remote/wsl#_working-with-git">#</a></h2><p>wsl和vsc以及git一起工作，有两个问题，一是换行，二是凭证</p>
+<h1 id="Using-C-and-WSL-in-VS-Code"><a href="#Using-C-and-WSL-in-VS-Code" class="headerlink" title="Using C++ and WSL in VS Code"></a>Using C++ and WSL in VS Code</h1><p><a href="https://code.visualstudio.com/docs/cpp/config-wsl">https://code.visualstudio.com/docs/cpp/config-wsl</a> GCC</p>
+<h1 id="ZSH"><a href="#ZSH" class="headerlink" title="ZSH"></a>ZSH</h1><p>安装zsh并设置为默认的shell</p>
+<p><code>echo $SHELL</code> 查看默认的shell</p>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH">https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH</a></p>
+<h1 id="Fish"><a href="#Fish" class="headerlink" title="Fish"></a>Fish</h1><p>相比zsh,开箱就用，运行fish_config还可以开启浏览器端的配置</p>
+<p>输入help keyword，可以访问在线的fish帮助</p>
+<p>安装<a href="https://github.com/oh-my-fish">oh-my-fish</a>,如果要安装插件也可以在这个仓库找到</p>
+<p>fish的awesome repo:<a href="https://github.com/jorgebucaran/awsm.fish,%E6%94%B6%E9%9B%86%E4%BA%86fish%E7%9A%84%E8%AE%B8%E5%A4%9A%E8%B5%84%E6%BA%90">https://github.com/jorgebucaran/awsm.fish,收集了fish的许多资源</a></p>
+<p>fish不兼容bash,如果要运行bash脚本怎么办呢？</p>
+<h2 id="目录跳转插件"><a href="#目录跳转插件" class="headerlink" title="目录跳转插件"></a>目录跳转插件</h2><p><a href="https://github.com/oh-my-fish">oh-my-fish</a>/<strong><a href="https://github.com/oh-my-fish/plugin-z">plugin-z</a></strong></p>
+<p><a href="https://github.com/wting">wting</a>/<strong><a href="https://github.com/wting/autojump">autojump</a></strong></p>
+<p><a href="https://github.com/rupa">rupa</a>/<strong><a href="https://github.com/rupa/z">z</a></strong></p>
+<p><a href="https://github.com/skywind3000">skywind3000</a>/<strong><a href="https://github.com/skywind3000/z.lua">z.lua</a></strong></p>
+<h2 id="速查表"><a href="#速查表" class="headerlink" title="速查表"></a>速查表</h2><p>bash:</p>
+<p><a href="https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh">https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh</a></p>
+<h1 id="Notepad2"><a href="#Notepad2" class="headerlink" title="Notepad2"></a><a href="https://www.flos-freeware.ch/notepad2.html">Notepad2</a></h1><p>原始的已经停止更新，现在有一个github分支<a href="https://github.com/zufuliu/notepad2">https://github.com/zufuliu/notepad2</a></p>
+<h1 id="mcedit"><a href="#mcedit" class="headerlink" title="mcedit"></a>mcedit</h1><p>shortcut说明</p>
+<p>c-u 表示ctrl-U</p>
+<p>m-e 表示alt-e</p>
+<p>s-i表示shift-insert</p>
+]]></content>
+      <categories>
+        <category>CLI</category>
+      </categories>
+      <tags>
+        <tag>CLI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>chrome浏览器扩展</title>
+    <url>/2021/02/22/chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95/</url>
+    <content><![CDATA[<p>[toc]</p>
+<h1 id="chrome浏览器扩展"><a href="#chrome浏览器扩展" class="headerlink" title="chrome浏览器扩展"></a>chrome浏览器扩展</h1><p>国内无法访问chrome扩展商店，如果从某些下载站下载，可能会有安全风险，有个第三方网站提供了扩展的搜索与下载</p>
+<p><a href="https://www.crx4chrome.com/">https://www.crx4chrome.com/</a></p>
+<p>扩展安装方式</p>
+<ol>
+<li>不启用开发者模式，拖拽crx文件到chrome窗口无法安装<br><em>此行占位行，使用shift+enter强制换行功能可以这样，如果只输入</em><br><em>enter会开启新的列表</em></li>
+<li>启用chrome开发者模式，可以解压缩.crx文件，<br>导入该文件夹即可安装</li>
+</ol>
+<h1 id="edge-translate扩展"><a href="#edge-translate扩展" class="headerlink" title="edge translate扩展"></a>edge translate扩展</h1><p>提供在当前页面对选中文字翻译，在当前页面的侧边显示翻译结果，提供了沉浸式阅读的体验</p>
+<p><a href="https://github.com/EdgeTranslate/EdgeTranslate">https://github.com/EdgeTranslate/EdgeTranslate</a></p>
+<h1 id="sha值计算比较"><a href="#sha值计算比较" class="headerlink" title="sha值计算比较"></a>sha值计算比较</h1><p>一般下载文件时，官方会提供文件的sha值，如果文件内容发生改变（文件名改变无影响），文件的sha值会变化。所以验证文件是否与官方相同的方式就是比较sha值是否相同。</p>
+<p><a href="https://www.7-zip.org/">https://www.7-zip.org/</a> 是一款开源的免费压缩软件，它提供了在windows菜单右键计算sha值功能</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/02/22/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>cmd脚本解释</title>
+    <url>/2021/02/23/cmd%E8%84%9A%E6%9C%AC%E8%A7%A3%E9%87%8A/</url>
+    <content><![CDATA[<p>@echo off</p>
+<p>:fun1<br>if not exist “%1” (echo New post filename requried)^<br>else (copy “%1” E:\HexoBlog\source_posts &amp;&amp; cmd /c “cd /d E:\HexoBlog\source_posts &amp;&amp; git status &amp;&amp; git add . &amp;&amp; git commit -m “add new post” &amp;&amp; cd /d E:\HexoBlog &amp;&amp; hexo g “)<br>goto:eof</p>
+<p>call fun1</p>
+<p>Rem 该脚本可以在cmd和powershell中运行<br>Rem 进入某个目录并执行命令，不切换当前cmd窗口的路径，而是另开一个cmd<br>Rem 复制新文件到E:\HexoBlog\source_posts目录，执行git命令，再执行hexo命令，最后再退回powershell环境<br>Rem else语句换行需要用符号^^连接<br>Rem git add . 暂存当前目录下所有新文件和修改的文件</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo博客搭建备忘</title>
+    <url>/2021/02/22/hexo%E5%A4%87%E5%BF%98/</url>
+    <content><![CDATA[<p>hexo搭建的博客，参考一个博主 <a href="https://tding.top/tools/">https://tding.top/tools/</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>office2019激活方式</title>
+    <url>/2021/02/22/office%202019%E6%BF%80%E6%B4%BB%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<h1 id="更方便的方式"><a href="#更方便的方式" class="headerlink" title="更方便的方式"></a>更方便的方式</h1><p><a href="https://otp.landian.vip/zh-cn/">https://otp.landian.vip/zh-cn/</a></p>
+<p>以下是自己手动方式</p>
+<h1 id="office-2019安装包哪儿下载"><a href="#office-2019安装包哪儿下载" class="headerlink" title="office 2019安装包哪儿下载"></a>office 2019安装包哪儿下载</h1><p><a href="https://msdn.itellyou.cn/">https://msdn.itellyou.cn/</a></p>
+<p>下载这个文件Office Professional Plus 2019 (x86 and x64) - DVD (Chinese-Simplified)</p>
+<p>，它是官方原版镜像文件</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210118164441.png" alt="image-20210118164434736"></p>
+<p>复制ed2k地址用迅雷下载。</p>
+<h1 id="零售版转换为批量授权版"><a href="#零售版转换为批量授权版" class="headerlink" title="零售版转换为批量授权版"></a>零售版转换为批量授权版</h1><p>KMS激活只适合批量授权版，如果是零售版的office安装包，需要转换。</p>
+<p>把下面的文本写到txt文件里，把txt文件改成bat文件运行就能实现转换。</p>
+<p>cmd窗口出现<code>Retail to Volume License conversion finished</code>就表示转换成功了。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">:ADMIN</span><br><span class="line">openfiles &gt;nul 2&gt;nul ||(</span><br><span class="line">echo CreateObject^(&quot;Shell.Application&quot;^).ShellExecute &quot;%~s0&quot;, &quot;&quot;, &quot;&quot;, &quot;runas&quot;, 1 &gt;&gt; &quot;%temp%\getadmin.vbs&quot;</span><br><span class="line">&quot;%temp%\getadmin.vbs&quot; &gt;nul 2&gt;&amp;1</span><br><span class="line">goto:eof</span><br><span class="line">)</span><br><span class="line">del &#x2F;f &#x2F;q &quot;%temp%\getadmin.vbs&quot; &gt;nul 2&gt;nul</span><br><span class="line"></span><br><span class="line">for &#x2F;f &quot;tokens&#x3D;6 delims&#x3D;[]. &quot; %%G in (&#39;ver&#39;) do set win&#x3D;%%G</span><br><span class="line"></span><br><span class="line">setlocal</span><br><span class="line"></span><br><span class="line">pushd &quot;%~dp0&quot;</span><br><span class="line">Title Office 2019 Retail to Volume License Converter</span><br><span class="line"></span><br><span class="line">rem SET OfficePath&#x3D;%ProgramFiles%\Microsoft Office</span><br><span class="line">SET OfficePath&#x3D;%ProgramFiles(x86)%\Microsoft Office</span><br><span class="line">if not exist &quot;%OfficePath%\root\Licenses16&quot; SET OfficePath&#x3D;%ProgramFiles(x86)%\Microsoft Office</span><br><span class="line">if not exist &quot;%OfficePath%\root\Licenses16&quot; (</span><br><span class="line">    echo Could not find the license files for Office 2019!</span><br><span class="line">    pause</span><br><span class="line">    goto :eof</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">echo Press Enter to start VL-Conversion...</span><br><span class="line">echo.</span><br><span class="line">pause</span><br><span class="line">echo.</span><br><span class="line">cd &#x2F;D &quot;%SystemRoot%\System32&quot;</span><br><span class="line"></span><br><span class="line">if %win% GEQ 9200 (</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ppd.xrm-ms&quot;</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ul.xrm-ms&quot;</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ul-oob.xrm-ms&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\client-issuance-bridge-office.xrm-ms</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\client-issuance-root.xrm-ms</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\client-issuance-root-bridge-test.xrm-ms</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\client-issuance-stil.xrm-ms</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\client-issuance-ul.xrm-ms</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\client-issuance-ul-oob.xrm-ms</span><br><span class="line">    cscript slmgr.vbs &#x2F;ilc &quot;%OfficePath%\root\Licenses16\pkeyconfig-office.xrm-ms</span><br><span class="line">)</span><br><span class="line"> if %win% LSS 9200 (</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ppd.xrm-ms&quot;</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ul.xrm-ms&quot;</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\ProPlus2019VL_KMS_Client_AE-ul-oob.xrm-ms&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\client-issuance-bridge-office.xrm-ms</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\client-issuance-root.xrm-ms</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\client-issuance-root-bridge-test.xrm-ms</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\client-issuance-stil.xrm-ms</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\client-issuance-ul.xrm-ms</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\client-issuance-ul-oob.xrm-ms</span><br><span class="line">    cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inslic:&quot;%OfficePath%\root\Licenses16\pkeyconfig-office.xrm-ms</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;inpkey:NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP</span><br><span class="line">cscript &quot;%OfficePath%\Office16\ospp.vbs&quot; &#x2F;act</span><br><span class="line"></span><br><span class="line">echo.</span><br><span class="line">echo Retail to Volume License conversion finished.</span><br><span class="line">echo.</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="KMS激活步骤"><a href="#KMS激活步骤" class="headerlink" title="KMS激活步骤"></a>KMS激活步骤</h1><p>按照<a href="https://03k.org/kms.html%E7%9A%84%E6%96%B9%E6%B3%95%E5%81%9A%E3%80%82">https://03k.org/kms.html的方法做。</a></p>
+<p>cmd里比如我自己执行两条命令如下：</p>
+<p>cscript  “C:\Program Files (x86)\Microsoft Office\Office16\OSPP.VBS” /sethst:kms.03k.org</p>
+<p>cscript “C:\Program Files (x86)\Microsoft Office\Office16\OSPP.VBS” /act</p>
+<p>出现<img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210118165259.png" alt="image-20210118165259275">就激活成功了</p>
+<p>如果你的OSPP.VBS文件路径和我的不一样 ，请输入：</p>
+<p>cscript <code>你的ospp.vbs路径</code> /sethst:kms.03k.org</p>
+<p>cscript <code>你的ospp.vbs路径</code> /act</p>
+<h1 id="参考信息"><a href="#参考信息" class="headerlink" title="参考信息"></a>参考信息</h1><p><a href="https://docs.microsoft.com/en-us/DeployOffice/vlactivation/gvlks">https://docs.microsoft.com/en-us/DeployOffice/vlactivation/gvlks</a></p>
+<p><a href="https://www.bilibili.com/read/cv6907989/">https://www.bilibili.com/read/cv6907989/</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>python</title>
+    <url>/2021/02/22/python/</url>
+    <content><![CDATA[<p>python</p>
+<p>[toc]</p>
+<h1 id="pip国内源配置"><a href="#pip国内源配置" class="headerlink" title="pip国内源配置"></a>pip国内源配置</h1><p>pip install安装包时是用从<code>The Python Package Index</code><a href="https://pypi.org/%E4%B8%8B%E8%BD%BD%EF%BC%8C%E9%80%9F%E5%BA%A6%E8%BE%83%E6%85%A2%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%85%8D%E7%BD%AE%E4%B8%BA%E5%9B%BD%E5%86%85%E6%BA%90">https://pypi.org/下载，速度较慢，可以配置为国内源</a></p>
+<p>清华开源镜像站pipy地址：<a href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">https://mirrors.tuna.tsinghua.edu.cn/help/pypi/</a></p>
+<ul>
+<li><p>临时使用命令：</p>
+<blockquote>
+<p>pip install -i <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a> some-package</p>
+</blockquote>
+<p>-i选项制定了源地址</p>
+</li>
+<li><p>永久配置（参见<a href="https://pip.pypa.io/en/stable/user_guide/">https://pip.pypa.io/en/stable/user_guide/</a> 关于index-url）<br>在C:\Users\username\AppData\Roaming\pip下新建一个pip.ini文件，写入</p>
+<blockquote>
+<p>[global]</p>
+<p>index-url = <a href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a></p>
+<p>[install]</p>
+<p>trusted-host = pypi.tuna.tsinghua.edu.cn</p>
+</blockquote>
+</li>
+</ul>
+<p>使用pip download packagename 某个包，从输出查看是否使用了指定的源</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20201125014112.png" alt="image-20201125014105622"></p>
+<p>for /r . %i in (dota*.exe) do @echo %i</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>spacevim</title>
+    <url>/2021/02/22/spacevim/</url>
+    <content><![CDATA[<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>spacevim的默认全局配置文件为C:\Users\hcf.SpaceVim.d\init.toml</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210220161244.png" alt="image-20210220161237660"></p>
+<p>标签栏123可以用<code>&lt;leader&gt; number</code>快捷键切换，默认前缀键为<code>\</code></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210220161448.png" alt="image-20210220161447934"></p>
+<p>在1和2切换用<code>spc number</code></p>
+<p>如何启用模块</p>
+<p><a href="https://spacevim.org/cn/layers/">可用模块 | SpaceVim</a></p>
+<p>模块和插件的区别：colorscheme 模块为 SpaceVim 提供了一系列常用的颜色主题，包含了众多颜色插件，如下图第一次启用colorscheme 模块会下载插件</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210220164548.png" alt="image-20210220164548080"></p>
+<p>更新模块</p>
+<p>:SPUpdate</p>
+<h1 id="十分钟Spacevim入门"><a href="#十分钟Spacevim入门" class="headerlink" title="十分钟Spacevim入门"></a>十分钟Spacevim入门</h1><p><a href="https://github.com/Jackiexiao/10-minutes-to-SpaceVim/blob/master/README-zh.md">https://github.com/Jackiexiao/10-minutes-to-SpaceVim/blob/master/README-zh.md</a></p>
+<p>spacevim是如何启动的 </p>
+<h2 id="几个可以预览的快捷键"><a href="#几个可以预览的快捷键" class="headerlink" title="几个可以预览的快捷键"></a>几个可以预览的快捷键</h2><p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210220225114.png" alt="image-20210220225114349"></p>
+<h2 id="安装spacevim会修改原有的vim配置吗"><a href="#安装spacevim会修改原有的vim配置吗" class="headerlink" title="安装spacevim会修改原有的vim配置吗"></a>安装spacevim会修改原有的vim配置吗</h2><p>并不会<a href="https://spacevim.org/faq/#have-a-try-with-spacevim-without-overwrite-vimrc">have-a-try-with-spacevim-without-overwrite-vimrc</a></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210220231934.png" alt="image-20210220231934156"></p>
+<h2 id="spacevim哪些选项可以在init-toml中配置呢？"><a href="#spacevim哪些选项可以在init-toml中配置呢？" class="headerlink" title="spacevim哪些选项可以在init.toml中配置呢？"></a>spacevim哪些选项可以在init.toml中配置呢？</h2><p>查看~/.SpaceVim/autoload/SpaceVim.vim</p>
+<h1 id="命令备忘"><a href="#命令备忘" class="headerlink" title="命令备忘"></a>命令备忘</h1><p>CLI输入nvim，启动neovim</p>
+<p>英文输入法模式下按下ESC，切换到normal模式，输入<code>:help</code>，查看neovim的帮助文档</p>
+<p>在文档内跳转shortcuts: forward <code>ctrl-]</code>, backward <code>ctrl-o</code></p>
+<p>交互教程，输入<code>:Tutor</code>启用，注意vim的命令区分大小写，tutor不会被识别</p>
+<p>要检查nvim的状况，运行<code>:checkhealth</code></p>
+<p>查看可以设置哪些选项 <code>:set all</code></p>
+<p>查看某个命令的帮助 :help command ， 如<code>:help set</code></p>
+<p>各选项简短说明 <a href="http://vimcdoc.sourceforge.net/doc/quickref.html#option-list">VIM: quickref (sourceforge.net)</a></p>
+<h1 id="查看spacevim的安装脚本可以知道安装过程"><a href="#查看spacevim的安装脚本可以知道安装过程" class="headerlink" title="查看spacevim的安装脚本可以知道安装过程"></a>查看spacevim的安装脚本可以知道安装过程</h1><h1 id="vim插件网站"><a href="#vim插件网站" class="headerlink" title="vim插件网站"></a>vim插件网站</h1><p><a href="https://vimawesome.com/">https://vimawesome.com/</a></p>
+<h1 id="vim发行版"><a href="#vim发行版" class="headerlink" title="vim发行版"></a>vim发行版</h1><p>在github搜索[Vim Distribution]</p>
+<h1 id="vim速查表"><a href="#vim速查表" class="headerlink" title="vim速查表"></a><a href="https://github.com/skywind3000/awesome-cheatsheets/blob/master/editors/vim.txt">vim速查表</a></h1>]]></content>
+  </entry>
+  <entry>
+    <title>win10home-docker</title>
+    <url>/2021/02/22/win10-home-docker/</url>
+    <content><![CDATA[<h2 id="wsl如何升级到wsl2"><a href="#wsl如何升级到wsl2" class="headerlink" title="wsl如何升级到wsl2"></a>wsl如何升级到wsl2</h2><p>reference：<a href="https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers">https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers</a></p>
+<p><a href="https://docs.docker.com/docker-for-windows/wsl/">https://docs.docker.com/docker-for-windows/wsl/</a></p>
+<p><a href="https://docs.microsoft.com/zh-cn/windows/wsl/reference">https://docs.microsoft.com/zh-cn/windows/wsl/reference</a></p>
+<p><a href="https://docs.docker.com/docker-for-windows/install-windows-home/">https://docs.docker.com/docker-for-windows/install-windows-home/</a></p>
+<p><a href="https://www.cnblogs.com/temari/p/13188168.html">https://www.cnblogs.com/temari/p/13188168.html</a></p>
+<p><a href="https://github.com/microsoft/WSL/discussions/5922">https://github.com/microsoft/WSL/discussions/5922</a></p>
+<p>docker run -it ubuntu bash  这个镜像最小化了，需要运行</p>
+<h2 id="win10家庭版开启虚拟化"><a href="#win10家庭版开启虚拟化" class="headerlink" title="win10家庭版开启虚拟化"></a>win10家庭版开启虚拟化</h2><p><a href="https://docs.docker.com/docker-for-windows/troubleshoot/#hyper-v">https://docs.docker.com/docker-for-windows/troubleshoot/#hyper-v</a></p>
+<p>wsl和wsl2可以互相切换，切换到wsl2后，不需要重新安装disto,docker Desktop for windows只支持wsl2，为了在win10家庭版下使用docker，需要进行切换</p>
+<p>To check the WSL mode, run:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wsl.exe -l -v</span><br></pre></td></tr></table></figure>
+
+<p>To upgrade your existing Linux distro to v2, run:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wsl.exe --set-version (distro name) 2</span><br></pre></td></tr></table></figure>
+
+<p>To set v2 as the default version for future installations, run:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">wsl.exe --set-default-version 2</span><br></pre></td></tr></table></figure>
+
+
+
+<p>运行<code>wsl.exe --set-version (distro name) 2</code>需要几分钟，此时wsl已经切换到wsl2,然后运行</p>
+<p><code>wsl  --distribution (distro name)</code>启动wsl2的disto(不需要再重新安装：wsl install (distro name) )</p>
+<p>运行<code>docker run hello-world</code>测试是否正常，如果出现”<code>Unable to find image &#39;hello-world:latest&#39; locally</code>“,是因为docker还没有从hub上pull镜像到本地，稍等下就可以了</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210218150541.png" alt="image-20210218150534442"></p>
+<p>列出所有安装的image</p>
+<p>docker image ls</p>
+<p>运行某个镜像</p>
+<p>docker run  image-name</p>
+<h2 id="docker替换源"><a href="#docker替换源" class="headerlink" title="docker替换源"></a>docker替换源</h2><p>docker在不同平台替换源的配置方式不同，参考<a href="https://docs.docker.com/engine/reference/commandline/dockerd/">dockerd | Docker Documentation</a>，搜索<code>configuration file</code>可以找到windows平台的配置方式</p>
+<p>docker官方推出了中国源：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&quot;registry-mirrors&quot;: [</span><br><span class="line">		&quot;registry.docker-cn.com&quot;</span><br><span class="line">	]</span><br></pre></td></tr></table></figure>
+
+<p>docker-desktop-for-windows的config file</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210219225756.png" alt="image-20210219225756676"></p>
+<p>位于C:\Users\hcf\AppData\Roaming\Docker\last-start-linux-daemon.json</p>
+<p>或者C:\Users\hcf\.docker\daemon.json 这两个文件内容一致</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>代理与加速</title>
+    <url>/2021/02/22/%E4%BB%A3%E7%90%86%E4%B8%8E%E5%8A%A0%E9%80%9F/</url>
+    <content><![CDATA[<h2 id="github加速与浏览器扩展"><a href="#github加速与浏览器扩展" class="headerlink" title="github加速与浏览器扩展"></a>github加速与浏览器扩展</h2><p>github有时下载较慢，可以安装一个chrome插件，chrome插件可以打开edge浏览器添加到edge</p>
+<p><a href="https://chrome.google.com/webstore/detail/github%E5%8A%A0%E9%80%9F/mfnkflidjnladnkldfonnaicljppahpg">GitHub加速</a> 提供repo的镜像加速地址，不提供release和raw的，<strong>不要设置该扩展</strong>，安装即有下图</p>
+<p>效果</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210219134621.png" alt="image-20210219134621700"></p>
+<p><a href="https://chrome.google.com/webstore/detail/enhanced-github/anlikcnbgdeidpacdbdljnabclhahhmd">Enhanced GitHub</a> 提供单个文件的下载链接和复制按钮</p>
+<p><a href="https://chrome.google.com/webstore/detail/octotree-github-code-tree/bkhaagjahfmjljalopjnoealnfndnagc">Octotree - GitHub code tree</a> 提供repo的目录树</p>
+<h2 id="github徽章生成"><a href="#github徽章生成" class="headerlink" title="github徽章生成"></a>github徽章生成</h2><p>通过这个网站<a href="https://shields.io/">https://shields.io/</a></p>
+<h2 id="一个加速github的油猴脚本"><a href="#一个加速github的油猴脚本" class="headerlink" title="一个加速github的油猴脚本"></a>一个加速github的油猴脚本</h2><p><a href="https://zhuanlan.zhihu.com/p/262905603">成功解决 Github 下载速度慢的问题！ - 知乎 (zhihu.com)</a></p>
+<p>作者github：<a href="https://github.com/XIU2/UserScript">XIU2/UserScript: 🔨 自用的一些乱七八糟 油猴脚本 (github.com)</a></p>
+<p>还开源了一些其他脚本</p>
+<p>油猴脚本仓库</p>
+<p><a href="https://greasyfork.org/zh-CN">Greasy Fork - 安全、实用的用户脚本大全</a></p>
+<h2 id="佛跳墙vpn官网"><a href="#佛跳墙vpn官网" class="headerlink" title="佛跳墙vpn官网"></a>佛跳墙vpn官网</h2><p><a href="https://github.com/getfotiaoqiang/download">https://github.com/getfotiaoqiang/download</a></p>
+<p><a href="https://fotiaoqiang.io/">https://fotiaoqiang.io</a></p>
+<p>目前使用效果是游客也可以免费使用，且十分稳定</p>
+<h2 id="js在线代理-临时上网"><a href="#js在线代理-临时上网" class="headerlink" title="js在线代理(临时上网)"></a>js在线代理(临时上网)</h2><p><strong><a href="https://github.com/EtherDream/jsproxy">jsprox</a></strong></p>
+<p>使用里面的cf-worker可以暂时上外网，推特等需要登录的网站不支持，google会提示检测到机器人，youtube等不需要登录的网站可以访问</p>
+<h2 id="wsl的ubuntu源替换为清华源"><a href="#wsl的ubuntu源替换为清华源" class="headerlink" title="wsl的ubuntu源替换为清华源"></a>wsl的ubuntu源替换为清华源</h2><p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210219135312.png" alt="image-20210219135312111"></p>
+<p>点击<code>？</code>可以看到替换方式</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210219135427.png" alt="image-20210219135427366"></p>
+<p>阿里的Ubuntu替换源教程都没有写好</p>
+<p><a href="https://developer.aliyun.com/mirror/ubuntu?spm=a2c6h.13651102.0.0.3e221b11uZr8As">阿里ubuntu</a></p>
+<h2 id="终端走代理"><a href="#终端走代理" class="headerlink" title="终端走代理"></a>终端走代理</h2><p>在CLI里运行git clone命令是没有走代理的，需要进行配置，待续….</p>
+<p>使用重复密码可能导致泄漏</p>
+<p>可以使用密码随机生成</p>
+<p><a href="https://1password.com/zh-cn/password-generator/">https://1password.com/zh-cn/password-generator/</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -383,56 +528,6 @@
 <p>树下肥猴的基础教学:<br>看 第二章 第1节：认识MOD<br><a href="http://bbs.3dmgame.com/thread-3316784-1-1.html">http://bbs.3dmgame.com/thread-3316784-1-1.html</a></p>
 <p>贴吧的:<br><a href="http://tieba.baidu.com/p/1556108744">http://tieba.baidu.com/p/1556108744</a><br><a href="http://tieba.baidu.com/p/2416218382">http://tieba.baidu.com/p/2416218382</a></p>
 <p>skyUI的mcm菜单 Mod Configuration Menu </p>
-]]></content>
-  </entry>
-  <entry>
-    <title>spacevim</title>
-    <url>/2021/02/22/spacevim/</url>
-    <content><![CDATA[<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>spacevim的默认全局配置文件为C:\Users\hcf.SpaceVim.d\init.toml</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210220161244.png" alt="image-20210220161237660"></p>
-<p>标签栏123可以用<code>&lt;leader&gt; number</code>快捷键切换，默认前缀键为<code>\</code></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210220161448.png" alt="image-20210220161447934"></p>
-<p>在1和2切换用<code>spc number</code></p>
-<p>如何启用模块</p>
-<p><a href="https://spacevim.org/cn/layers/">可用模块 | SpaceVim</a></p>
-<p>模块和插件的区别：colorscheme 模块为 SpaceVim 提供了一系列常用的颜色主题，包含了众多颜色插件，如下图第一次启用colorscheme 模块会下载插件</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210220164548.png" alt="image-20210220164548080"></p>
-<p>更新模块</p>
-<p>:SPUpdate</p>
-<h1 id="十分钟Spacevim入门"><a href="#十分钟Spacevim入门" class="headerlink" title="十分钟Spacevim入门"></a>十分钟Spacevim入门</h1><p><a href="https://github.com/Jackiexiao/10-minutes-to-SpaceVim/blob/master/README-zh.md">https://github.com/Jackiexiao/10-minutes-to-SpaceVim/blob/master/README-zh.md</a></p>
-<p>spacevim是如何启动的 </p>
-<h2 id="几个可以预览的快捷键"><a href="#几个可以预览的快捷键" class="headerlink" title="几个可以预览的快捷键"></a>几个可以预览的快捷键</h2><p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210220225114.png" alt="image-20210220225114349"></p>
-<h2 id="安装spacevim会修改原有的vim配置吗"><a href="#安装spacevim会修改原有的vim配置吗" class="headerlink" title="安装spacevim会修改原有的vim配置吗"></a>安装spacevim会修改原有的vim配置吗</h2><p>并不会<a href="https://spacevim.org/faq/#have-a-try-with-spacevim-without-overwrite-vimrc">have-a-try-with-spacevim-without-overwrite-vimrc</a></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210220231934.png" alt="image-20210220231934156"></p>
-<h2 id="spacevim哪些选项可以在init-toml中配置呢？"><a href="#spacevim哪些选项可以在init-toml中配置呢？" class="headerlink" title="spacevim哪些选项可以在init.toml中配置呢？"></a>spacevim哪些选项可以在init.toml中配置呢？</h2><p>查看~/.SpaceVim/autoload/SpaceVim.vim</p>
-<h1 id="命令备忘"><a href="#命令备忘" class="headerlink" title="命令备忘"></a>命令备忘</h1><p>CLI输入nvim，启动neovim</p>
-<p>英文输入法模式下按下ESC，切换到normal模式，输入<code>:help</code>，查看neovim的帮助文档</p>
-<p>在文档内跳转shortcuts: forward <code>ctrl-]</code>, backward <code>ctrl-o</code></p>
-<p>交互教程，输入<code>:Tutor</code>启用，注意vim的命令区分大小写，tutor不会被识别</p>
-<p>要检查nvim的状况，运行<code>:checkhealth</code></p>
-<p>查看可以设置哪些选项 <code>:set all</code></p>
-<p>查看某个命令的帮助 :help command ， 如<code>:help set</code></p>
-<p>各选项简短说明 <a href="http://vimcdoc.sourceforge.net/doc/quickref.html#option-list">VIM: quickref (sourceforge.net)</a></p>
-<h1 id="查看spacevim的安装脚本可以知道安装过程"><a href="#查看spacevim的安装脚本可以知道安装过程" class="headerlink" title="查看spacevim的安装脚本可以知道安装过程"></a>查看spacevim的安装脚本可以知道安装过程</h1><h1 id="vim插件网站"><a href="#vim插件网站" class="headerlink" title="vim插件网站"></a>vim插件网站</h1><p><a href="https://vimawesome.com/">https://vimawesome.com/</a></p>
-<h1 id="vim发行版"><a href="#vim发行版" class="headerlink" title="vim发行版"></a>vim发行版</h1><p>在github搜索[Vim Distribution]</p>
-<h1 id="vim速查表"><a href="#vim速查表" class="headerlink" title="vim速查表"></a><a href="https://github.com/skywind3000/awesome-cheatsheets/blob/master/editors/vim.txt">vim速查表</a></h1>]]></content>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/02/22/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
   <entry>
@@ -543,100 +638,5 @@
 <li>玩家为什么愿意在buff上花更高的价格买箱子？</li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Windows Terminal</title>
-    <url>/2021/02/21/Windows%20Terminal/</url>
-    <content><![CDATA[<h1 id="Windows-Terminal"><a href="#Windows-Terminal" class="headerlink" title="Windows Terminal"></a>Windows Terminal</h1><p>官方文档：<a href="https://docs.microsoft.com/zh-cn/windows/terminal/">https://docs.microsoft.com/zh-cn/windows/terminal/</a></p>
-<p>Github:<a href="https://github.com/microsoft/terminal">https://github.com/microsoft/terminal</a></p>
-<p><a href="https://www.hanselman.com/blog/whats-the-difference-between-a-console-a-terminal-and-a-shell">终端、控制台、shell的区别</a></p>
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>配置方式类型vscode，Win Terminal的默认配置文件<code>default.json</code>打开方式：按住<code>alt</code>键点击<code>设置</code>。</p>
-<p>在<code>setting.json</code>中自定义选项时可以参考<code>default.json</code>。</p>
-<p>对各项设定作用以及取值说明文档 <a href="https://github.com/microsoft/terminal/blob/10c599eb176a5bd460f4c5caee6bded553e38928/doc/cascadia/SettingsSchema.md">SettingsSchema.md</a></p>
-<h2 id="设定启动目录"><a href="#设定启动目录" class="headerlink" title="设定启动目录"></a>设定启动目录</h2><p><code>default.json</code> 中设置为<code>&quot;startingDirectory&quot;: &quot;%USERPROFILE%&quot;</code>,如我的设置<code>powershell</code>启动目录为<code>Desktop</code></p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210212211005.png" alt="image-20210212210958074"></p>
-<h2 id="设置主题（theme"><a href="#设置主题（theme" class="headerlink" title="设置主题（theme)"></a>设置主题（theme)</h2><p>主题包括整个窗口的颜色（不包括标题栏）</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210212211639.png" alt="image-20210212211639068"></p>
-<p>配置Win Terminal有两种方式</p>
-<p><strong>经实际使用，colortool只在cmd或powershell中有效，在Win Terminal打开的ps中运行无效</strong></p>
-<p>自动方式：<a href="https://github.com/microsoft/terminal/tree/ae550e0969595f062b15c2ff5cc33d4afe8ebc3f/src/tools/ColorTool">colortool</a>, 属于Terminal repo的一部分，可以在repo下载release安装或者<code>scoop install colortool</code>,我运行整个程序就出错:</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210212212532.png" alt="image-20210212212531920"></p>
-<p>查了repo的issue，暂时没找到原因，我的Terminal从win store安装，非预览版，在colortool的文档中没有见到有要求Terminal版本</p>
-<p><strong>经实际使用 <code>colortool campbell.ini</code>才是正确方式，即Scheme name要带上文件后缀</strong>，<strong>为了使这项改动永久生效，还需要在powershell的标题栏右键打开属性点击“确定”</strong>，cmd的窗口主题也可以这样改变，cmd和ps的改定似乎是分开的，即使ps中已经成功运行了这条命令，这条命令在Windows Terminal中打开的PS里运行并不改变主题，猜想Windows Terminal的setting.json拥有最高优先级。</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210213201915.png" alt="image-20210213201907913"></p>
-<p>手动方式：改写setting.json文件，例如配置毛玻璃主题：<a href="https://docs.microsoft.com/zh-cn/windows/terminal/custom-terminal-gallery/frosted-glass-theme%EF%BC%8C%E8%A6%81%E6%94%B9%E7%9A%84%E4%B8%A4%E5%A4%84%E4%B8%80%E5%A4%84%E6%98%AF%E5%9C%A8sheme%E4%B8%AD%E6%B7%BB%E5%8A%A0%E4%B8%BB%E9%A2%98%E7%9A%84%E5%90%84%E7%A7%8D%E5%80%BC%EF%BC%8C%E5%8F%A6%E4%B8%80%E5%A4%84%E6%98%AFprofile%E4%B8%AD%E9%92%88%E5%AF%B9powershell%E6%B7%BB%E5%8A%A0%E9%80%89%E9%A1%B9&quot;colorScheme&quot;,%60default.json%60%E6%9C%89%E5%90%84%E7%A7%8D%E4%B8%BB%E9%A2%98%E7%9A%84scheme%E9%94%AE%E5%80%BC%E5%AF%B9%EF%BC%8C%E9%BB%98%E8%AE%A4%E7%9A%84%E4%B8%BB%E9%A2%98%E6%98%AFCampbell%EF%BC%8C%E4%BB%A5%E4%B8%8A%E6%88%AA%E5%9B%BE%E6%98%AF%E6%94%B9%E6%88%90%E4%BA%86%60Solarized">https://docs.microsoft.com/zh-cn/windows/terminal/custom-terminal-gallery/frosted-glass-theme，要改的两处一处是在sheme中添加主题的各种值，另一处是profile中针对powershell添加选项&quot;colorScheme&quot;,`default.json`有各种主题的scheme键值对，默认的主题是Campbell，以上截图是改成了`Solarized</a> Dark`，可以观察到colortool -b Campbell命令中的字符-b不易阅读。</p>
-<h2 id="使用oh-my-posh美化Powershell"><a href="#使用oh-my-posh美化Powershell" class="headerlink" title="使用oh-my-posh美化Powershell"></a>使用oh-my-posh美化Powershell</h2><p><a href="https://github.com/JanDeDobbeleer/oh-my-posh">https://github.com/JanDeDobbeleer/oh-my-posh</a></p>
-<p>oh-my-posh包括了powerline功能，后者可以在命令行提示中显示git状态以及给提示分段，以下乱码是字体不能显示某些符号</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210212214545.png" alt="image-20210212214544956"></p>
-<p>参见issue <a href="https://github.com/JanDeDobbeleer/oh-my-posh/issues/319">#319</a>,下载任何一个Nerd字体,安装字体后，setting.json中添加”fontFace”: “Delugia Nerd Font”,  这个字体的下载地址参见：<a href="https://www.jianshu.com/p/19db2f50cec9">https://www.jianshu.com/p/19db2f50cec9</a></p>
-<p>Nerd字体的Repo:<a href="https://github.com/ryanoasis/nerd-fonts">https://github.com/ryanoasis/nerd-fonts</a></p>
-<p>以下是美化后的效果截图</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210212220023.png" alt="image-20210212220023248"></p>
-<p>1部分：显示加载配置文件耗时</p>
-<p>2部分：用vscode在oh-my-posh本地repository下创建了新文件</p>
-<p>3部分：git状态提示，+1表示新添加了文件</p>
-<h3 id="不能在powershell中修改字体"><a href="#不能在powershell中修改字体" class="headerlink" title="不能在powershell中修改字体"></a>不能在powershell中修改字体</h3><p> 在windows Terminal setting.json中给PS配置了NERD字体，如果不通过WT直接启动PS，还是不能正确显示，PS也无法更改字体，原因是PS对字体使用有更严格的要求</p>
-<p>可以使用这个字体：<a href="https://github.com/be5invis/Sarasa-Gothic/releases">https://github.com/be5invis/Sarasa-Gothic/releases</a> 在它的介绍里发现有<a href="https://mirrors.tuna.tsinghua.edu.cn/github-release/be5invis/Sarasa-Gothic">tsinghua mirror</a>,加快下载速度</p>
-<p>使用<code>等距更纱黑体 T SC</code>字体可以显示powerline的符号，这个字体也适合cmd，即cmd也能设置这个字体，再配合colortool更改配色</p>
-<p>参考<a href="https://www.jianshu.com/p/100aa26a42cc">https://www.jianshu.com/p/100aa26a42cc</a></p>
-<h2 id="添加git-bash到Win-Terminal"><a href="#添加git-bash到Win-Terminal" class="headerlink" title="添加git bash到Win Terminal"></a>添加git bash到Win Terminal</h2><p>git bash属于git-for-windows提供的bash环境</p>
-<p>每个profile都需要GUID，一个在线生成GUID的网站<a href="https://www.guidgen.com/">https://www.guidgen.com/</a></p>
-<p>or You can run <code>[guid]::NewGuid()</code> in PowerShell to generate a GUID for your custom profile.</p>
-<p>我的配置</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">               &#x2F;&#x2F; Make changes here to the git-bash.exe profile.</span><br><span class="line">               &quot;guid&quot;: &quot;&#123;b113edb3-02a0-431a-a6c9-9c0356a1ad4c&#125;&quot;,</span><br><span class="line">               &quot;name&quot;: &quot;git bash&quot;,</span><br><span class="line">               &quot;commandline&quot;: &quot;C:\\Program Files\\Git\\bin\\bash.exe&quot;,</span><br><span class="line">               &quot;icon&quot;: &quot;C:\\Program Files\\Git\\mingw64\\share\\git\\git-for-windows.ico&quot;,</span><br><span class="line">               &quot;hidden&quot;: false,</span><br><span class="line">               &quot;padding&quot;: &quot;8, 8, 8, 8&quot;,</span><br><span class="line">               &quot;altGrAliasing&quot;: true,</span><br><span class="line">               &quot;startingDirectory&quot;: &quot;%USERPROFILE%&quot;,</span><br><span class="line">               &quot;useAcrylic&quot;: true,</span><br><span class="line">               &quot;acrylicOpacity&quot;: 0.7,</span><br><span class="line">               &quot;colorScheme&quot;: &quot;Ubuntu&quot;</span><br><span class="line">           &#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意 commandline不要填git-bash.exe的路径，否则生成的窗口不会嵌入在Win Terminal里，而是独立成窗口</p>
-<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210213214337.png" alt="image-20210213214337473"></p>
-<p><strong>issue</strong></p>
-<p>1部分可以看到有路径没有正确显示，中文乱码</p>
-<p><a href="https://github.com/git-for-windows/git/issues/2181T">https://github.com/git-for-windows/git/issues/2181T</a></p>
-<h2 id="修改启动时的默认profile"><a href="#修改启动时的默认profile" class="headerlink" title="修改启动时的默认profile"></a>修改启动时的默认profile</h2><p>defaultProfile 值填写各个profile的GUID,如要默认启动bash，就填bash的GUID</p>
-<h2 id="修改背景图片"><a href="#修改背景图片" class="headerlink" title="修改背景图片"></a>修改背景图片</h2><p>“backgroundImage”：”图片的绝对地址”</p>
-<p>“backgroundImageOpacity”: 1 // 图片透明图</p>
-<p>“backgroundImageStretchMode”: “uniformToFill”</p>
-<p>setting.json的”defaults”下的设置对所有profile都有效，Put settings here that you want to apply to all profiles。如果把更改背景图片的设置放在这儿，所有的shell都会被更改背景图片</p>
-<h2 id="一个Powershell资源收集REPO"><a href="#一个Powershell资源收集REPO" class="headerlink" title="一个Powershell资源收集REPO"></a>一个Powershell资源收集REPO</h2><p><a href="https://github.com/janikvonrotz/awesome-powershell">awesome-powershell</a></p>
-<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><p><a href="https://github.com/atomcorp/themes">https://github.com/atomcorp/themes</a> 此处可以获取各种theme的json文件</p>
-<p><a href="https://terminalsplash.com/">TerminalSplash</a></p>
-<h1 id="WSL"><a href="#WSL" class="headerlink" title="WSL"></a>WSL</h1><p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210214033957.png" alt="image-20210214033950182"></p>
-<h2 id="更改安装目录"><a href="#更改安装目录" class="headerlink" title="更改安装目录"></a>更改安装目录</h2><p>默认安装目录为系统盘，依以下步骤可以迁移到其他目录</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">首先查看所有分发版本</span><br><span class="line">wsl <span class="literal">-l</span> -<span class="literal">-all</span>  <span class="literal">-v</span></span><br><span class="line">  NAME STATE VERSION</span><br><span class="line"> * Ubuntu<span class="literal">-20</span>.<span class="number">04</span> Running <span class="number">2</span></span><br><span class="line"></span><br><span class="line">导出分发版为tar文件到d盘</span><br><span class="line">wsl -<span class="literal">-export</span> Ubuntu<span class="literal">-20</span>.<span class="number">04</span> d:\ubuntu20.<span class="number">04</span>.tar</span><br><span class="line">注销当前分发版</span><br><span class="line">wsl -<span class="literal">-unregister</span> Ubuntu<span class="literal">-20</span>.<span class="number">04</span></span><br><span class="line">重新导入并安装分发版在d:\ubuntu</span><br><span class="line">wsl -<span class="literal">-import</span> Ubuntu<span class="literal">-20</span>.<span class="number">04</span> d:\ubuntu d:\ubuntu20.<span class="number">04</span>.tar -<span class="literal">-version</span> <span class="number">2</span></span><br><span class="line">设置默认登陆用户为安装时用户名</span><br><span class="line">ubuntu2004 config -<span class="literal">-default</span><span class="literal">-user</span> Username</span><br><span class="line">删除tar文件(可选)</span><br><span class="line"><span class="built_in">del</span> d:\ubuntu20.<span class="number">04</span>.tar</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="运行windows的exe文件"><a href="#运行windows的exe文件" class="headerlink" title="运行windows的exe文件"></a>运行windows的exe文件</h2><p>wsl（指子系统的命令行）自动继承了windows的环境变量，输入<code>echo $PATH</code> 可以观察，但是/mnt/c/MinGW/bin下的gcc为exe文件，需要输入gcc.exe才能在wsl里运行</p>
-<h2 id="打开资源管理器"><a href="#打开资源管理器" class="headerlink" title="打开资源管理器"></a>打开资源管理器</h2><p>运行explorer.exe .可以打开当前目录，可以在.bahsrc里建立同名：alias explore=explorer.exe</p>
-<h2 id="在windows和wsl上都安装有python"><a href="#在windows和wsl上都安装有python" class="headerlink" title="在windows和wsl上都安装有python"></a>在windows和wsl上都安装有python</h2><p>Remember, Python is installed in the Linux distro, which means if you’re editing Python files on the Windows side, you can’t run or debug them unless you install the same Python development stack on Windows. And that defeats the purpose of having an isolated Linux instance set up with all your Python tools and runtimes!</p>
-<h2 id="vscode-wsl"><a href="#vscode-wsl" class="headerlink" title="vscode+wsl"></a>vscode+wsl</h2><p>vscode装在windows侧，配有插件wsl-remote,第一次在wsl中使用命令code会自动安装a small vscode server</p>
-<p><a href="https://code.visualstudio.com/docs/remote/wsl">https://code.visualstudio.com/docs/remote/wsl</a></p>
-<h2 id="wsl在vscode中的issue"><a href="#wsl在vscode中的issue" class="headerlink" title="wsl在vscode中的issue"></a>wsl在vscode中的issue</h2><p><a href="https://code.visualstudio.com/docs/remote/wsl#_known-limitations">https://code.visualstudio.com/docs/remote/wsl#_known-limitations</a></p>
-<h2 id="Working-with-Git"><a href="#Working-with-Git" class="headerlink" title="Working with Git#"></a>Working with Git<a href="https://code.visualstudio.com/docs/remote/wsl#_working-with-git">#</a></h2><p>wsl和vsc以及git一起工作，有两个问题，一是换行，二是凭证</p>
-<h1 id="Using-C-and-WSL-in-VS-Code"><a href="#Using-C-and-WSL-in-VS-Code" class="headerlink" title="Using C++ and WSL in VS Code"></a>Using C++ and WSL in VS Code</h1><p><a href="https://code.visualstudio.com/docs/cpp/config-wsl">https://code.visualstudio.com/docs/cpp/config-wsl</a> GCC</p>
-<h1 id="ZSH"><a href="#ZSH" class="headerlink" title="ZSH"></a>ZSH</h1><p>安装zsh并设置为默认的shell</p>
-<p><code>echo $SHELL</code> 查看默认的shell</p>
-<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH">https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH</a></p>
-<h1 id="Fish"><a href="#Fish" class="headerlink" title="Fish"></a>Fish</h1><p>相比zsh,开箱就用，运行fish_config还可以开启浏览器端的配置</p>
-<p>输入help keyword，可以访问在线的fish帮助</p>
-<p>安装<a href="https://github.com/oh-my-fish">oh-my-fish</a>,如果要安装插件也可以在这个仓库找到</p>
-<p>fish的awesome repo:<a href="https://github.com/jorgebucaran/awsm.fish,%E6%94%B6%E9%9B%86%E4%BA%86fish%E7%9A%84%E8%AE%B8%E5%A4%9A%E8%B5%84%E6%BA%90">https://github.com/jorgebucaran/awsm.fish,收集了fish的许多资源</a></p>
-<p>fish不兼容bash,如果要运行bash脚本怎么办呢？</p>
-<h2 id="目录跳转插件"><a href="#目录跳转插件" class="headerlink" title="目录跳转插件"></a>目录跳转插件</h2><p><a href="https://github.com/oh-my-fish">oh-my-fish</a>/<strong><a href="https://github.com/oh-my-fish/plugin-z">plugin-z</a></strong></p>
-<p><a href="https://github.com/wting">wting</a>/<strong><a href="https://github.com/wting/autojump">autojump</a></strong></p>
-<p><a href="https://github.com/rupa">rupa</a>/<strong><a href="https://github.com/rupa/z">z</a></strong></p>
-<p><a href="https://github.com/skywind3000">skywind3000</a>/<strong><a href="https://github.com/skywind3000/z.lua">z.lua</a></strong></p>
-<h2 id="速查表"><a href="#速查表" class="headerlink" title="速查表"></a>速查表</h2><p>bash:</p>
-<p><a href="https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh">https://github.com/LeCoupa/awesome-cheatsheets/blob/master/languages/bash.sh</a></p>
-<h1 id="Notepad2"><a href="#Notepad2" class="headerlink" title="Notepad2"></a><a href="https://www.flos-freeware.ch/notepad2.html">Notepad2</a></h1><p>原始的已经停止更新，现在有一个github分支<a href="https://github.com/zufuliu/notepad2">https://github.com/zufuliu/notepad2</a></p>
-<h1 id="mcedit"><a href="#mcedit" class="headerlink" title="mcedit"></a>mcedit</h1><p>shortcut说明</p>
-<p>c-u 表示ctrl-U</p>
-<p>m-e 表示alt-e</p>
-<p>s-i表示shift-insert</p>
-]]></content>
-      <categories>
-        <category>CLI</category>
-      </categories>
-      <tags>
-        <tag>CLI</tag>
-      </tags>
   </entry>
 </search>
