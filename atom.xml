@@ -46,13 +46,10 @@
     <updated>2021-02-24T12:44:24.169Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;github加速与浏览器扩展&quot;&gt;&lt;a href=&quot;#github加速与浏览器扩展&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;github加速与浏览器扩展&quot;&gt;&lt;a href=&quot;#github加速与浏览器扩展&quot; class=&quot;headerlink&quot; title=&quot;github加速与浏览器扩展&quot;&gt;&lt;/a&gt;github加速与浏览器扩展&lt;/h2&gt;&lt;p&gt;github有时下载较慢，可以安装一个chrome插件，chrome插件可以打开edge浏览器添加到edge&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://chrome.google.com/webstore/detail/github%E5%8A%A0%E9%80%9F/mfnkflidjnladnkldfonnaicljppahpg&quot;&gt;GitHub加速&lt;/a&gt; 提供repo的镜像加速地址，不提供release和raw的，&lt;strong&gt;不要设置该扩展&lt;/strong&gt;，安装即有下图&lt;/p&gt;
+&lt;p&gt;效果&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20210219134621.png&quot; alt=&quot;image-20210219134621700&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -67,13 +64,9 @@
     <updated>2021-02-22T11:20:47.189Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;邮件客户端版本&quot;&gt;&lt;a href=&quot;#邮件客户端版本&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;邮件客户端版本&quot;&gt;&lt;a href=&quot;#邮件客户端版本&quot; class=&quot;headerlink&quot; title=&quot;邮件客户端版本&quot;&gt;&lt;/a&gt;邮件客户端版本&lt;/h2&gt;&lt;p&gt;本文所使用的Outlook是Win10家庭版1909自带的邮件桌面客户端，非Office或Office365包含的Outlook,该Outlook账户可以登录网页版。&lt;/p&gt;
+&lt;h2 id=&quot;设置收发邮件的自动归档&quot;&gt;&lt;a href=&quot;#设置收发邮件的自动归档&quot; class=&quot;headerlink&quot; title=&quot;设置收发邮件的自动归档&quot;&gt;&lt;/a&gt;设置收发邮件的自动归档&lt;/h2&gt;&lt;p&gt;Win10自带邮件客户端上没有自定义收信规则的功能，&lt;code&gt;移动到某个文件夹&lt;/code&gt;有，但是前者可以在收发邮件时自动归类，发邮件也是可以归类的，但是一般放在发件箱就够了。&lt;/p&gt;
+&lt;p&gt;这个邮件客户端是阉割版的，让我以为Outlook的自动分类需要购买收费版，查看了QQ邮箱，发现免费的QQ邮箱有这个功能，那Outlook应该也免费有。登录了Outlook Web端，才能找到这个功能，web端相比这个客户端设置功能更丰富。&lt;/p&gt;</summary>
     
     
     
@@ -88,13 +81,10 @@
     <updated>2021-02-22T11:20:17.107Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;wsl如何升级到wsl2&quot;&gt;&lt;a href=&quot;#wsl如何升级到wsl2&quot; class=&quot;headerlink&quot; title=&quot;wsl如何升级到wsl2&quot;&gt;&lt;/a&gt;wsl如何升级到wsl2&lt;/h2&gt;&lt;p&gt;reference：&lt;a</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;wsl如何升级到wsl2&quot;&gt;&lt;a href=&quot;#wsl如何升级到wsl2&quot; class=&quot;headerlink&quot; title=&quot;wsl如何升级到wsl2&quot;&gt;&lt;/a&gt;wsl如何升级到wsl2&lt;/h2&gt;&lt;p&gt;reference：&lt;a href=&quot;https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers&quot;&gt;https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.docker.com/docker-for-windows/wsl/&quot;&gt;https://docs.docker.com/docker-for-windows/wsl/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.microsoft.com/zh-cn/windows/wsl/reference&quot;&gt;https://docs.microsoft.com/zh-cn/windows/wsl/reference&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.docker.com/docker-for-windows/install-windows-home/&quot;&gt;https://docs.docker.com/docker-for-windows/install-windows-home/&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
@@ -109,15 +99,10 @@
     <updated>2021-02-22T11:19:54.071Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;python&lt;/p&gt;
 &lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;pip国内源配置&quot;&gt;&lt;a href=&quot;#pip国内源配置&quot; class=&quot;headerlink&quot; title=&quot;pip国内源配置&quot;&gt;&lt;/a&gt;pip国内源配置&lt;/h1&gt;&lt;p&gt;pip</summary>
-        
-      
+&lt;h1 id=&quot;pip国内源配置&quot;&gt;&lt;a href=&quot;#pip国内源配置&quot; class=&quot;headerlink&quot; title=&quot;pip国内源配置&quot;&gt;&lt;/a&gt;pip国内源配置&lt;/h1&gt;&lt;p&gt;pip install安装包时是用从&lt;code&gt;The Python Package Index&lt;/code&gt;&lt;a href=&quot;https://pypi.org/%E4%B8%8B%E8%BD%BD%EF%BC%8C%E9%80%9F%E5%BA%A6%E8%BE%83%E6%85%A2%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%85%8D%E7%BD%AE%E4%B8%BA%E5%9B%BD%E5%86%85%E6%BA%90&quot;&gt;https://pypi.org/下载，速度较慢，可以配置为国内源&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;清华开源镜像站pipy地址：&lt;a href=&quot;https://mirrors.tuna.tsinghua.edu.cn/help/pypi/&quot;&gt;https://mirrors.tuna.tsinghua.edu.cn/help/pypi/&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
@@ -132,13 +117,9 @@
     <updated>2021-02-22T11:19:31.280Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Picgo图床&quot;&gt;&lt;a href=&quot;#Picgo图床&quot; class=&quot;headerlink&quot; title=&quot;Picgo图床&quot;&gt;&lt;/a&gt;Picgo图床&lt;/h1&gt;&lt;h2 id=&quot;Word与md文档存储图片&quot;&gt;&lt;a href=&quot;#Word与md文档存储图片&quot;</summary>
-        
-      
+    <summary type="html">&lt;h1 id=&quot;Picgo图床&quot;&gt;&lt;a href=&quot;#Picgo图床&quot; class=&quot;headerlink&quot; title=&quot;Picgo图床&quot;&gt;&lt;/a&gt;Picgo图床&lt;/h1&gt;&lt;h2 id=&quot;Word与md文档存储图片&quot;&gt;&lt;a href=&quot;#Word与md文档存储图片&quot; class=&quot;headerlink&quot; title=&quot;Word与md文档存储图片&quot;&gt;&lt;/a&gt;Word与md文档存储图片&lt;/h2&gt;&lt;p&gt;word文档或者笔记软件插入图片，图片存储在文档本身里，这些文档是二进制的，需要对应软件才能打开。&lt;/p&gt;
+&lt;p&gt;markdown或html文档里插入的图片无法存储在文档里，只能以地址形式连接到文档，这样造成了文档与图片的分离。&lt;/p&gt;
+&lt;p&gt;图片可以存储在本地，与文档一起，也可以存到某个网络服务器上，图床就是这样的一个网络服务器。&lt;/p&gt;</summary>
     
     
     
@@ -153,13 +134,9 @@
     <updated>2021-02-22T11:18:31.799Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;更方便的方式&quot;&gt;&lt;a href=&quot;#更方便的方式&quot; class=&quot;headerlink&quot; title=&quot;更方便的方式&quot;&gt;&lt;/a&gt;更方便的方式&lt;/h1&gt;&lt;p&gt;&lt;a</summary>
-        
-      
+    <summary type="html">&lt;h1 id=&quot;更方便的方式&quot;&gt;&lt;a href=&quot;#更方便的方式&quot; class=&quot;headerlink&quot; title=&quot;更方便的方式&quot;&gt;&lt;/a&gt;更方便的方式&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://otp.landian.vip/zh-cn/&quot;&gt;https://otp.landian.vip/zh-cn/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以下是自己手动方式&lt;/p&gt;
+&lt;h1 id=&quot;office-2019安装包哪儿下载&quot;&gt;&lt;a href=&quot;#office-2019安装包哪儿下载&quot; class=&quot;headerlink&quot; title=&quot;office 2019安装包哪儿下载&quot;&gt;&lt;/a&gt;office 2019安装包哪儿下载&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://msdn.itellyou.cn/&quot;&gt;https://msdn.itellyou.cn/&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
@@ -174,14 +151,9 @@
     <updated>2021-02-22T11:17:58.673Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;MSI-GP62-6QG拆机换硬盘&quot;&gt;&lt;a href=&quot;#MSI-GP62-6QG拆机换硬盘&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+&lt;h1 id=&quot;MSI-GP62-6QG拆机换硬盘&quot;&gt;&lt;a href=&quot;#MSI-GP62-6QG拆机换硬盘&quot; class=&quot;headerlink&quot; title=&quot;MSI-GP62-6QG拆机换硬盘&quot;&gt;&lt;/a&gt;MSI-GP62-6QG拆机换硬盘&lt;/h1&gt;&lt;p&gt;原装硬盘为一个海力士SSD和一个日立HDD。由于这个日立HDD坏道了，无法进入操作系统（win10本身没有错误），我用一个Sandisk SSD替换了坏道的硬盘。&lt;/p&gt;
+&lt;h1 id=&quot;拆机工具&quot;&gt;&lt;a href=&quot;#拆机工具&quot; class=&quot;headerlink&quot; title=&quot;拆机工具&quot;&gt;&lt;/a&gt;拆机工具&lt;/h1&gt;&lt;p&gt;有的笔记本自行拆机很麻烦，而且会影响保修，我这个型号的只需要螺丝刀和垫片就行，自行拆机也不影响保修。&lt;/p&gt;</summary>
     
     
     
@@ -217,14 +189,10 @@
     <updated>2021-02-22T11:16:57.159Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;chrome浏览器扩展&quot;&gt;&lt;a href=&quot;#chrome浏览器扩展&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+&lt;h1 id=&quot;chrome浏览器扩展&quot;&gt;&lt;a href=&quot;#chrome浏览器扩展&quot; class=&quot;headerlink&quot; title=&quot;chrome浏览器扩展&quot;&gt;&lt;/a&gt;chrome浏览器扩展&lt;/h1&gt;&lt;p&gt;国内无法访问chrome扩展商店，如果从某些下载站下载，可能会有安全风险，有个第三方网站提供了扩展的搜索与下载&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.crx4chrome.com/&quot;&gt;https://www.crx4chrome.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;扩展安装方式&lt;/p&gt;</summary>
     
     
     
@@ -239,13 +207,9 @@
     <updated>2021-02-22T11:14:17.633Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;游戏本体和资源&quot;&gt;&lt;a href=&quot;#游戏本体和资源&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+    <summary type="html">&lt;h1 id=&quot;游戏本体和资源&quot;&gt;&lt;a href=&quot;#游戏本体和资源&quot; class=&quot;headerlink&quot; title=&quot;游戏本体和资源&quot;&gt;&lt;/a&gt;游戏本体和资源&lt;/h1&gt;&lt;p&gt;以下用上古5代指上古卷轴五重置版，本文所使用的上古五游戏本体程序来自于3DM，《上古卷轴5：天际重制版》3DM免安装官方中文未加密版：&lt;a href=&quot;https://dl.3dmgame.com/pc/83371.html,%E7%89%88%E6%9C%AC%E5%8F%B7%E4%BD%8D1.5.16&quot;&gt;https://dl.3dmgame.com/pc/83371.html,版本号位1.5.16&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20201213181723.png&quot; alt=&quot;image-20201213181715963&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;物品、魔法、交易界面美化&quot;&gt;&lt;a href=&quot;#物品、魔法、交易界面美化&quot; class=&quot;headerlink&quot; title=&quot;物品、魔法、交易界面美化&quot;&gt;&lt;/a&gt;物品、魔法、交易界面美化&lt;/h1&gt;&lt;p&gt;原版的这些界面使用不方便，加装Mod可以美化这些界面。需要两个Mod:&lt;/p&gt;</summary>
     
     
     
@@ -260,15 +224,11 @@
     <updated>2021-02-22T11:22:36.116Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;天际的非官方wiki&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;http://en.uesp.net/wiki/Skyrim:Skyrim&quot;&gt;http://en.uesp.net/wiki/Skyrim:Skyrim&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a</summary>
-        
-      
+&lt;p&gt;&lt;a href=&quot;http://elderscrolls.wikia.com/wiki/The_Elder_Scrolls_Wiki&quot;&gt;http://elderscrolls.wikia.com/wiki/The_Elder_Scrolls_Wiki&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://2143.replace.favo.diafeng.cn/&quot;&gt;http://2143.replace.favo.diafeng.cn/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;天将烽火，一位mod大佬自建的网站&lt;/p&gt;</summary>
     
     
     
@@ -283,14 +243,10 @@
     <updated>2021-02-22T11:02:10.977Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;h1 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h1&gt;&lt;p&gt;spacevim的默认全局配置文件为C:\Users\hcf.SpaceVim.d\init.toml&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20210220161244.png&quot; alt=&quot;image-20210220161237660&quot;&gt;&lt;/p&gt;
+&lt;p&gt;标签栏123可以用&lt;code&gt;&amp;lt;leader&amp;gt; number&lt;/code&gt;快捷键切换，默认前缀键为&lt;code&gt;\&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20210220161448.png&quot; alt=&quot;image-20210220161447934&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -305,13 +261,10 @@
     <updated>2021-02-22T08:56:01.323Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
-        
-      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
@@ -326,13 +279,10 @@
     <updated>2021-02-22T13:09:09.336Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;故障起因&quot;&gt;&lt;a href=&quot;#故障起因&quot; class=&quot;headerlink&quot; title=&quot;故障起因&quot;&gt;&lt;/a&gt;故障起因&lt;/h1&gt;&lt;p&gt;最近有一天用迅雷下载了一集&lt;a</summary>
-        
-      
+    <summary type="html">&lt;h1 id=&quot;故障起因&quot;&gt;&lt;a href=&quot;#故障起因&quot; class=&quot;headerlink&quot; title=&quot;故障起因&quot;&gt;&lt;/a&gt;故障起因&lt;/h1&gt;&lt;p&gt;最近有一天用迅雷下载了一集&lt;a href=&quot;https://movie.douban.com/subject/30344167/&quot;&gt;曼达洛人&lt;/a&gt;，想看一下，点击了一直没反应，进入资源管理器某个分区，直接双击没反应，右键资源管理器会无响应,整个窗口直接卡死。当时以为是系统卡了，后来越来越严重，于是到网上查下解决办法，试了几个容易操作的办法，都没有好转。有次在任务管理器里重启了资源管理器，以为好了，结果还是卡死。这使我想到可能是硬盘坏了，用&lt;a href=&quot;https://www.diskgenius.cn/download.php&quot;&gt;DiskGenius&lt;/a&gt;检查了硬盘，发现有个分区上有坏道，这个硬盘上的其他分区没有坏道，此时DiskGenius针对这个硬盘的操作已经很卡了。&lt;/p&gt;
+&lt;p&gt;我平时不关笔记本，想着重启电脑可能好转，就重启电脑，结果系统启动卡在了硬盘修复，下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20201201200641.jpg&quot;&gt;&lt;/p&gt;
+&lt;p&gt;修复时间太长了(ETA: estimated time frame)，想到跳过这个修复过程，直接进入系统。其实在开始修复时，会有提示“&lt;code&gt;跳过磁盘检查请在5秒内按任意键&lt;/code&gt;”，但是这个按键时机很难把握，有时候按了似乎也没效果。为了进系统，试了好几次，有时候能进去，进去后这个坏道硬盘上有分区还可以使用。我关机后，又是这样漫长的尝试。&lt;/p&gt;</summary>
     
     
     
@@ -347,13 +297,10 @@
     <updated>2021-02-22T13:08:28.279Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;没学过经济学如何理解经济&quot;&gt;&lt;a href=&quot;#没学过经济学如何理解经济&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;没学过经济学如何理解经济&quot;&gt;&lt;a href=&quot;#没学过经济学如何理解经济&quot; class=&quot;headerlink&quot; title=&quot;没学过经济学如何理解经济&quot;&gt;&lt;/a&gt;没学过经济学如何理解经济&lt;/h2&gt;&lt;p&gt;经济成为一门学科，始于亚当斯密对国民财富的研究，那是还是18世纪，目前人类的经济活动比以往任何时期都多，一国的经济活动也是前所未有的。个人每天都在参与经济活动，即使如网文里的修仙大能辟谷了，也需要获取物资，交换物资。那么我如何去理解当今的经济呢？我没有经济学的专业背景，也没有时间去看经济学的专著，所以我需要一些简单的模型、理论、信息来理解经济是怎样运行的，从而用于现实世界。&lt;/p&gt;
+&lt;p&gt;[三十分钟看懂经济机器如何运转] &lt;a href=&quot;https://www.bilibili.com/video/BV1kx41117mE&quot;&gt;https://www.bilibili.com/video/BV1kx41117mE&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以信贷这一经济活动来描述经济的运行，如果没有信贷，经济不可能取得如此的繁荣，但是借贷的风险也会引发经济周期&lt;/p&gt;
+&lt;p&gt;[货币之溯源] &lt;a href=&quot;https://www.bilibili.com/video/BV1kx41117Zo&quot;&gt;https://www.bilibili.com/video/BV1kx41117Zo&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
@@ -368,13 +315,10 @@
     <updated>2021-02-22T13:11:01.920Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Windows-Terminal&quot;&gt;&lt;a href=&quot;#Windows-Terminal&quot; class=&quot;headerlink&quot; title=&quot;Windows Terminal&quot;&gt;&lt;/a&gt;Windows Terminal&lt;/h1&gt;&lt;p&gt;官方文档：&lt;a</summary>
-        
-      
+    <summary type="html">&lt;h1 id=&quot;Windows-Terminal&quot;&gt;&lt;a href=&quot;#Windows-Terminal&quot; class=&quot;headerlink&quot; title=&quot;Windows Terminal&quot;&gt;&lt;/a&gt;Windows Terminal&lt;/h1&gt;&lt;p&gt;官方文档：&lt;a href=&quot;https://docs.microsoft.com/zh-cn/windows/terminal/&quot;&gt;https://docs.microsoft.com/zh-cn/windows/terminal/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Github:&lt;a href=&quot;https://github.com/microsoft/terminal&quot;&gt;https://github.com/microsoft/terminal&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.hanselman.com/blog/whats-the-difference-between-a-console-a-terminal-and-a-shell&quot;&gt;终端、控制台、shell的区别&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;配置文件&quot;&gt;&lt;a href=&quot;#配置文件&quot; class=&quot;headerlink&quot; title=&quot;配置文件&quot;&gt;&lt;/a&gt;配置文件&lt;/h2&gt;</summary>
     
     
     
