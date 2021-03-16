@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-01T18:02:55.699Z</updated>
+  <updated>2021-03-16T08:42:46.460Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,13 +21,13 @@
     <link href="http://example.com/2021/03/16/error%20MSB8036%20%E6%89%BE%E4%B8%8D%E5%88%B0%20Windows%20SDK%20%E7%89%88%E6%9C%AC%2010/"/>
     <id>http://example.com/2021/03/16/error%20MSB8036%20%E6%89%BE%E4%B8%8D%E5%88%B0%20Windows%20SDK%20%E7%89%88%E6%9C%AC%2010/</id>
     <published>2021-03-16T08:12:49.175Z</published>
-    <updated>2021-03-01T18:02:55.699Z</updated>
+    <updated>2021-03-16T08:42:46.460Z</updated>
     
     
-    <summary type="html">&lt;p&gt; &lt;code&gt;error MSB8036: 找不到 Windows SDK 版本 10.0.18362.0。请安装所需版本的 Windows SDK&lt;/code&gt;&lt;/p&gt;
+    <summary type="html">&lt;hr&gt;
+&lt;h2 id=&quot;title-error-MSB8036-找不到-Windows-SDK-版本-10&quot;&gt;&lt;a href=&quot;#title-error-MSB8036-找不到-Windows-SDK-版本-10&quot; class=&quot;headerlink&quot; title=&quot; title: error MSB8036 找不到 Windows SDK 版本 10&quot;&gt;&lt;/a&gt; title: error MSB8036 找不到 Windows SDK 版本 10&lt;/h2&gt;&lt;p&gt; &lt;code&gt;error MSB8036: 找不到 Windows SDK 版本 10.0.18362.0。请安装所需版本的 Windows SDK&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;error MSB8036 The Windows SDK version 10.0.18362.0 was not found&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;错误调查&quot;&gt;&lt;a href=&quot;#错误调查&quot; class=&quot;headerlink&quot; title=&quot;错误调查&quot;&gt;&lt;/a&gt;错误调查&lt;/h2&gt;&lt;p&gt;我在E盘上安装了vs2019 community，并安装了WindowsSdk version &lt;code&gt;10.0.17763.0和10.0.18362.0&lt;/code&gt;，创建控制台工程后遇到了上面的错误，而且还发现了其他问题。**&lt;del&gt;既然已经安装了10.0.18362.0，就不应该出现找不到信息&lt;/del&gt;**&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;我的win10版本是1909（18363.1379&lt;/strong&gt;）&lt;/p&gt;</summary>
+&lt;h2 id=&quot;错误调查&quot;&gt;&lt;a href=&quot;#错误调查&quot; class=&quot;headerlink&quot; title=&quot;错误调查&quot;&gt;&lt;/a&gt;错误调查&lt;/h2&gt;</summary>
     
     
     
@@ -35,11 +35,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>GDB与调试</title>
     <link href="http://example.com/2021/03/16/GDB%E4%B8%8E%E8%B0%83%E8%AF%95/"/>
     <id>http://example.com/2021/03/16/GDB%E4%B8%8E%E8%B0%83%E8%AF%95/</id>
     <published>2021-03-16T08:12:36.352Z</published>
-    <updated>2021-03-06T15:09:11.482Z</updated>
+    <updated>2021-03-16T08:44:22.016Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;FAQ&quot;&gt;&lt;a href=&quot;#FAQ&quot; class=&quot;headerlink&quot; title=&quot;FAQ:&quot;&gt;&lt;/a&gt;FAQ:&lt;/h2&gt;&lt;h3 id=&quot;linux或wsl下，进入GDB后如何执行外部命令？&quot;&gt;&lt;a href=&quot;#linux或wsl下，进入GDB后如何执行外部命令？&quot; class=&quot;headerlink&quot; title=&quot;linux或wsl下，进入GDB后如何执行外部命令？&quot;&gt;&lt;/a&gt;linux或wsl下，进入GDB后如何执行外部命令？&lt;/h3&gt;&lt;p&gt;输入shell,回到shell，再输入exit返回GDB&lt;/p&gt;
@@ -52,11 +52,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>git身份认证</title>
     <link href="http://example.com/2021/03/16/git%20%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/"/>
     <id>http://example.com/2021/03/16/git%20%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/</id>
     <published>2021-03-16T08:12:24.301Z</published>
-    <updated>2021-03-16T08:01:59.428Z</updated>
+    <updated>2021-03-16T08:40:03.840Z</updated>
     
     
     <summary type="html">&lt;p&gt;git在CLI访问远程仓库有两种url&lt;/p&gt;
@@ -71,11 +71,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>golang</title>
     <link href="http://example.com/2021/03/16/golang/"/>
     <id>http://example.com/2021/03/16/golang/</id>
     <published>2021-03-16T08:12:10.835Z</published>
-    <updated>2021-02-24T16:43:38.845Z</updated>
+    <updated>2021-03-16T08:44:01.294Z</updated>
     
     
       
@@ -92,11 +92,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>hexo搭建博客</title>
     <link href="http://example.com/2021/03/16/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://example.com/2021/03/16/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</id>
     <published>2021-03-16T08:11:42.802Z</published>
-    <updated>2021-03-16T08:24:51.148Z</updated>
+    <updated>2021-03-16T08:38:39.245Z</updated>
     
     
     <summary type="html">&lt;p&gt;官网&lt;/p&gt;
@@ -111,11 +111,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>node.js</title>
     <link href="http://example.com/2021/03/16/nodejs/"/>
     <id>http://example.com/2021/03/16/nodejs/</id>
     <published>2021-03-16T08:10:57.378Z</published>
-    <updated>2021-03-14T06:34:08.434Z</updated>
+    <updated>2021-03-16T08:41:05.967Z</updated>
     
     
     <summary type="html">&lt;p&gt;nodejs&lt;/p&gt;
@@ -130,11 +130,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>redis</title>
     <link href="http://example.com/2021/03/16/redis/"/>
     <id>http://example.com/2021/03/16/redis/</id>
     <published>2021-03-16T08:10:44.567Z</published>
-    <updated>2021-03-10T18:27:34.470Z</updated>
+    <updated>2021-03-16T08:41:50.996Z</updated>
     
     
     <summary type="html">&lt;h1 id=&quot;redis源码安装过程&quot;&gt;&lt;a href=&quot;#redis源码安装过程&quot; class=&quot;headerlink&quot; title=&quot;redis源码安装过程&quot;&gt;&lt;/a&gt;redis源码安装过程&lt;/h1&gt;&lt;p&gt;安装环境：win101909 wsl2 ubuntu20.04&lt;/p&gt;
@@ -148,11 +148,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>ssh</title>
     <link href="http://example.com/2021/03/16/ssh/"/>
     <id>http://example.com/2021/03/16/ssh/</id>
     <published>2021-03-16T08:10:02.718Z</published>
-    <updated>2021-03-15T15:41:01.660Z</updated>
+    <updated>2021-03-16T08:40:15.789Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;我的本机上有多个ssh key，是我在不同的时期生成的，并添加到了github&lt;/p&gt;
@@ -168,11 +168,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>Vcpkg 安装包慢的解决办法</title>
     <link href="http://example.com/2021/03/16/Vcpkg%20%E5%AE%89%E8%A3%85%E5%8C%85%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
     <id>http://example.com/2021/03/16/Vcpkg%20%E5%AE%89%E8%A3%85%E5%8C%85%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</id>
     <published>2021-03-16T08:09:51.678Z</published>
-    <updated>2021-02-26T17:27:15.456Z</updated>
+    <updated>2021-03-16T08:43:02.903Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;vcpkg搜索包&quot;&gt;&lt;a href=&quot;#vcpkg搜索包&quot; class=&quot;headerlink&quot; title=&quot;vcpkg搜索包&quot;&gt;&lt;/a&gt;vcpkg搜索包&lt;/h2&gt;&lt;p&gt;&lt;code&gt;vcpkg searc&lt;/code&gt;不加package-name是列出所有支持的包，rg与grep功能相同，相对是个加强版，执行下面的命令可以找到libevent安装包的信息&lt;/p&gt;
@@ -187,11 +187,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>Vcpkg安装libevent</title>
     <link href="http://example.com/2021/03/16/Vcpkg%E5%AE%89%E8%A3%85libevent/"/>
     <id>http://example.com/2021/03/16/Vcpkg%E5%AE%89%E8%A3%85libevent/</id>
     <published>2021-03-16T08:09:34.423Z</published>
-    <updated>2021-03-02T07:44:39.064Z</updated>
+    <updated>2021-03-16T08:42:17.329Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;vcpkg搜索libevent&quot;&gt;&lt;a href=&quot;#vcpkg搜索libevent&quot; class=&quot;headerlink&quot; title=&quot;vcpkg搜索libevent&quot;&gt;&lt;/a&gt;vcpkg搜索libevent&lt;/h2&gt;&lt;p&gt;&lt;code&gt;vcpkg search&lt;/code&gt;不加package-name是列出所有支持的包，rg与grep功能相同，相对是个加强版，执行下面的命令可以找到libevent安装包的信息&lt;/p&gt;
@@ -206,11 +206,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>各编译器对c++标准的支持</title>
     <link href="http://example.com/2021/03/16/%E5%90%84%E7%BC%96%E8%AF%91%E5%99%A8%E5%AF%B9c++%E6%A0%87%E5%87%86%E7%9A%84%E6%94%AF%E6%8C%81/"/>
     <id>http://example.com/2021/03/16/%E5%90%84%E7%BC%96%E8%AF%91%E5%99%A8%E5%AF%B9c++%E6%A0%87%E5%87%86%E7%9A%84%E6%94%AF%E6%8C%81/</id>
     <published>2021-03-16T08:08:58.518Z</published>
-    <updated>2021-03-14T06:37:20.025Z</updated>
+    <updated>2021-03-16T08:40:36.637Z</updated>
     
     
     <summary type="html">&lt;p&gt;各编译器对c++标准的支持&lt;/p&gt;
@@ -225,11 +225,11 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>解决vscode集成终端按下ctrl+c无效</title>
     <link href="http://example.com/2021/03/16/%E8%A7%A3%E5%86%B3vscode%E9%9B%86%E6%88%90%E7%BB%88%E7%AB%AF%E6%8C%89%E4%B8%8Bctrl+c%E6%97%A0%E6%95%88/"/>
     <id>http://example.com/2021/03/16/%E8%A7%A3%E5%86%B3vscode%E9%9B%86%E6%88%90%E7%BB%88%E7%AB%AF%E6%8C%89%E4%B8%8Bctrl+c%E6%97%A0%E6%95%88/</id>
     <published>2021-03-16T08:08:41.018Z</published>
-    <updated>2021-03-10T17:46:01.850Z</updated>
+    <updated>2021-03-16T08:41:12.900Z</updated>
     
     
     <summary type="html">&lt;p&gt;解决vscode集成终端按下ctrl+c无效&lt;/p&gt;
