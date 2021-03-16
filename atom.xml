@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-02-23T12:54:49.113Z</updated>
+  <updated>2021-03-01T18:02:55.699Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,232 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/03/16/error%20MSB8036%20%E6%89%BE%E4%B8%8D%E5%88%B0%20Windows%20SDK%20%E7%89%88%E6%9C%AC%2010/"/>
+    <id>http://example.com/2021/03/16/error%20MSB8036%20%E6%89%BE%E4%B8%8D%E5%88%B0%20Windows%20SDK%20%E7%89%88%E6%9C%AC%2010/</id>
+    <published>2021-03-16T08:12:49.175Z</published>
+    <updated>2021-03-01T18:02:55.699Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt; &lt;code&gt;error MSB8036: 找不到 Windows SDK 版本 10.0.18362.0。请安装所需版本的 Windows SDK&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;error MSB8036 The Windows SDK version 10.0.18362.0 was not found&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;错误调查&quot;&gt;&lt;a href=&quot;#错误调查&quot; class=&quot;headerlink&quot; title=&quot;错误调查&quot;&gt;&lt;/a&gt;错误调查&lt;/h2&gt;&lt;p&gt;我在E盘上安装了vs2019 community，并安装了WindowsSdk version &lt;code&gt;10.0.17763.0和10.0.18362.0&lt;/code&gt;，创建控制台工程后遇到了上面的错误，而且还发现了其他问题。**&lt;del&gt;既然已经安装了10.0.18362.0，就不应该出现找不到信息&lt;/del&gt;**&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我的win10版本是1909（18363.1379&lt;/strong&gt;）&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/03/16/GDB%E4%B8%8E%E8%B0%83%E8%AF%95/"/>
+    <id>http://example.com/2021/03/16/GDB%E4%B8%8E%E8%B0%83%E8%AF%95/</id>
+    <published>2021-03-16T08:12:36.352Z</published>
+    <updated>2021-03-06T15:09:11.482Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;FAQ&quot;&gt;&lt;a href=&quot;#FAQ&quot; class=&quot;headerlink&quot; title=&quot;FAQ:&quot;&gt;&lt;/a&gt;FAQ:&lt;/h2&gt;&lt;h3 id=&quot;linux或wsl下，进入GDB后如何执行外部命令？&quot;&gt;&lt;a href=&quot;#linux或wsl下，进入GDB后如何执行外部命令？&quot; class=&quot;headerlink&quot; title=&quot;linux或wsl下，进入GDB后如何执行外部命令？&quot;&gt;&lt;/a&gt;linux或wsl下，进入GDB后如何执行外部命令？&lt;/h3&gt;&lt;p&gt;输入shell,回到shell，再输入exit返回GDB&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20210306221235.png&quot; alt=&quot;image-20210306221228645&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;vscode使用gdb调试如何输入gdb命令？&quot;&gt;&lt;a href=&quot;#vscode使用gdb调试如何输入gdb命令？&quot; class=&quot;headerlink&quot; title=&quot;vscode使用gdb调试如何输入gdb命令？&quot;&gt;&lt;/a&gt;vscode使用gdb调试如何输入gdb命令？&lt;/h3&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/03/16/git%20%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/"/>
+    <id>http://example.com/2021/03/16/git%20%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/</id>
+    <published>2021-03-16T08:12:24.301Z</published>
+    <updated>2021-03-16T08:01:59.428Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;git在CLI访问远程仓库有两种url&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssh形式：git@github.com:username&amp;#x2F;reponame.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;http形式：https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;username&amp;#x2F;reponame.git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;ssh形式&quot;&gt;&lt;a href=&quot;#ssh形式&quot; class=&quot;headerlink&quot; title=&quot;ssh形式&quot;&gt;&lt;/a&gt;ssh形式&lt;/h2&gt;&lt;p&gt;通过ssh访问远程仓库如github，需要设置ssh key pair，设置后做git操作不需要输入github的用户名和密码。所以如果clone仓库时使用的是ssh url，在CLI访问github就是用的ssh密钥对来做身份认证&lt;/p&gt;
+&lt;h2 id=&quot;http形式&quot;&gt;&lt;a href=&quot;#http形式&quot; class=&quot;headerlink&quot; title=&quot;http形式&quot;&gt;&lt;/a&gt;http形式&lt;/h2&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/03/16/golang/"/>
+    <id>http://example.com/2021/03/16/golang/</id>
+    <published>2021-03-16T08:12:10.835Z</published>
+    <updated>2021-02-24T16:43:38.845Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;go 安装cheat 在windows下无法下载包，可以把代理更改下set GOPROXY=&lt;a</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/03/16/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://example.com/2021/03/16/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</id>
+    <published>2021-03-16T08:11:42.802Z</published>
+    <updated>2021-03-16T08:24:51.148Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;官网&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://hexo.io/zh-cn/&quot;&gt;https://hexo.io/zh-cn/&lt;/a&gt; 看网站底部，似乎该站也是hexo搭建的&lt;/p&gt;
+&lt;h1 id=&quot;theme&quot;&gt;&lt;a href=&quot;#theme&quot; class=&quot;headerlink&quot; title=&quot;theme&quot;&gt;&lt;/a&gt;theme&lt;/h1&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git clone https:&amp;#x2F;&amp;#x2F;github.com&amp;#x2F;theme-next&amp;#x2F;hexo-theme-next themes&amp;#x2F;next&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;查看这款主题支持哪些插件：查阅themes\next\_config.yml&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/03/16/nodejs/"/>
+    <id>http://example.com/2021/03/16/nodejs/</id>
+    <published>2021-03-16T08:10:57.378Z</published>
+    <updated>2021-03-14T06:34:08.434Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;nodejs&lt;/p&gt;
+&lt;h2 id=&quot;安装模块&quot;&gt;&lt;a href=&quot;#安装模块&quot; class=&quot;headerlink&quot; title=&quot;安装模块&quot;&gt;&lt;/a&gt;安装模块&lt;/h2&gt;&lt;p&gt;安装模块到当前项目node_modules目录下&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install module-name&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;安装模块到本机的node.js 全局安装目录下&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/03/16/redis/"/>
+    <id>http://example.com/2021/03/16/redis/</id>
+    <published>2021-03-16T08:10:44.567Z</published>
+    <updated>2021-03-10T18:27:34.470Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;redis源码安装过程&quot;&gt;&lt;a href=&quot;#redis源码安装过程&quot; class=&quot;headerlink&quot; title=&quot;redis源码安装过程&quot;&gt;&lt;/a&gt;redis源码安装过程&lt;/h1&gt;&lt;p&gt;安装环境：win101909 wsl2 ubuntu20.04&lt;/p&gt;
+&lt;p&gt;ubuntu发行版软件仓库提供的redis安装版本是稳定版，且一般落后于最新版的redis,所以不从软件仓库安装，而是下载源码编译安装&lt;/p&gt;
+&lt;p&gt;从发行版仓库安装命令&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$sudo apt-get update&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$sudo apt-get install redis-server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/03/16/ssh/"/>
+    <id>http://example.com/2021/03/16/ssh/</id>
+    <published>2021-03-16T08:10:02.718Z</published>
+    <updated>2021-03-15T15:41:01.660Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h2&gt;&lt;p&gt;我的本机上有多个ssh key，是我在不同的时期生成的，并添加到了github&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在我使用git操作访问github或hexo推送博客到github时,使用了是哪一个key?&lt;/li&gt;
+&lt;li&gt;在多个ssh keys下，每次使用git访问远程仓库时使用某个特定key?&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;ssh-exe&quot;&gt;&lt;a href=&quot;#ssh-exe&quot; class=&quot;headerlink&quot; title=&quot;ssh.exe&quot;&gt;&lt;/a&gt;ssh.exe&lt;/h2&gt;&lt;p&gt;ssh.exe可执行程序是命令行式的，运行形式为ssh [options] destination [command]&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/03/16/Vcpkg%20%E5%AE%89%E8%A3%85%E5%8C%85%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    <id>http://example.com/2021/03/16/Vcpkg%20%E5%AE%89%E8%A3%85%E5%8C%85%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</id>
+    <published>2021-03-16T08:09:51.678Z</published>
+    <updated>2021-02-26T17:27:15.456Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;vcpkg搜索包&quot;&gt;&lt;a href=&quot;#vcpkg搜索包&quot; class=&quot;headerlink&quot; title=&quot;vcpkg搜索包&quot;&gt;&lt;/a&gt;vcpkg搜索包&lt;/h2&gt;&lt;p&gt;&lt;code&gt;vcpkg searc&lt;/code&gt;不加package-name是列出所有支持的包，rg与grep功能相同，相对是个加强版，执行下面的命令可以找到libevent安装包的信息&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vcpkg search | rg libevent&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20210227005900.png&quot; alt=&quot;image-20210227005900500&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Vcpkg-安装包慢的解决办法&quot;&gt;&lt;a href=&quot;#Vcpkg-安装包慢的解决办法&quot; class=&quot;headerlink&quot; title=&quot;Vcpkg 安装包慢的解决办法&quot;&gt;&lt;/a&gt;Vcpkg 安装包慢的解决办法&lt;/h2&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/03/16/Vcpkg%E5%AE%89%E8%A3%85libevent/"/>
+    <id>http://example.com/2021/03/16/Vcpkg%E5%AE%89%E8%A3%85libevent/</id>
+    <published>2021-03-16T08:09:34.423Z</published>
+    <updated>2021-03-02T07:44:39.064Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;vcpkg搜索libevent&quot;&gt;&lt;a href=&quot;#vcpkg搜索libevent&quot; class=&quot;headerlink&quot; title=&quot;vcpkg搜索libevent&quot;&gt;&lt;/a&gt;vcpkg搜索libevent&lt;/h2&gt;&lt;p&gt;&lt;code&gt;vcpkg search&lt;/code&gt;不加package-name是列出所有支持的包，rg与grep功能相同，相对是个加强版，执行下面的命令可以找到libevent安装包的信息&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vcpkg search | rg libevent&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20210227005900.png&quot; alt=&quot;image-20210227005900500&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;vcpkg安装包慢的解决办法&quot;&gt;&lt;a href=&quot;#vcpkg安装包慢的解决办法&quot; class=&quot;headerlink&quot; title=&quot;vcpkg安装包慢的解决办法&quot;&gt;&lt;/a&gt;vcpkg安装包慢的解决办法&lt;/h2&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/03/16/%E5%90%84%E7%BC%96%E8%AF%91%E5%99%A8%E5%AF%B9c++%E6%A0%87%E5%87%86%E7%9A%84%E6%94%AF%E6%8C%81/"/>
+    <id>http://example.com/2021/03/16/%E5%90%84%E7%BC%96%E8%AF%91%E5%99%A8%E5%AF%B9c++%E6%A0%87%E5%87%86%E7%9A%84%E6%94%AF%E6%8C%81/</id>
+    <published>2021-03-16T08:08:58.518Z</published>
+    <updated>2021-03-14T06:37:20.025Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;各编译器对c++标准的支持&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.cppreference.com/w/cpp/compiler_support&quot;&gt;https://en.cppreference.com/w/cpp/compiler_support&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;vs2019各版本对比&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://visualstudio.microsoft.com/zh-hans/vs/compare/&quot;&gt;https://visualstudio.microsoft.com/zh-hans/vs/compare/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;vs中如何设置c++标准版本&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/03/16/%E8%A7%A3%E5%86%B3vscode%E9%9B%86%E6%88%90%E7%BB%88%E7%AB%AF%E6%8C%89%E4%B8%8Bctrl+c%E6%97%A0%E6%95%88/"/>
+    <id>http://example.com/2021/03/16/%E8%A7%A3%E5%86%B3vscode%E9%9B%86%E6%88%90%E7%BB%88%E7%AB%AF%E6%8C%89%E4%B8%8Bctrl+c%E6%97%A0%E6%95%88/</id>
+    <published>2021-03-16T08:08:41.018Z</published>
+    <updated>2021-03-10T17:46:01.850Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;解决vscode集成终端按下ctrl+c无效&lt;/p&gt;
+&lt;p&gt;vscode terminal ctrl+c is invalid/ don’t work&lt;/p&gt;
+&lt;h2 id=&quot;问题表现&quot;&gt;&lt;a href=&quot;#问题表现&quot; class=&quot;headerlink&quot; title=&quot;问题表现&quot;&gt;&lt;/a&gt;问题表现&lt;/h2&gt;&lt;p&gt;linux bash 或cmd 或powershell按下&lt;code&gt;ctrl+c&lt;/code&gt;可以终止终端中当前正在运行的程序，并开启新的提示符&lt;/p&gt;
+&lt;p&gt;我的集成终端有wsl-bash  wsl-fish cmd powershell,按下ctrl+c后都无效果，网上找到一种解决办法&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>cmd脚本解释</title>
@@ -157,175 +383,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>hexo博客搭建备忘</title>
-    <link href="http://example.com/2021/02/22/hexo%E5%A4%87%E5%BF%98/"/>
-    <id>http://example.com/2021/02/22/hexo%E5%A4%87%E5%BF%98/</id>
-    <published>2021-02-22T11:22:51.728Z</published>
-    <updated>2021-02-22T11:17:35.098Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;hexo搭建的博客，参考一个博主 &lt;a</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>chrome浏览器扩展</title>
-    <link href="http://example.com/2021/02/22/chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95/"/>
-    <id>http://example.com/2021/02/22/chrome%E6%B5%8F%E8%A7%88%E5%99%A8%E6%89%A9%E5%B1%95/</id>
-    <published>2021-02-22T11:22:51.725Z</published>
-    <updated>2021-02-22T11:16:57.159Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;chrome浏览器扩展&quot;&gt;&lt;a href=&quot;#chrome浏览器扩展&quot; class=&quot;headerlink&quot; title=&quot;chrome浏览器扩展&quot;&gt;&lt;/a&gt;chrome浏览器扩展&lt;/h1&gt;&lt;p&gt;国内无法访问chrome扩展商店，如果从某些下载站下载，可能会有安全风险，有个第三方网站提供了扩展的搜索与下载&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.crx4chrome.com/&quot;&gt;https://www.crx4chrome.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;扩展安装方式&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>The Elder Scrolls V：Skyrim Special Edition</title>
-    <link href="http://example.com/2021/02/22/The%20Elder%20Scrolls%20V%EF%BC%9ASkyrim%20Special%20Edition/"/>
-    <id>http://example.com/2021/02/22/The%20Elder%20Scrolls%20V%EF%BC%9ASkyrim%20Special%20Edition/</id>
-    <published>2021-02-22T11:22:51.722Z</published>
-    <updated>2021-02-22T11:14:17.633Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;游戏本体和资源&quot;&gt;&lt;a href=&quot;#游戏本体和资源&quot; class=&quot;headerlink&quot; title=&quot;游戏本体和资源&quot;&gt;&lt;/a&gt;游戏本体和资源&lt;/h1&gt;&lt;p&gt;以下用上古5代指上古卷轴五重置版，本文所使用的上古五游戏本体程序来自于3DM，《上古卷轴5：天际重制版》3DM免安装官方中文未加密版：&lt;a href=&quot;https://dl.3dmgame.com/pc/83371.html,%E7%89%88%E6%9C%AC%E5%8F%B7%E4%BD%8D1.5.16&quot;&gt;https://dl.3dmgame.com/pc/83371.html,版本号位1.5.16&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20201213181723.png&quot; alt=&quot;image-20201213181715963&quot;&gt;&lt;/p&gt;
-&lt;h1 id=&quot;物品、魔法、交易界面美化&quot;&gt;&lt;a href=&quot;#物品、魔法、交易界面美化&quot; class=&quot;headerlink&quot; title=&quot;物品、魔法、交易界面美化&quot;&gt;&lt;/a&gt;物品、魔法、交易界面美化&lt;/h1&gt;&lt;p&gt;原版的这些界面使用不方便，加装Mod可以美化这些界面。需要两个Mod:&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>The Elder Scrolls V：Skyrim Special Edition-2</title>
-    <link href="http://example.com/2021/02/22/%E5%BC%80%E9%94%81/"/>
-    <id>http://example.com/2021/02/22/%E5%BC%80%E9%94%81/</id>
-    <published>2021-02-22T11:22:51.719Z</published>
-    <updated>2021-02-22T11:22:36.116Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;天际的非官方wiki&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://en.uesp.net/wiki/Skyrim:Skyrim&quot;&gt;http://en.uesp.net/wiki/Skyrim:Skyrim&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://elderscrolls.wikia.com/wiki/The_Elder_Scrolls_Wiki&quot;&gt;http://elderscrolls.wikia.com/wiki/The_Elder_Scrolls_Wiki&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://2143.replace.favo.diafeng.cn/&quot;&gt;http://2143.replace.favo.diafeng.cn/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;天将烽火，一位mod大佬自建的网站&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>spacevim</title>
-    <link href="http://example.com/2021/02/22/spacevim/"/>
-    <id>http://example.com/2021/02/22/spacevim/</id>
-    <published>2021-02-22T10:58:09.186Z</published>
-    <updated>2021-02-22T11:02:10.977Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h1&gt;&lt;p&gt;spacevim的默认全局配置文件为C:\Users\hcf.SpaceVim.d\init.toml&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20210220161244.png&quot; alt=&quot;image-20210220161237660&quot;&gt;&lt;/p&gt;
-&lt;p&gt;标签栏123可以用&lt;code&gt;&amp;lt;leader&amp;gt; number&lt;/code&gt;快捷键切换，默认前缀键为&lt;code&gt;\&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20210220161448.png&quot; alt=&quot;image-20210220161447934&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2021/02/22/hello-world/"/>
-    <id>http://example.com/2021/02/22/hello-world/</id>
-    <published>2021-02-22T08:56:01.323Z</published>
-    <updated>2021-02-22T08:56:01.323Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>换硬盘始末</title>
-    <link href="http://example.com/2021/02/21/%E6%8D%A2%E7%A1%AC%E7%9B%98%E5%A7%8B%E6%9C%AB/"/>
-    <id>http://example.com/2021/02/21/%E6%8D%A2%E7%A1%AC%E7%9B%98%E5%A7%8B%E6%9C%AB/</id>
-    <published>2021-02-22T05:09:03.000Z</published>
-    <updated>2021-02-22T13:09:09.336Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;故障起因&quot;&gt;&lt;a href=&quot;#故障起因&quot; class=&quot;headerlink&quot; title=&quot;故障起因&quot;&gt;&lt;/a&gt;故障起因&lt;/h1&gt;&lt;p&gt;最近有一天用迅雷下载了一集&lt;a href=&quot;https://movie.douban.com/subject/30344167/&quot;&gt;曼达洛人&lt;/a&gt;，想看一下，点击了一直没反应，进入资源管理器某个分区，直接双击没反应，右键资源管理器会无响应,整个窗口直接卡死。当时以为是系统卡了，后来越来越严重，于是到网上查下解决办法，试了几个容易操作的办法，都没有好转。有次在任务管理器里重启了资源管理器，以为好了，结果还是卡死。这使我想到可能是硬盘坏了，用&lt;a href=&quot;https://www.diskgenius.cn/download.php&quot;&gt;DiskGenius&lt;/a&gt;检查了硬盘，发现有个分区上有坏道，这个硬盘上的其他分区没有坏道，此时DiskGenius针对这个硬盘的操作已经很卡了。&lt;/p&gt;
-&lt;p&gt;我平时不关笔记本，想着重启电脑可能好转，就重启电脑，结果系统启动卡在了硬盘修复，下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20201201200641.jpg&quot;&gt;&lt;/p&gt;
-&lt;p&gt;修复时间太长了(ETA: estimated time frame)，想到跳过这个修复过程，直接进入系统。其实在开始修复时，会有提示“&lt;code&gt;跳过磁盘检查请在5秒内按任意键&lt;/code&gt;”，但是这个按键时机很难把握，有时候按了似乎也没效果。为了进系统，试了好几次，有时候能进去，进去后这个坏道硬盘上有分区还可以使用。我关机后，又是这样漫长的尝试。&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>经济知识小记</title>
-    <link href="http://example.com/2021/02/21/%E7%BB%8F%E6%B5%8E%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://example.com/2021/02/21/%E7%BB%8F%E6%B5%8E%E7%9F%A5%E8%AF%86%E5%B0%8F%E8%AE%B0/</id>
-    <published>2021-02-22T05:08:23.000Z</published>
-    <updated>2021-02-22T13:08:28.279Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;没学过经济学如何理解经济&quot;&gt;&lt;a href=&quot;#没学过经济学如何理解经济&quot; class=&quot;headerlink&quot; title=&quot;没学过经济学如何理解经济&quot;&gt;&lt;/a&gt;没学过经济学如何理解经济&lt;/h2&gt;&lt;p&gt;经济成为一门学科，始于亚当斯密对国民财富的研究，那是还是18世纪，目前人类的经济活动比以往任何时期都多，一国的经济活动也是前所未有的。个人每天都在参与经济活动，即使如网文里的修仙大能辟谷了，也需要获取物资，交换物资。那么我如何去理解当今的经济呢？我没有经济学的专业背景，也没有时间去看经济学的专著，所以我需要一些简单的模型、理论、信息来理解经济是怎样运行的，从而用于现实世界。&lt;/p&gt;
-&lt;p&gt;[三十分钟看懂经济机器如何运转] &lt;a href=&quot;https://www.bilibili.com/video/BV1kx41117mE&quot;&gt;https://www.bilibili.com/video/BV1kx41117mE&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;以信贷这一经济活动来描述经济的运行，如果没有信贷，经济不可能取得如此的繁荣，但是借贷的风险也会引发经济周期&lt;/p&gt;
-&lt;p&gt;[货币之溯源] &lt;a href=&quot;https://www.bilibili.com/video/BV1kx41117Zo&quot;&gt;https://www.bilibili.com/video/BV1kx41117Zo&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Windows Terminal</title>
-    <link href="http://example.com/2021/02/21/Windows%20Terminal/"/>
-    <id>http://example.com/2021/02/21/Windows%20Terminal/</id>
-    <published>2021-02-22T03:22:00.000Z</published>
-    <updated>2021-02-25T17:23:07.939Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;Windows-Terminal&quot;&gt;&lt;a href=&quot;#Windows-Terminal&quot; class=&quot;headerlink&quot; title=&quot;Windows Terminal&quot;&gt;&lt;/a&gt;Windows Terminal&lt;/h1&gt;&lt;p&gt;官方文档：&lt;a href=&quot;https://docs.microsoft.com/zh-cn/windows/terminal/&quot;&gt;https://docs.microsoft.com/zh-cn/windows/terminal/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Github:&lt;a href=&quot;https://github.com/microsoft/terminal&quot;&gt;https://github.com/microsoft/terminal&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.hanselman.com/blog/whats-the-difference-between-a-console-a-terminal-and-a-shell&quot;&gt;终端、控制台、shell的区别&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;配置文件&quot;&gt;&lt;a href=&quot;#配置文件&quot; class=&quot;headerlink&quot; title=&quot;配置文件&quot;&gt;&lt;/a&gt;配置文件&lt;/h2&gt;</summary>
-    
-    
-    
-    <category term="CLI" scheme="http://example.com/categories/CLI/"/>
-    
-    
-    <category term="CLI" scheme="http://example.com/tags/CLI/"/>
     
   </entry>
   

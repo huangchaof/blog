@@ -32,6 +32,470 @@
 ]]></content>
   </entry>
   <entry>
+    <title></title>
+    <url>/2021/03/16/error%20MSB8036%20%E6%89%BE%E4%B8%8D%E5%88%B0%20Windows%20SDK%20%E7%89%88%E6%9C%AC%2010/</url>
+    <content><![CDATA[<p> <code>error MSB8036: 找不到 Windows SDK 版本 10.0.18362.0。请安装所需版本的 Windows SDK</code></p>
+<p><code>error MSB8036 The Windows SDK version 10.0.18362.0 was not found</code></p>
+<h2 id="错误调查"><a href="#错误调查" class="headerlink" title="错误调查"></a>错误调查</h2><p>我在E盘上安装了vs2019 community，并安装了WindowsSdk version <code>10.0.17763.0和10.0.18362.0</code>，创建控制台工程后遇到了上面的错误，而且还发现了其他问题。**<del>既然已经安装了10.0.18362.0，就不应该出现找不到信息</del>**</p>
+<p><strong>我的win10版本是1909（18363.1379</strong>）</p>
+<p>下面这些问题也是这个错误的表现</p>
+<ol>
+<li><p>vs2019创建控制台工程默认使用windowssdk最新版本</p>
+</li>
+<li><p>由于本机上安装的最新版本是10.0.18362.0，build时会有如下提示：</p>
+<p>中文提示：</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">错误	MSB8036	找不到 Windows SDK 版本 10.0.18362.0。请安装所需版本的 Windows SDK，或者在项目属性页中或通过右键单击解决方案并选择“重定解决方案目标”来更改 SDK 版本。	Project1	E:\Microsoft Visual Studio\2019\MSBuild\Microsoft\VC\v160\Microsoft.Cpp.WindowsSDK.targets</span><br></pre></td></tr></table></figure>
+
+<p>​    英文提示：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Error	MSB8036	The Windows SDK version 10.0.18362.0 was not found. Install the required version of Windows SDK or change the SDK version in the project property pages or by right-clicking the solution and selecting &quot;Retarget solution&quot;.	ConsoleApplication10	E:\Microsoft Visual Studio\2019\MSBuild\Microsoft\VC\v160\Microsoft.Cpp.WindowsSDK.targets	46	</span><br></pre></td></tr></table></figure>
+
+<p>查看文件<code>Microsoft.Cpp.WindowsSDK.targets</code>会发现变量<code>WindowsSDKInstalled</code>为false会导致上面的错误信息.在project的属性页切换Windows SDK为10.0.17763.0，build成功</p>
+<p>观察到<code>$(WindowsSdkDir)</code>的值在不同版本的sdk下，值不同</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210301232651.jpg"></p>
+<p>切换为10.0.17763.0版本后，路径正确了</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210302011030.png" alt="image-20210302011030477"></p>
+<p>3.安装boost<code>vcpkg install boost</code> ,当安装到包python3[core]:x86-windows -&gt; 3.9.2会调用msbuild,运行的命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Command failed: msbuild E:&#x2F;Vcpkg&#x2F;vcpkg&#x2F;buildtrees&#x2F;python3&#x2F;x86-windows-rel&#x2F;v3.9.2-cc9ebdcfd9.clean&#x2F;PCbuild&#x2F;pcbuild.proj &#x2F;p:Configuration&#x3D;Release &#x2F;p:IncludeExtensions&#x3D;true &#x2F;p:IncludeExternals&#x3D;true &#x2F;p:IncludeCTypes&#x3D;true &#x2F;p:IncludeSSL&#x3D;true &#x2F;p:IncludeTkinter&#x3D;false &#x2F;p:IncludeTests&#x3D;false &#x2F;p:ForceImportBeforeCppTargets&#x3D;E:&#x2F;Vcpkg&#x2F;vcpkg&#x2F;buildtrees&#x2F;python3&#x2F;src&#x2F;v3.9.2-cc9ebdcfd9.clean&#x2F;PCbuild&#x2F;python_vcpkg.props &#x2F;p:IncludeUwp&#x3D;false &#x2F;p:_VcpkgPythonLinkage&#x3D;DynamicLibrary &#x2F;t:Rebuild &#x2F;p:Platform&#x3D;Win32 &#x2F;p:PlatformToolset&#x3D;v142 &#x2F;p:VCPkgLocalAppDataDisabled&#x3D;true &#x2F;p:UseIntelMKL&#x3D;No &#x2F;p:WindowsTargetPlatformVersion&#x3D;10.0.18362.0 &#x2F;p:VcpkgTriplet&#x3D;x86-windows &#x2F;p:VcpkgInstalledDir&#x3D;E:&#x2F;Vcpkg&#x2F;vcpkg&#x2F;installed &#x2F;p:VcpkgManifestInstall&#x3D;false &#x2F;m</span><br></pre></td></tr></table></figure>
+
+<p>也会产生找不到windowssdk的错误：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">E:\Microsoft Visual Studio\2019\MSBuild\Microsoft\VC\v160\Microsoft.Cpp.WindowsSDK.targets(46,5): error MSB8036: 找不到 Windows SDK 版本 10.0.18362.0。请安装所需版本的 Windows SDK，或者在项目属性页中或通过右键单击解决方案并选择“重定解决方案目标”来更改 SDK 版本。 </span><br></pre></td></tr></table></figure>
+
+<p> msbuild使用proj文件构建，使用的sdk版本也是10.0.18362.0</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">msbuild pcbuild.proj  &#x2F;p:WindowsTargetPlatformVersion&#x3D;10.0.18362.0</span><br></pre></td></tr></table></figure>
+
+<p>注意msbuild可以用/p:WindowsTargetPlatformVersion=10.0.18362.0形式制定sdk版本</p>
+<p> 4.运行cmake,generator使用vs2019 2016,也会报错： error MSB8036: 找不到 Windows SDK 版本 10.0.18362.0，请安装所需版本的 Windows SDK</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210301233034.png" alt="image-20210301233034660"></p>
+<h2 id="何处下载sdk"><a href="#何处下载sdk" class="headerlink" title="何处下载sdk"></a>何处下载sdk</h2><ol>
+<li><p>从vs installer处单个组件下载安装</p>
+</li>
+<li><p>各个版本的Windows SDK 下载</p>
+<p><a href="https://developer.microsoft.com/zh-cn/windows/downloads/sdk-archive">https://developer.microsoft.com/zh-cn/windows/downloads/sdk-archive</a></p>
+<p>在此处并没有找到10.0.18362.0，10.0.18362.0是随着vs2019 community安装的</p>
+<p>经安装，发现下面的10.0.18362.1就是10.0.18362.0，用vs installer卸载了10.0.18362.0，安装此处的10.0.18362.1，还是报相同错误</p>
+<p>10.0.18362.1</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210302003639.png" alt="image-20210302003631864"></p>
+<p>此处似乎有网络问题，需要先下载iso文件</p>
+</li>
+</ol>
+<p>3.最新版本的Windows SDK下载</p>
+<p>​    <a href="https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk">https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk</a></p>
+<h3 id="卸载sdk"><a href="#卸载sdk" class="headerlink" title="卸载sdk"></a>卸载sdk</h3><p>用windows卸载功能</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210302004838.png" alt="image-20210302004838307"></p>
+<h2 id="尝试解决"><a href="#尝试解决" class="headerlink" title="尝试解决"></a>尝试解决</h2><p>注意到工程的proj文件里用<code>WindowsTargetPlatformVersion</code>控制sdk版本，在vs安装目录下查找WindowsTargetPlatformVersion发现2019\Common7\IDE\VC\VCWizards\2052\common.js里有个函数<br><code>StampWindowsTargetPlatformVersion</code>设置了它的值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function StampWindowsTargetPlatformVersion(oProj)</span><br><span class="line">&#123;</span><br><span class="line">    var strLatestWindowsSDKVersion &#x3D; GetLatestWindowsSDKVersion(oProj);</span><br><span class="line">    if (strLatestWindowsSDKVersion)</span><br><span class="line">    &#123;</span><br><span class="line">        &#x2F;&#x2F;Stamp the latest Windows SDK version found in the disk - It is a global property, so enough to do it for any one config</span><br><span class="line">        var commonConfigRule &#x3D; oProj.Object.Configurations(1).Rules(&quot;ConfigurationGeneral&quot;);</span><br><span class="line">        commonConfigRule.SetPropertyValue(&quot;WindowsTargetPlatformVersion&quot;, strLatestWindowsSDKVersion);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改了sdk版本为某个特点值，还是不能解决上面的问题</p>
+<p>用vs installer修复也没有解决</p>
+<h2 id="最终解决"><a href="#最终解决" class="headerlink" title="最终解决"></a>最终解决</h2><p>我一直在vs installer里修复，或者尝试修改vs的2019\Common7\IDE\VC\VCWizards\2052\common.js，或者在网上搜索，寻找解决办法，都没有解决。</p>
+<p>在我安装了一个新sdk，由于无法通过vs installer卸载（因为不是通过installer安装的），尝试用windows自带的卸载功能时，发现可以在此处修复sdk.使用修复后，这个错误消失了。</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210302011611.png" alt="image-20210302011611271"></p>
+<h2 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h2><p><a href="https://zhuanlan.zhihu.com/p/196453677">WindowsSdkDir从何处来？</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/03/16/GDB%E4%B8%8E%E8%B0%83%E8%AF%95/</url>
+    <content><![CDATA[<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ:"></a>FAQ:</h2><h3 id="linux或wsl下，进入GDB后如何执行外部命令？"><a href="#linux或wsl下，进入GDB后如何执行外部命令？" class="headerlink" title="linux或wsl下，进入GDB后如何执行外部命令？"></a>linux或wsl下，进入GDB后如何执行外部命令？</h3><p>输入shell,回到shell，再输入exit返回GDB</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210306221235.png" alt="image-20210306221228645"></p>
+<h3 id="vscode使用gdb调试如何输入gdb命令？"><a href="#vscode使用gdb调试如何输入gdb命令？" class="headerlink" title="vscode使用gdb调试如何输入gdb命令？"></a>vscode使用gdb调试如何输入gdb命令？</h3><p>在DEBUG CONSOLE窗口使用<code>-exec gdb-comand</code>形式，如下图输入-exec c，程序继续执行，直到16行断点处停住</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210306230615.png" alt="image-20210306230615129"></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210306230712.png" alt="image-20210306230712018"></p>
+<h3 id="win10下如何使用gdb？"><a href="#win10下如何使用gdb？" class="headerlink" title="win10下如何使用gdb？"></a>win10下如何使用gdb？</h3><p>安装Mingw64</p>
+<h3 id="gdb开启调试？"><a href="#gdb开启调试？" class="headerlink" title="gdb开启调试？"></a>gdb开启调试？</h3><p>必须要有一个已经编译的程序，如win10下用g++编译的exe文件，且编译时加了-g参数，加入debug的符号信息</p>
+<p>然后输入<code>gdb executable-file</code>进入gdb，在gdb提示符后输入<code>run</code>就启动了程序，会有如下的类似符号载入信息</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210306222310.png"></p>
+<h3 id="退出gdb"><a href="#退出gdb" class="headerlink" title="退出gdb?"></a>退出gdb?</h3><p>输入quit或 q</p>
+<h3 id="屏蔽进入gdb的开始信息"><a href="#屏蔽进入gdb的开始信息" class="headerlink" title="屏蔽进入gdb的开始信息"></a>屏蔽进入gdb的开始信息</h3><p>每次进gdb加上 <code>-silent</code> 参数</p>
+<h3 id="gdb常用命令"><a href="#gdb常用命令" class="headerlink" title="gdb常用命令"></a>gdb常用命令</h3><p>break n 在某行断点</p>
+<p>run 执行当前程序，会在第一个断点处停住</p>
+<p>continue 程序在某处停住后，继续执行，直到遇到下一处断点</p>
+<p>next 执行单步运行</p>
+<p>print var-name  打印变量值</p>
+<p>list 打印某行或某个函数</p>
+<p>watch  观察某个变量</p>
+<h2 id="GDB的三种调试方式"><a href="#GDB的三种调试方式" class="headerlink" title="GDB的三种调试方式"></a>GDB的三种调试方式</h2><ul>
+<li>gdb filename</li>
+<li>gdb attach pid</li>
+<li>gdb filename corename</li>
+</ul>
+<p><a href="https://gitbook.cn/gitchat/column/5c0e149eedba1b683458fd5f/topic/5c0e1e9fedba1b6834591e85">https://gitbook.cn/gitchat/column/5c0e149eedba1b683458fd5f/topic/5c0e1e9fedba1b6834591e85</a></p>
+<h2 id="gdb的调试原理"><a href="#gdb的调试原理" class="headerlink" title="gdb的调试原理"></a>gdb的调试原理</h2><p><a href="https://gitbook.cn/gitchat/column/5c0e149eedba1b683458fd5f/topic/5c0e1e47edba1b6834591e7f">https://gitbook.cn/gitchat/column/5c0e149eedba1b683458fd5f/topic/5c0e1e47edba1b6834591e7f</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/03/16/git%20%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/</url>
+    <content><![CDATA[<p>git在CLI访问远程仓库有两种url</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh形式：git@github.com:username&#x2F;reponame.git</span><br><span class="line">http形式：https:&#x2F;&#x2F;github.com&#x2F;username&#x2F;reponame.git</span><br></pre></td></tr></table></figure>
+
+<h2 id="ssh形式"><a href="#ssh形式" class="headerlink" title="ssh形式"></a>ssh形式</h2><p>通过ssh访问远程仓库如github，需要设置ssh key pair，设置后做git操作不需要输入github的用户名和密码。所以如果clone仓库时使用的是ssh url，在CLI访问github就是用的ssh密钥对来做身份认证</p>
+<h2 id="http形式"><a href="#http形式" class="headerlink" title="http形式"></a>http形式</h2><p>http形式，每次在命令行做git操作，如git pull、git push都需要输入用户名和密码，为了简化这步操作，git有了<code>凭证存储</code>，即把用户名和密码存储在本地机器上。</p>
+<p>参见 <a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8">Git工具-凭证存储</a> <a href="https://docs.github.com/en/github/using-git/which-remote-url-should-i-use">github-Which remote URL should I use</a></p>
+<h3 id="git-for-windows安装时选择凭证管理"><a href="#git-for-windows安装时选择凭证管理" class="headerlink" title="git-for-windows安装时选择凭证管理"></a>git-for-windows安装时选择凭证管理</h3><p>git-for-windows安装时可以选择credential helper</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210316140350.png" alt="image-20210316140350683"></p>
+<p>https用了ssl/tls来加密</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210316140200.png" alt="image-20210316140200110"></p>
+<p>查看配置 credential.helper的值</p>
+<p>下面的命令可以输入git所有的配置及所在文件</p>
+<figure class="highlight console"><table><tr><td class="code"><pre><span class="line">git config --list --show-origin</span><br></pre></td></tr></table></figure>
+
+<p>用git config –list |grep credential.helper 查看所有的值</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210316141558.png" alt="image-20210316141558726"></p>
+<p>下面这个错误是由于使用了网络代理</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210316131620.png" alt="image-20210316131620686"></p>
+<h2 id="git-credential-fill"><a href="#git-credential-fill" class="headerlink" title="git credential fill"></a>git credential fill</h2><p>参见<a href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8">https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8</a></p>
+<h2 id="凭证管理"><a href="#凭证管理" class="headerlink" title="凭证管理"></a>凭证管理</h2><h3 id="取消凭证管理"><a href="#取消凭证管理" class="headerlink" title="取消凭证管理"></a>取消凭证管理</h3><p>用以下命令可以取消三级配置的credential.helper，然后做git操作需要输入username和password</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --system --<span class="built_in">unset</span> credential.helper</span><br><span class="line">git config --global --<span class="built_in">unset</span> credential.helper</span><br><span class="line">git config --<span class="built_in">local</span> --<span class="built_in">unset</span> credential.helper</span><br></pre></td></tr></table></figure>
+
+<p>恢复凭证管理需要用下面的命令，这只配置了两级，global级的会覆盖system级的值，</p>
+<p>用git config –local credential.helper value 可以配置当前仓库的。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --system credential.helper manager-core</span><br><span class="line">git config --global credential.helper manager</span><br></pre></td></tr></table></figure>
+
+<h3 id="windows凭证管理"><a href="#windows凭证管理" class="headerlink" title="windows凭证管理"></a><em>windows凭证管理</em></h3><p>使用凭证管理后，这些凭证存在windows凭证管理器里，如果手动删除了凭证，使用git操作会提示需要登录</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210316160124.png" alt="image-20210316160124703"></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210316160001.png" alt="image-20210316160001011"></p>
+<p>参考 <a href="https://www.cnblogs.com/volnet/p/git-credentials.html">https://www.cnblogs.com/volnet/p/git-credentials.html</a></p>
+<p><a href="https://blog.csdn.net/lqlqlq007/article/details/79065095">https://blog.csdn.net/lqlqlq007/article/details/79065095</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/03/16/golang/</url>
+    <content><![CDATA[<p>go 安装cheat 在windows下无法下载包，可以把代理更改下set GOPROXY=<a href="https://goproxy.cn,direct/">https://goproxy.cn,direct</a></p>
+<p>而cheat还是无法运行，见issue:<a href="https://github.com/cheat/cheat/issues/571">https://github.com/cheat/cheat/issues/571</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/03/16/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p>官网</p>
+<p><a href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a> 看网站底部，似乎该站也是hexo搭建的</p>
+<h1 id="theme"><a href="#theme" class="headerlink" title="theme"></a>theme</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+<p>查看这款主题支持哪些插件：查阅themes\next\_config.yml</p>
+<h1 id="创建文章有两种方式"><a href="#创建文章有两种方式" class="headerlink" title="创建文章有两种方式"></a>创建文章有两种方式</h1><ol>
+<li><p>hexo new post-name 创建的文章会生成标题</p>
+</li>
+<li><p>复制已有md文件到$Root\source\_posts目录下，导入的文章没有标题，需要在文章开头手动添加</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210316162126.png" alt="image-20210316162126707"></p>
+</li>
+</ol>
+<p><a href="https://zhuanlan.zhihu.com/p/114195732">Mac_如何利用Hexo发布、迁移博文？</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page &quot;about&quot;</span><br><span class="line">hexo new page &quot;tags&quot;</span><br><span class="line">hexo new page &quot;categories</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>搜索功能</p>
+<p><a href="https://blog.csdn.net/xinyflove/article/details/108791970">https://blog.csdn.net/xinyflove/article/details/108791970</a></p>
+<p>开启标签主题等项</p>
+<p><a href="https://blog.csdn.net/mqdxiaoxiao/article/details/93644533">https://blog.csdn.net/mqdxiaoxiao/article/details/93644533</a></p>
+<p>设置头像</p>
+<p><a href="https://blog.csdn.net/qq_44304221/article/details/96758595">https://blog.csdn.net/qq_44304221/article/details/96758595</a></p>
+<p>troubleshoot</p>
+<h2 id="hexo-init初始化failed"><a href="#hexo-init初始化failed" class="headerlink" title="hexo init初始化failed"></a>hexo init初始化failed</h2><p>报错“fatal: unable to access ‘<a href="https://github.com/hexojs/hexo-starter.git/&#39;">https://github.com/hexojs/hexo-starter.git/&#39;</a>:  OpenSSL SSL_connect: Connection was reset in connection to github.com:443 ”</p>
+<p><a href="https://www.cnblogs.com/sunjinggege/p/14430828.html">https://www.cnblogs.com/sunjinggege/p/14430828.html</a></p>
+<p>不是git的配置原因，而是网络原因</p>
+<h2 id="已有md文件放入-post目录下，文章无标题？"><a href="#已有md文件放入-post目录下，文章无标题？" class="headerlink" title="已有md文件放入_post目录下，文章无标题？"></a>已有md文件放入_post目录下，文章无标题？</h2><p><a href="https://sulin.me/2019/Z726F8.html">https://sulin.me/2019/Z726F8.html</a></p>
+<p>已有md不带有Front-matter中的title</p>
+<p><strong>md文档中如果插入yaml格式的文本块，hexo generate时会当做格式来解析，所以此处用图片插入代替</strong></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210316162257.png" alt="image-20210316162257292"></p>
+<h2 id="设置头像不显示？路径错误"><a href="#设置头像不显示？路径错误" class="headerlink" title="设置头像不显示？路径错误"></a>设置头像不显示？路径错误</h2><h2 id="hexo生成后，local可以看到，部署到github却不更新？"><a href="#hexo生成后，local可以看到，部署到github却不更新？" class="headerlink" title="hexo生成后，local可以看到，部署到github却不更新？"></a>hexo生成后，local可以看到，部署到github却不更新？</h2><p>如这种早起issue<a href="https://github.com/hexojs/hexo/issues/961">https://github.com/hexojs/hexo/issues/961</a></p>
+<p>github pages从哪个分支发布：<a href="https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site">https://docs.github.com/en/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site</a></p>
+<p><a href="https://blog.csdn.net/lu_xiuyuan/article/details/112056997">https://blog.csdn.net/lu_xiuyuan/article/details/112056997</a></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210223001150.png" alt="image-20210223001143608"></p>
+<h2 id="版权声明"><a href="#版权声明" class="headerlink" title="版权声明"></a>版权声明</h2><h2 id="打赏"><a href="#打赏" class="headerlink" title="打赏"></a>打赏</h2><p>主题配置</p>
+<p>经典主题Next<a href="https://github.com/theme-next/hexo-theme-next">https://github.com/theme-next/hexo-theme-next</a></p>
+<p>Next效果展示：<a href="https://github.com/theme-next/awesome-next#live-preview">https://github.com/theme-next/awesome-next#live-preview</a></p>
+<p><a href="https://tding.top/archives/42c38b10.html">Hexo-NexT (v7.0+) 主题配置</a></p>
+<p><a href="http://www.guide2it.com/post/2019-03-04-03-configuration-for-next-theme-site/">Next主题配置详解</a></p>
+<p>Hexo官网插件</p>
+<p><a href="https://hexo.io/plugins/">https://hexo.io/plugins/</a></p>
+<p>gitte pages</p>
+<p><a href="https://gitee.com/help/articles/4136#article-header0">https://gitee.com/help/articles/4136#article-header0</a></p>
+<p>什么是gh-pages</p>
+<h1 id="如何用Github的gh-pages分支展示自己的项目"><a href="#如何用Github的gh-pages分支展示自己的项目" class="headerlink" title="如何用Github的gh-pages分支展示自己的项目"></a><a href="https://www.cnblogs.com/MuYunyun/p/6082359.html">如何用Github的gh-pages分支展示自己的项目</a></h1><h1 id="持续集成服务-Travis-CI-教程"><a href="#持续集成服务-Travis-CI-教程" class="headerlink" title="持续集成服务 Travis CI 教程"></a>持续集成服务 Travis CI 教程</h1><p><a href="http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html">http://www.ruanyifeng.com/blog/2017/12/travis_ci_tutorial.html</a></p>
+<h1 id="next主题中设置mist主题内容居中"><a href="#next主题中设置mist主题内容居中" class="headerlink" title="next主题中设置mist主题内容居中"></a>next主题中设置mist主题内容居中</h1><p><a href="https://www.jianshu.com/p/19089f2b99c6">https://www.jianshu.com/p/19089f2b99c6</a></p>
+<p>我的首页标题默认是居左的，修改后好了</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/03/16/nodejs/</url>
+    <content><![CDATA[<p>nodejs</p>
+<h2 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h2><p>安装模块到当前项目node_modules目录下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install module-name</span><br></pre></td></tr></table></figure>
+
+<p>安装模块到本机的node.js 全局安装目录下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install module-name -g</span><br></pre></td></tr></table></figure>
+
+<p>这个全局安装目录在哪儿呢？</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm config ls </span><br></pre></td></tr></table></figure>
+
+<p>其中的变量prefix就定义了这个路径</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210314142034.png" alt="image-20210314142033995"></p>
+<p>记录依赖信息</p>
+<p>-save参数会将安装的模块信息写入dependencies文件package.json</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install module-name -save</span><br></pre></td></tr></table></figure>
+
+<p>在当前项目rootdir下运行<code>npm install</code>的作用</p>
+<p>By default, <code>npm install</code> will install all modules listed as dependencies in <a href="../configuring-npm/package-json.html"><code>package.json</code></a>.</p>
+<h2 id="package-lock-json的作用"><a href="#package-lock-json的作用" class="headerlink" title="package-lock.json的作用"></a>package-lock.json的作用</h2><p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210314141031.png" alt="image-20210314141024177"></p>
+<h2 id="npm包管理依赖机制的缺点"><a href="#npm包管理依赖机制的缺点" class="headerlink" title="npm包管理依赖机制的缺点"></a>npm包管理依赖机制的缺点</h2><p><a href="https://pnpm.js.org/zh/motivation/">https://pnpm.js.org/zh/motivation/</a></p>
+<p>npm的包管理依赖原理</p>
+<p><a href="https://zhuanlan.zhihu.com/p/352437367">https://zhuanlan.zhihu.com/p/352437367</a> pnpm</p>
+<h2 id="Deno"><a href="#Deno" class="headerlink" title="Deno"></a>Deno</h2><p>to do</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/03/16/redis/</url>
+    <content><![CDATA[<h1 id="redis源码安装过程"><a href="#redis源码安装过程" class="headerlink" title="redis源码安装过程"></a>redis源码安装过程</h1><p>安装环境：win101909 wsl2 ubuntu20.04</p>
+<p>ubuntu发行版软件仓库提供的redis安装版本是稳定版，且一般落后于最新版的redis,所以不从软件仓库安装，而是下载源码编译安装</p>
+<p>从发行版仓库安装命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$sudo apt-get update</span><br><span class="line">$sudo apt-get install redis-server</span><br></pre></td></tr></table></figure>
+
+<p>运行redis</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">redis-server #服务端</span><br><span class="line">redis-client #客户端</span><br></pre></td></tr></table></figure>
+
+<h2 id="clone工程"><a href="#clone工程" class="headerlink" title="clone工程"></a>clone工程</h2><p>使用了github的镜像加速方式获取的地址</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;redis&#x2F;redis.git</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308172600.png" alt="image-20210308172600746"></p>
+<h2 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h2><p>clone下来的当前分支为unstable分支，切换到最新的稳定分支，也就是latest release所在分支</p>
+<p>92bde12是commit的sha1值缩写</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout 92bde12</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308173200.png" alt="image-20210308173200693"></p>
+<h2 id="make"><a href="#make" class="headerlink" title="make"></a>make</h2><p>执行make命令会编译生成redis的二进制可执行文件</p>
+<p>BUILD_TLS=yess是为了支持TLS，这需要系统预先安装过OpenSSL</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make BUILD_TLS&#x3D;yes</span><br></pre></td></tr></table></figure>
+
+<p>如果没有OpenSSL，运行下面命令安装</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install openssl</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308173524.png" alt="image-20210308173524486"></p>
+<p>安装过程还有许多可以自定义的参数，参见工程根目录下的README.md</p>
+<h2 id="make-install"><a href="#make-install" class="headerlink" title="make install"></a>make install</h2><p>把redis的二进制文件安装到 /usr/local/bin,如果到其他目录，运行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make PREFIX&#x3D;&#x2F;some&#x2F;other&#x2F;directory install</span><br></pre></td></tr></table></figure>
+
+<p>没有这一步要运行redis,需要在命令行输入redis-server执行文件的绝对路径</p>
+<h2 id="安装过程错误解决"><a href="#安装过程错误解决" class="headerlink" title="安装过程错误解决"></a>安装过程错误解决</h2><p>如下错误是缺少了OpenSSL的开发包，安装就行了</p>
+<p><strong>错误</strong></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308174314.png" alt="image-20210308174313906"></p>
+<p><strong>安装libssl-dev</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install  libssl-dev</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308174621.png" alt="image-20210308174621245"></p>
+<p><strong>重新运行make BUILD_TLS=yes还是报安装错误</strong></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308174759.png" alt="image-20210308174759393"></p>
+<p><strong>解决办法是运行清理</strong></p>
+<p>注意 应该用**<code>make distclean  &amp;&amp; make BUILD_TLS=yes</code>**,make distclean是清理残存文件，make是编译</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make distclean  &amp;&amp; make</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308175034.png" alt="image-20210308175034009"></p>
+<p><strong>清理完成后在执行make BUILD_TLS=yes</strong></p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308175202.png" alt="image-20210308175201924"></p>
+<p><strong>运行测试</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">make test</span><br></pre></td></tr></table></figure>
+
+<p>下面是缺少tcl库，因为redis test的脚本是tcl文件</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308175615.png" alt="image-20210308175615525"></p>
+<p><strong>安装tcl</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt-get install tcl</span><br></pre></td></tr></table></figure>
+
+<p>然后再执行make test,可能出现下面的错误</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308175928.png" alt="image-20210308175928340"></p>
+<p>搜索错误</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pending querybuf: check size of pending_querybuf after set a big value in tests&#x2F;unit&#x2F;pendingquerybuf.tcl</span><br></pre></td></tr></table></figure>
+
+<p><strong>这个错误可以通过反复运行make test解决</strong>，参见<a href="https://github.com/redis/redis/issues/5463">issue5463</a> ,测试全部pass，也就安装完成了。</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308172355.png" alt="image-20210308172354716"></p>
+<h1 id="运行redis-server"><a href="#运行redis-server" class="headerlink" title="运行redis server"></a>运行redis server</h1><p>cd到src目录下，运行 <code>./redis-server</code></p>
+<p>从截图可以看到如下信息，pid是redis-server这个程序的进程id,默认运行在6379端口。</p>
+<p>由于<code>./redis-server</code>这条命令没有设置为后台运行，所以不能关闭当前的shell会话，否则会终止redis server</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Redis version&#x3D;6.2.1, bits&#x3D;64, commit&#x3D;92bde124, modified&#x3D;0, pid&#x3D;28642, just started</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308180345.png" alt="image-20210308180345322"></p>
+<h1 id="运行redis-client"><a href="#运行redis-client" class="headerlink" title="运行redis client"></a>运行redis client</h1><p>cd到src目录，执行redis-cli，如图显示server运行在本机的6379端口</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308181026.png" alt="image-20210308181025940"></p>
+<p>通过这个命令行的client可以访问数据库，如</p>
+<p>set key-value, get key-value</p>
+<h1 id="gdb调试正在运行的redis-server"><a href="#gdb调试正在运行的redis-server" class="headerlink" title="gdb调试正在运行的redis server"></a>gdb调试正在运行的redis server</h1><p>前面的sever pid为28642，</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gdb attach pid</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308181529.png" alt="image-20210308181529197"></p>
+<p>gdb下输入命令查看进程的线程</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">info threads</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308181651.png" alt="image-20210308181651309"></p>
+<p><strong><code>通过redis-cli下输入命令下传递消息给server,来调试server</code></strong></p>
+<h1 id="hiredis安装"><a href="#hiredis安装" class="headerlink" title="hiredis安装"></a>hiredis安装</h1><p>redis提供了多种语言的client和API，hiredis是c语言的API和client</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com.cnpmjs.org&#x2F;redis&#x2F;hiredis.git</span><br></pre></td></tr></table></figure>
+
+<p>如下为安装过程截图</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308182021.png" alt="image-20210308182020870"></p>
+<h1 id="wsl在vscode里使用hiredis-API"><a href="#wsl在vscode里使用hiredis-API" class="headerlink" title="wsl在vscode里使用hiredis API"></a>wsl在vscode里使用hiredis API</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#include &quot;hiredis&#x2F;hiredis.h&quot;</span><br><span class="line">#include &lt;dirent.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    redisContext *context &#x3D; redisConnect(&quot;127.0.0.1&quot;, 6379);</span><br><span class="line"></span><br><span class="line">    redisCommand(context, &quot;SET number 1000&quot;);</span><br><span class="line"></span><br><span class="line">    redisFree(context);</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>调用hiredis API写一段代码,并命名为con.cpp,运行 g++ con.cpp -lhiredis 编译，-lhiredis表示链接</p>
+<p>hiredis的库文件</p>
+<p>编译成功后出现执行出现如下错误</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">error while loading shared libraries: libhiredis.so.1.0.1-dev: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308182534.png" alt="image-20210308182534069"></p>
+<p>这是由于hiredis动态库libhiredis.so.1.0.1-dev 的默认安装路径为/usr/local/lib目录，系统找不到，在/etc/ld.so.conf文件里添加/usr/local/lib就行，执行<code>sudo /sbin/ldconfig</code>更新配置</p>
+<p>编写代码向数据库写入键值对后，可以回到redis-cli下或者key-value</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210308181026.png" alt="image-20210308181025940"></p>
+<p>ps:objdump -tT xxx.so可以查看库文件导出的函数接口</p>
+<p>redis-cli常用命令</p>
+<p>keys * 获取所有的键</p>
+<p>redis默认数据为</p>
+<p>redis地址</p>
+<h1 id="redis日志"><a href="#redis日志" class="headerlink" title="redis日志"></a>redis日志</h1><p>我的redis安装目录为/home/hcf/redis，cd到这个目录下 cat redis.conf |grep logfile</p>
+<p>logfile后面的path就是log路径，如果为空，redis的日志会写到标准输出</p>
+<p>loglevel用来设置日志的等级</p>
+<p>redis的配置文件为installdir/redis.conf</p>
+<h1 id="reference"><a href="#reference" class="headerlink" title="reference"></a>reference</h1><p><a href="https://www.codetd.com/article/12466347">linux下hiredis安装、C接口编程</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/03/16/ssh/</url>
+    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>我的本机上有多个ssh key，是我在不同的时期生成的，并添加到了github</p>
+<ol>
+<li>在我使用git操作访问github或hexo推送博客到github时,使用了是哪一个key?</li>
+<li>在多个ssh keys下，每次使用git访问远程仓库时使用某个特定key?</li>
+</ol>
+<h2 id="ssh-exe"><a href="#ssh-exe" class="headerlink" title="ssh.exe"></a>ssh.exe</h2><p>ssh.exe可执行程序是命令行式的，运行形式为ssh [options] destination [command]</p>
+<p>[]表示可以省略，而destination参数是必须的</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210315205322.png" alt="image-20210315205315358"></p>
+<p>-i <em>identity_file</em> 可以显示指定用户的private key文件，如id_rsa</p>
+<p>-F <em>configfile</em> 显示指定配置文件，系统级别（system-wised)的configfile为*/etc/ssh/ssh_config*，</p>
+<p>用户级别的为 <em>~/.ssh/config</em></p>
+<h2 id="ssh的作用"><a href="#ssh的作用" class="headerlink" title="ssh的作用"></a>ssh的作用</h2><p>ssh可以使用户远程登录主机，并且在主机执行各种操作（当然这需要用户具有相应的权限）</p>
+<p>通过ssh访问github相当于是让本机拥有了访问权限，如果有其他人可以使用这台机器，也可以执行对仓库的读写权限（需要用户原来就具有这些权限），而密码原则上是只有知道密码的人才具有权限。</p>
+<p>ssh对通信过程进行了加密，避免了网络攻击，如通信劫持，窃听，中间人攻击等</p>
+<h2 id="加密known-hosts"><a href="#加密known-hosts" class="headerlink" title="加密known_hosts"></a>加密known_hosts</h2><p>如ssh访问github时，会把github的public key加入这个文件，要对文件内容加密，在/etc/ssh/ssh_config中加入HashKnownHosts yes</p>
+<blockquote>
+<p>Indicates that <a href="https://man.openbsd.org/ssh.1">ssh(1)</a> should hash host names and addresses when they are added to <em>~/.ssh/known_hosts</em>. These hashed names may be used normally by <a href="https://man.openbsd.org/ssh.1">ssh(1)</a> and <a href="https://man.openbsd.org/sshd.8">sshd(8)</a>, but they do not visually reveal identifying information if the file’s contents are disclosed. The default is <code>no</code>. Note that existing names and addresses in known hosts files will not be converted automatically, but may be manually hashed using <a href="https://man.openbsd.org/ssh-keygen.1">ssh-keygen(1)</a>.</p>
+</blockquote>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="查看ssh-key的指纹"><a href="#查看ssh-key的指纹" class="headerlink" title="查看ssh key的指纹"></a>查看ssh key的指纹</h3><p><code>ssh-keygen -lf  public-key-file-name</code></p>
+<p>对比github ssh key的指纹，就可以知道</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210315213521.png" alt="image-20210315213521277"></p>
+<h2 id="调试ssh"><a href="#调试ssh" class="headerlink" title="调试ssh"></a>调试ssh</h2><p>ssh.exe使用时-v选项可以打印debug信息</p>
+<blockquote>
+<p>-v Verbose mode. Causes <code>ssh</code> to print debugging messages about its progress. This is helpful in debugging connection, authentication, and configuration problems. Multiple <code>-v</code> options increase the verbosity. The maximum is 3.</p>
+</blockquote>
+<p>–Verbose选项在许多命令行程序中都有用 </p>
+<h2 id="配置文件的级别"><a href="#配置文件的级别" class="headerlink" title="配置文件的级别"></a>配置文件的级别</h2><p>许多linux命令行程序都会有配置文件，级别分为三级，例如git</p>
+<blockquote>
+<ul>
+<li>/etc/gitconfig 文件：系统中对所有用户都普遍适用的配置。若使用 git config 时用 –system 选项，读写的就是这个文件。</li>
+<li>~/.gitconfig 文件：用户目录下的配置文件只适用于该用户。若使用 git config 时用 –global 选项，读写的就是这个文件。</li>
+<li>当前仓库的 Git 目录中的配置文件（也就是工作目录中的 .git/config 文件）：这里的配置仅仅针对当前仓库有效。每一个级别的配置都会覆盖上层的相同配置，所以 .git/config 里的配置会覆盖 /etc/gitconfig 中的同名变量。</li>
+</ul>
+</blockquote>
+<p><code>system-wised</code> <code>per-user</code> <code>current dir-or-project</code></p>
+<h2 id="翻译"><a href="#翻译" class="headerlink" title="翻译"></a>翻译</h2><p>encrypt     加密</p>
+<p>authentication    认证 </p>
+<p>certificate    证书</p>
+<p>directive 指令 指示符</p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/03/16/Vcpkg%20%E5%AE%89%E8%A3%85%E5%8C%85%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="vcpkg搜索包"><a href="#vcpkg搜索包" class="headerlink" title="vcpkg搜索包"></a>vcpkg搜索包</h2><p><code>vcpkg searc</code>不加package-name是列出所有支持的包，rg与grep功能相同，相对是个加强版，执行下面的命令可以找到libevent安装包的信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vcpkg search | rg libevent</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210227005900.png" alt="image-20210227005900500"></p>
+<h2 id="Vcpkg-安装包慢的解决办法"><a href="#Vcpkg-安装包慢的解决办法" class="headerlink" title="Vcpkg 安装包慢的解决办法"></a>Vcpkg 安装包慢的解决办法</h2><p>执行下面的命令，安装过程如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vcpkg install libevent </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210227004637.png" alt="image-20210227004637557"></p>
+<p>从安装过程中可看出vcpkg先从github下载libevent的release,由于这个下载没有使用代理或者github的镜像，所以下载较慢。</p>
+<p>可以手动下载这个包放到vcpkg\downloads目录下，复制以下链接到浏览器或者其他下载工具下载</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;libevent&#x2F;libevent&#x2F;archive&#x2F;release-2.1.12-stable.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>注意不要从/libevent/libevent的release处下载，两个文件的hash值不同，我就遇到下面的报错</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210227011514.png" alt="image-20210227011513933"> </p>
+<p>注意下载后的文件要更名为<code>libevent-libevent-release-2.1.12-stable.tar.gz</code></p>
+<p>这是利用了vcpkg的缓存机制，类似scoop 的cache功能。</p>
+<p>下图是手动下载安装包重新安装的过程</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210227012541.png" alt="image-20210227012540750"></p>
+<p>安装过程：</p>
+<p>下载安装包</p>
+<p>解压出源码编译安装</p>
+<p>reference：<a href="https://blog.csdn.net/cjmqas/article/details/79282847">https://blog.csdn.net/cjmqas/article/details/79282847</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/03/16/Vcpkg%E5%AE%89%E8%A3%85libevent/</url>
+    <content><![CDATA[<h2 id="vcpkg搜索libevent"><a href="#vcpkg搜索libevent" class="headerlink" title="vcpkg搜索libevent"></a>vcpkg搜索libevent</h2><p><code>vcpkg search</code>不加package-name是列出所有支持的包，rg与grep功能相同，相对是个加强版，执行下面的命令可以找到libevent安装包的信息</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vcpkg search | rg libevent</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210227005900.png" alt="image-20210227005900500"></p>
+<h2 id="vcpkg安装包慢的解决办法"><a href="#vcpkg安装包慢的解决办法" class="headerlink" title="vcpkg安装包慢的解决办法"></a>vcpkg安装包慢的解决办法</h2><p>执行下面的命令，安装过程如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vcpkg install libevent </span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210227004637.png" alt="image-20210227004637557"></p>
+<p>从安装过程中可看出vcpkg先从github下载libevent的release,由于这个下载没有使用代理或者github的镜像，所以下载较慢。</p>
+<p>可以手动下载这个包放到vcpkg\downloads目录下，复制以下链接到浏览器或者其他下载工具下载</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;github.com&#x2F;libevent&#x2F;libevent&#x2F;archive&#x2F;release-2.1.12-stable.tar.gz</span><br></pre></td></tr></table></figure>
+
+<p>注意不要从/libevent/libevent的release处下载，两个文件的hash值不同，我就遇到下面的报错</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210227011514.png" alt="image-20210227011513933"> </p>
+<p>注意下载后的文件要更名为<code>libevent-libevent-release-2.1.12-stable.tar.gz</code></p>
+<p>这是利用了vcpkg的缓存机制，类似scoop 的cache功能。</p>
+<p>下图是手动下载安装包重新安装的过程</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210227012541.png" alt="image-20210227012540750"></p>
+<p>安装过程：</p>
+<p>下载安装包</p>
+<p>解压出源码编译安装</p>
+<p>指定安装的triplets</p>
+<p>格式：库名称<library>：三元组<triplets>（x86-windows， x64-windows， x64-linux， x64-osx）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">vcpkg install boost:x64-windows</span><br></pre></td></tr></table></figure>
+
+<p>如何制作一个vcpkg安装包，如何提PR</p>
+<p><a href="https://blog.csdn.net/zhangzq86/article/details/78016991">https://blog.csdn.net/zhangzq86/article/details/78016991</a></p>
+<p><a href="https://www.jianshu.com/p/9b72a57499c6">https://www.jianshu.com/p/9b72a57499c6</a></p>
+<p>reference：<a href="https://blog.csdn.net/cjmqas/article/details/79282847">https://blog.csdn.net/cjmqas/article/details/79282847</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/03/16/%E5%90%84%E7%BC%96%E8%AF%91%E5%99%A8%E5%AF%B9c++%E6%A0%87%E5%87%86%E7%9A%84%E6%94%AF%E6%8C%81/</url>
+    <content><![CDATA[<p>各编译器对c++标准的支持</p>
+<p><a href="https://en.cppreference.com/w/cpp/compiler_support">https://en.cppreference.com/w/cpp/compiler_support</a></p>
+<p>vs2019各版本对比</p>
+<p><a href="https://visualstudio.microsoft.com/zh-hans/vs/compare/">https://visualstudio.microsoft.com/zh-hans/vs/compare/</a></p>
+<p>vs中如何设置c++标准版本</p>
+<p><a href="https://docs.microsoft.com/zh-cn/cpp/build/reference/std-specify-language-standard-version?view=msvc-160">https://docs.microsoft.com/zh-cn/cpp/build/reference/std-specify-language-standard-version?view=msvc-160</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/03/16/%E8%A7%A3%E5%86%B3vscode%E9%9B%86%E6%88%90%E7%BB%88%E7%AB%AF%E6%8C%89%E4%B8%8Bctrl+c%E6%97%A0%E6%95%88/</url>
+    <content><![CDATA[<p>解决vscode集成终端按下ctrl+c无效</p>
+<p>vscode terminal ctrl+c is invalid/ don’t work</p>
+<h2 id="问题表现"><a href="#问题表现" class="headerlink" title="问题表现"></a>问题表现</h2><p>linux bash 或cmd 或powershell按下<code>ctrl+c</code>可以终止终端中当前正在运行的程序，并开启新的提示符</p>
+<p>我的集成终端有wsl-bash  wsl-fish cmd powershell,按下ctrl+c后都无效果，网上找到一种解决办法</p>
+<h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><p><a href="https://stackoverflow.com/questions/45257525/make-ctrlc-copy-and-ctrlshiftc-interrupt-in-vscode-terminal">Make Ctrl+C=copy and Ctrl+Shift+C=interrupt in VSCode terminal</a></p>
+<p><a href="https://stackoverflow.com/questions/56469080/how-can-i-make-cmdc-send-ctrlc-in-vs-codes-terminal-in-macos">How can I make cmd+c send ctrl+c in VS Code’s terminal, in macOS?</a></p>
+<p>vscode docs对这个workbench.action.terminal.sendSequence作用的介绍</p>
+<p><a href="https://code.visualstudio.com/docs/editor/integrated-terminal#_send-text-from-a-keybinding">Integrated Terminal in Visual Studio Code</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;key&quot;: &quot;cmd+c&quot;,</span><br><span class="line">    &quot;command&quot;: &quot;workbench.action.terminal.sendSequence&quot;,</span><br><span class="line">    &quot;args&quot;: &#123; &quot;text&quot;: &quot;\u0003&quot; &#125;,</span><br><span class="line">    &quot;when&quot;: &quot;terminalFocus&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>按截图中的设置keybindings.json就好了</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210311013431.png" alt="image-20210311013423875"></p>
+<h2 id="无效的原因和另一种解决办法"><a href="#无效的原因和另一种解决办法" class="headerlink" title="无效的原因和另一种解决办法"></a>无效的原因和另一种解决办法</h2><p>ctrl+c能终止程序是个很自然的事，为什么不行呢？</p>
+<p>观察我的vscode key 设置，发现有很多ctrl+c或包含它的组合键（其中有些是我以前安装了ctags扩展导致的改键），这些导致了按键的冲突，很自然的想到，如果把这些改键恢复到默认，是不是就行了呢？</p>
+<p>在我设置这些改键为默认键后，发现不需要上面的workbench.action.terminal.sendSequence设置，ctrl+c就能在各种终端中正常工作了。</p>
+<p>如果我需要保留那些ctrl+c的组合键，使用workbench.action.terminal.sendSequence就是有用的</p>
+]]></content>
+  </entry>
+  <entry>
     <title>cmd脚本解释</title>
     <url>/2021/02/23/cmd%E8%84%9A%E6%9C%AC%E8%A7%A3%E9%87%8A/</url>
     <content><![CDATA[<p>@echo off</p>

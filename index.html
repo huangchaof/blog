@@ -134,7 +134,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">17</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">29</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -286,7 +286,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/23/cmd%E8%84%9A%E6%9C%AC%E8%A7%A3%E9%87%8A/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/16/error%20MSB8036%20%E6%89%BE%E4%B8%8D%E5%88%B0%20Windows%20SDK%20%E7%89%88%E6%9C%AC%2010/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/jugg.jfif">
@@ -300,7 +300,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/23/cmd%E8%84%9A%E6%9C%AC%E8%A7%A3%E9%87%8A/" class="post-title-link" itemprop="url">cmd脚本解释</a>
+            <a href="/2021/03/16/error%20MSB8036%20%E6%89%BE%E4%B8%8D%E5%88%B0%20Windows%20SDK%20%E7%89%88%E6%9C%AC%2010/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -311,8 +311,15 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-02-23 12:54:49" itemprop="dateCreated datePublished" datetime="2021-02-23T12:54:49Z">2021-02-23</time>
+              <time title="创建时间：2021-03-16 08:12:49" itemprop="dateCreated datePublished" datetime="2021-03-16T08:12:49Z">2021-03-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-01 18:02:55" itemprop="dateModified" datetime="2021-03-01T18:02:55Z">2021-03-01</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -320,14 +327,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>448</span>
+              <span>4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -339,89 +346,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>@echo off</p>
-<p>:fun1<br>if not exist “%1” (echo New post filename requried)^<br>else (copy “%1” E:\HexoBlog\source_posts &amp;&amp; cmd /c “cd /d E:\HexoBlog\source_posts &amp;&amp; git status &amp;&amp; git add . &amp;&amp; git commit -m “add new post” &amp;&amp; cd /d E:\HexoBlog &amp;&amp; hexo g “)<br>goto:eof</p>
-<p>call fun1</p>
-<p>Rem 该脚本可以在cmd和powershell中运行<br>Rem 进入某个目录并执行命令，不切换当前cmd窗口的路径，而是另开一个cmd<br>Rem 复制新文件到E:\HexoBlog\source_posts目录，执行git命令，再执行hexo命令，最后再退回powershell环境<br>Rem else语句换行需要用符号^^连接<br>Rem git add . 暂存当前目录下所有新文件和修改的文件</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/22/Win10%E8%87%AA%E5%B8%A6Outlook%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BE%E7%BD%AE/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/jugg.jfif">
-      <meta itemprop="name" content="lensousou">
-      <meta itemprop="description" content="轻轻的我走了，正如我轻轻的来">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="冷飕飕的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/02/22/Win10%E8%87%AA%E5%B8%A6Outlook%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BE%E7%BD%AE/" class="post-title-link" itemprop="url">Win10自带mail客户端设置</a>
-        </h2>
-
-        <div class="post-meta">
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-02-22 11:22:51 / 修改时间：11:20:47" itemprop="dateCreated datePublished" datetime="2021-02-22T11:22:51Z">2021-02-22</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>924</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="邮件客户端版本"><a href="#邮件客户端版本" class="headerlink" title="邮件客户端版本"></a>邮件客户端版本</h2><p>本文所使用的Outlook是Win10家庭版1909自带的邮件桌面客户端，非Office或Office365包含的Outlook,该Outlook账户可以登录网页版。</p>
-<h2 id="设置收发邮件的自动归档"><a href="#设置收发邮件的自动归档" class="headerlink" title="设置收发邮件的自动归档"></a>设置收发邮件的自动归档</h2><p>Win10自带邮件客户端上没有自定义收信规则的功能，<code>移动到某个文件夹</code>有，但是前者可以在收发邮件时自动归类，发邮件也是可以归类的，但是一般放在发件箱就够了。</p>
-<p>这个邮件客户端是阉割版的，让我以为Outlook的自动分类需要购买收费版，查看了QQ邮箱，发现免费的QQ邮箱有这个功能，那Outlook应该也免费有。登录了Outlook Web端，才能找到这个功能，web端相比这个客户端设置功能更丰富。</p>
+          <p> <code>error MSB8036: 找不到 Windows SDK 版本 10.0.18362.0。请安装所需版本的 Windows SDK</code></p>
+<p><code>error MSB8036 The Windows SDK version 10.0.18362.0 was not found</code></p>
+<h2 id="错误调查"><a href="#错误调查" class="headerlink" title="错误调查"></a>错误调查</h2><p>我在E盘上安装了vs2019 community，并安装了WindowsSdk version <code>10.0.17763.0和10.0.18362.0</code>，创建控制台工程后遇到了上面的错误，而且还发现了其他问题。**<del>既然已经安装了10.0.18362.0，就不应该出现找不到信息</del>**</p>
+<p><strong>我的win10版本是1909（18363.1379</strong>）</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/02/22/Win10%E8%87%AA%E5%B8%A6Outlook%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%AE%BE%E7%BD%AE/#more" rel="contents">
+              <a class="btn" href="/2021/03/16/error%20MSB8036%20%E6%89%BE%E4%B8%8D%E5%88%B0%20Windows%20SDK%20%E7%89%88%E6%9C%AC%2010/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -445,7 +376,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/22/win10-home-docker/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/16/GDB%E4%B8%8E%E8%B0%83%E8%AF%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/jugg.jfif">
@@ -459,7 +390,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/22/win10-home-docker/" class="post-title-link" itemprop="url">win10home-docker</a>
+            <a href="/2021/03/16/GDB%E4%B8%8E%E8%B0%83%E8%AF%95/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -469,10 +400,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-02-22 11:22:51 / 修改时间：11:20:17" itemprop="dateCreated datePublished" datetime="2021-02-22T11:22:51Z">2021-02-22</time>
+              <time title="创建时间：2021-03-16 08:12:36" itemprop="dateCreated datePublished" datetime="2021-03-16T08:12:36Z">2021-03-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-06 15:09:11" itemprop="dateModified" datetime="2021-03-06T15:09:11Z">2021-03-06</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -480,7 +417,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>696</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -499,13 +436,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="wsl如何升级到wsl2"><a href="#wsl如何升级到wsl2" class="headerlink" title="wsl如何升级到wsl2"></a>wsl如何升级到wsl2</h2><p>reference：<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers">https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers</a></p>
-<p><a target="_blank" rel="noopener" href="https://docs.docker.com/docker-for-windows/wsl/">https://docs.docker.com/docker-for-windows/wsl/</a></p>
-<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/reference">https://docs.microsoft.com/zh-cn/windows/wsl/reference</a></p>
-<p><a target="_blank" rel="noopener" href="https://docs.docker.com/docker-for-windows/install-windows-home/">https://docs.docker.com/docker-for-windows/install-windows-home/</a></p>
+          <h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ:"></a>FAQ:</h2><h3 id="linux或wsl下，进入GDB后如何执行外部命令？"><a href="#linux或wsl下，进入GDB后如何执行外部命令？" class="headerlink" title="linux或wsl下，进入GDB后如何执行外部命令？"></a>linux或wsl下，进入GDB后如何执行外部命令？</h3><p>输入shell,回到shell，再输入exit返回GDB</p>
+<p><img src="https://gitee.com/lensousou/imagerepo/raw/master/img//20210306221235.png" alt="image-20210306221228645"></p>
+<h3 id="vscode使用gdb调试如何输入gdb命令？"><a href="#vscode使用gdb调试如何输入gdb命令？" class="headerlink" title="vscode使用gdb调试如何输入gdb命令？"></a>vscode使用gdb调试如何输入gdb命令？</h3>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/02/22/win10-home-docker/#more" rel="contents">
+              <a class="btn" href="/2021/03/16/GDB%E4%B8%8E%E8%B0%83%E8%AF%95/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -529,7 +465,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/02/22/python/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/16/git%20%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/jugg.jfif">
@@ -543,7 +479,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/02/22/python/" class="post-title-link" itemprop="url">python</a>
+            <a href="/2021/03/16/git%20%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/" class="post-title-link" itemprop="url">未命名</a>
         </h2>
 
         <div class="post-meta">
@@ -555,7 +491,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-02-22 11:22:51 / 修改时间：11:19:54" itemprop="dateCreated datePublished" datetime="2021-02-22T11:22:51Z">2021-02-22</time>
+              <time title="创建时间：2021-03-16 08:12:24 / 修改时间：08:01:59" itemprop="dateCreated datePublished" datetime="2021-03-16T08:12:24Z">2021-03-16</time>
             </span>
 
           <br>
@@ -564,7 +500,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>524</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -583,18 +519,100 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>python</p>
-<p>[toc]</p>
-<h1 id="pip国内源配置"><a href="#pip国内源配置" class="headerlink" title="pip国内源配置"></a>pip国内源配置</h1><p>pip install安装包时是用从<code>The Python Package Index</code><a target="_blank" rel="noopener" href="https://pypi.org/%E4%B8%8B%E8%BD%BD%EF%BC%8C%E9%80%9F%E5%BA%A6%E8%BE%83%E6%85%A2%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%85%8D%E7%BD%AE%E4%B8%BA%E5%9B%BD%E5%86%85%E6%BA%90">https://pypi.org/下载，速度较慢，可以配置为国内源</a></p>
-<p>清华开源镜像站pipy地址：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/help/pypi/">https://mirrors.tuna.tsinghua.edu.cn/help/pypi/</a></p>
+          <p>git在CLI访问远程仓库有两种url</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh形式：git@github.com:username&#x2F;reponame.git</span><br><span class="line">http形式：https:&#x2F;&#x2F;github.com&#x2F;username&#x2F;reponame.git</span><br></pre></td></tr></table></figure>
+
+<h2 id="ssh形式"><a href="#ssh形式" class="headerlink" title="ssh形式"></a>ssh形式</h2><p>通过ssh访问远程仓库如github，需要设置ssh key pair，设置后做git操作不需要输入github的用户名和密码。所以如果clone仓库时使用的是ssh url，在CLI访问github就是用的ssh密钥对来做身份认证</p>
+<h2 id="http形式"><a href="#http形式" class="headerlink" title="http形式"></a>http形式</h2>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/02/22/python/#more" rel="contents">
+              <a class="btn" href="/2021/03/16/git%20%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
           <!--/noindex-->
         
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/16/golang/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/jugg.jfif">
+      <meta itemprop="name" content="lensousou">
+      <meta itemprop="description" content="轻轻的我走了，正如我轻轻的来">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="冷飕飕的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/16/golang/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-16 08:12:10" itemprop="dateCreated datePublished" datetime="2021-03-16T08:12:10Z">2021-03-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-24 16:43:38" itemprop="dateModified" datetime="2021-02-24T16:43:38Z">2021-02-24</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>129</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>go 安装cheat 在windows下无法下载包，可以把代理更改下set GOPROXY=<a target="_blank" rel="noopener" href="https://goproxy.cn,direct/">https://goproxy.cn,direct</a></p>
+<p>而cheat还是无法运行，见issue:<a target="_blank" rel="noopener" href="https://github.com/cheat/cheat/issues/571">https://github.com/cheat/cheat/issues/571</a></p>
+
       
     </div>
 
@@ -612,7 +630,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -680,7 +698,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -745,13 +763,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">25k</span>
+    <span title="站点总字数">40k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">22 分钟</span>
+    <span title="站点阅读时长">36 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
   </div>
