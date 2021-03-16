@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-16T08:42:46.460Z</updated>
+  <updated>2021-03-16T08:53:07.417Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,17 +17,17 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>error MSB8036 找不到 Windows SDK 版本 10</title>
     <link href="http://example.com/2021/03/16/error%20MSB8036%20%E6%89%BE%E4%B8%8D%E5%88%B0%20Windows%20SDK%20%E7%89%88%E6%9C%AC%2010/"/>
     <id>http://example.com/2021/03/16/error%20MSB8036%20%E6%89%BE%E4%B8%8D%E5%88%B0%20Windows%20SDK%20%E7%89%88%E6%9C%AC%2010/</id>
     <published>2021-03-16T08:12:49.175Z</published>
-    <updated>2021-03-16T08:42:46.460Z</updated>
+    <updated>2021-03-16T08:53:07.417Z</updated>
     
     
-    <summary type="html">&lt;hr&gt;
-&lt;h2 id=&quot;title-error-MSB8036-找不到-Windows-SDK-版本-10&quot;&gt;&lt;a href=&quot;#title-error-MSB8036-找不到-Windows-SDK-版本-10&quot; class=&quot;headerlink&quot; title=&quot; title: error MSB8036 找不到 Windows SDK 版本 10&quot;&gt;&lt;/a&gt; title: error MSB8036 找不到 Windows SDK 版本 10&lt;/h2&gt;&lt;p&gt; &lt;code&gt;error MSB8036: 找不到 Windows SDK 版本 10.0.18362.0。请安装所需版本的 Windows SDK&lt;/code&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt; &lt;code&gt;error MSB8036: 找不到 Windows SDK 版本 10.0.18362.0。请安装所需版本的 Windows SDK&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;error MSB8036 The Windows SDK version 10.0.18362.0 was not found&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;错误调查&quot;&gt;&lt;a href=&quot;#错误调查&quot; class=&quot;headerlink&quot; title=&quot;错误调查&quot;&gt;&lt;/a&gt;错误调查&lt;/h2&gt;</summary>
+&lt;h2 id=&quot;错误调查&quot;&gt;&lt;a href=&quot;#错误调查&quot; class=&quot;headerlink&quot; title=&quot;错误调查&quot;&gt;&lt;/a&gt;错误调查&lt;/h2&gt;&lt;p&gt;我在E盘上安装了vs2019 community，并安装了WindowsSdk version &lt;code&gt;10.0.17763.0和10.0.18362.0&lt;/code&gt;，创建控制台工程后遇到了上面的错误，而且还发现了其他问题。**&lt;del&gt;既然已经安装了10.0.18362.0，就不应该出现找不到信息&lt;/del&gt;**&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我的win10版本是1909（18363.1379&lt;/strong&gt;）&lt;/p&gt;</summary>
     
     
     
