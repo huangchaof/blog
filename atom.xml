@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-16T08:53:07.417Z</updated>
+  <updated>2021-04-27T19:59:22.784Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/04/27/manjaro%E5%8C%85%E7%AE%A1%E7%90%86pacman/"/>
+    <id>http://example.com/2021/04/27/manjaro%E5%8C%85%E7%AE%A1%E7%90%86pacman/</id>
+    <published>2021-04-27T19:48:36.516Z</published>
+    <updated>2021-04-27T19:59:22.784Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;安装、查询&quot;&gt;&lt;a href=&quot;#安装、查询&quot; class=&quot;headerlink&quot; title=&quot;安装、查询&quot;&gt;&lt;/a&gt;安装、查询&lt;/h2&gt;&lt;p&gt;pacman -S –sync 安装包，从remote  repository&lt;/p&gt;
+&lt;p&gt;pacman -Q –query 查询已安装的包 &lt;/p&gt;
+&lt;p&gt;pacman -Si gcc 显示包信息&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20210428024905.png&quot; alt=&quot;image-20210428024857756&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="http://example.com/2021/04/11/VirtualBox%E4%B8%8Ewsl2%E5%85%B1%E5%AD%98/"/>
+    <id>http://example.com/2021/04/11/VirtualBox%E4%B8%8Ewsl2%E5%85%B1%E5%AD%98/</id>
+    <published>2021-04-12T06:59:26.966Z</published>
+    <updated>2021-04-29T11:08:37.511Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;wsl2使用hyper-v，以前不能与其他虚拟机软件共存，VirtualBox6.0版本已经可以共存了&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gitee.com/lensousou/imagerepo/raw/master/img//20210427023154.png&quot; alt=&quot;image-20210427023154874&quot;&gt;&lt;/p&gt;
+&lt;p&gt;wsl2与hyper-v的关系，wsl2能否与其他虚拟化产品共存：&lt;a href=&quot;https://docs.microsoft.com/zh-cn/windows/wsl/wsl2-faq&quot;&gt;有关适用于 Linux 2 的 Windows 子系统的常见问题 | Microsoft Docs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;注意：&lt;strong&gt;此文档使用virtualbox6.18&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;安装VBoxGuestAdditions&quot;&gt;&lt;a href=&quot;#安装VBoxGuestAdditions&quot; class=&quot;headerlink&quot; title=&quot;安装VBoxGuestAdditions&quot;&gt;&lt;/a&gt;安装VBoxGuestAdditions&lt;/h2&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>error MSB8036 找不到 Windows SDK 版本 10</title>
@@ -56,7 +93,7 @@
     <link href="http://example.com/2021/03/16/git%20%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/"/>
     <id>http://example.com/2021/03/16/git%20%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81/</id>
     <published>2021-03-16T08:12:24.301Z</published>
-    <updated>2021-03-16T08:40:03.840Z</updated>
+    <updated>2021-03-17T05:08:30.938Z</updated>
     
     
     <summary type="html">&lt;p&gt;git在CLI访问远程仓库有两种url&lt;/p&gt;
@@ -304,7 +341,7 @@
     <link href="http://example.com/2021/02/22/win10-home-docker/"/>
     <id>http://example.com/2021/02/22/win10-home-docker/</id>
     <published>2021-02-22T11:22:51.744Z</published>
-    <updated>2021-02-22T11:20:17.107Z</updated>
+    <updated>2021-04-26T17:51:11.604Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;wsl如何升级到wsl2&quot;&gt;&lt;a href=&quot;#wsl如何升级到wsl2&quot; class=&quot;headerlink&quot; title=&quot;wsl如何升级到wsl2&quot;&gt;&lt;/a&gt;wsl如何升级到wsl2&lt;/h2&gt;&lt;p&gt;reference：&lt;a href=&quot;https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers&quot;&gt;https://docs.microsoft.com/zh-cn/windows/wsl/tutorials/wsl-containers&lt;/a&gt;&lt;/p&gt;
@@ -346,40 +383,6 @@
     <summary type="html">&lt;h1 id=&quot;Picgo图床&quot;&gt;&lt;a href=&quot;#Picgo图床&quot; class=&quot;headerlink&quot; title=&quot;Picgo图床&quot;&gt;&lt;/a&gt;Picgo图床&lt;/h1&gt;&lt;h2 id=&quot;Word与md文档存储图片&quot;&gt;&lt;a href=&quot;#Word与md文档存储图片&quot; class=&quot;headerlink&quot; title=&quot;Word与md文档存储图片&quot;&gt;&lt;/a&gt;Word与md文档存储图片&lt;/h2&gt;&lt;p&gt;word文档或者笔记软件插入图片，图片存储在文档本身里，这些文档是二进制的，需要对应软件才能打开。&lt;/p&gt;
 &lt;p&gt;markdown或html文档里插入的图片无法存储在文档里，只能以地址形式连接到文档，这样造成了文档与图片的分离。&lt;/p&gt;
 &lt;p&gt;图片可以存储在本地，与文档一起，也可以存到某个网络服务器上，图床就是这样的一个网络服务器。&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>office2019激活方式</title>
-    <link href="http://example.com/2021/02/22/office%202019%E6%BF%80%E6%B4%BB%E6%96%B9%E5%BC%8F/"/>
-    <id>http://example.com/2021/02/22/office%202019%E6%BF%80%E6%B4%BB%E6%96%B9%E5%BC%8F/</id>
-    <published>2021-02-22T11:22:51.734Z</published>
-    <updated>2021-02-22T11:18:31.799Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;更方便的方式&quot;&gt;&lt;a href=&quot;#更方便的方式&quot; class=&quot;headerlink&quot; title=&quot;更方便的方式&quot;&gt;&lt;/a&gt;更方便的方式&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://otp.landian.vip/zh-cn/&quot;&gt;https://otp.landian.vip/zh-cn/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;以下是自己手动方式&lt;/p&gt;
-&lt;h1 id=&quot;office-2019安装包哪儿下载&quot;&gt;&lt;a href=&quot;#office-2019安装包哪儿下载&quot; class=&quot;headerlink&quot; title=&quot;office 2019安装包哪儿下载&quot;&gt;&lt;/a&gt;office 2019安装包哪儿下载&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://msdn.itellyou.cn/&quot;&gt;https://msdn.itellyou.cn/&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>MSI-GP62-6QG拆机换硬盘</title>
-    <link href="http://example.com/2021/02/22/MSI-GP62-6QG%E6%8B%86%E6%9C%BA%E6%8D%A2%E7%A1%AC%E7%9B%98/"/>
-    <id>http://example.com/2021/02/22/MSI-GP62-6QG%E6%8B%86%E6%9C%BA%E6%8D%A2%E7%A1%AC%E7%9B%98/</id>
-    <published>2021-02-22T11:22:51.731Z</published>
-    <updated>2021-02-22T11:17:58.673Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;[toc]&lt;/p&gt;
-&lt;h1 id=&quot;MSI-GP62-6QG拆机换硬盘&quot;&gt;&lt;a href=&quot;#MSI-GP62-6QG拆机换硬盘&quot; class=&quot;headerlink&quot; title=&quot;MSI-GP62-6QG拆机换硬盘&quot;&gt;&lt;/a&gt;MSI-GP62-6QG拆机换硬盘&lt;/h1&gt;&lt;p&gt;原装硬盘为一个海力士SSD和一个日立HDD。由于这个日立HDD坏道了，无法进入操作系统（win10本身没有错误），我用一个Sandisk SSD替换了坏道的硬盘。&lt;/p&gt;
-&lt;h1 id=&quot;拆机工具&quot;&gt;&lt;a href=&quot;#拆机工具&quot; class=&quot;headerlink&quot; title=&quot;拆机工具&quot;&gt;&lt;/a&gt;拆机工具&lt;/h1&gt;&lt;p&gt;有的笔记本自行拆机很麻烦，而且会影响保修，我这个型号的只需要螺丝刀和垫片就行，自行拆机也不影响保修。&lt;/p&gt;</summary>
     
     
     
